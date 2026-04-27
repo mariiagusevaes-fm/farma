@@ -1,1214 +1,1112 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>FarmaMamá — Medicamentos seguros en el embarazo y lactancia</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#7A9E7E">
 <style>
-  :root {
-    --sage: #7A9E7E;
-    --sage-light: #B8D4BB;
-    --sage-pale: #EEF5EF;
-    --cream: #FAF8F4;
-    --warm: #F5EFE6;
-    --text: #2C2C2C;
-    --text-soft: #6B6B6B;
-    --green-bg: #E8F5E9;
-    --green-txt: #2E7D32;
-    --yellow-bg: #FFF8E1;
-    --yellow-txt: #F57F17;
-    --red-bg: #FFEBEE;
-    --red-txt: #C62828;
-    --shadow: 0 4px 24px rgba(0,0,0,0.07);
-    --radius: 20px;
-  }
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: ‘DM Sans’, sans-serif;
-background: var(–cream);
-color: var(–text);
-min-height: 100vh;
-}
-
-/* HEADER */
-header {
-background: white;
-border-bottom: 1px solid #EEE;
-padding: 0 32px;
-height: 64px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-position: sticky;
-top: 0;
-z-index: 100;
-}
-
-.logo {
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.logo-icon {
-width: 36px;
-height: 36px;
-background: var(–sage);
-border-radius: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 18px;
-}
-
-.logo-text {
-font-family: ‘DM Serif Display’, serif;
-font-size: 22px;
-color: var(–text);
-letter-spacing: -0.3px;
-}
-
-.logo-text span {
-color: var(–sage);
-}
-
-.header-note {
-font-size: 12px;
-color: var(–text-soft);
-background: var(–sage-pale);
-padding: 6px 14px;
-border-radius: 20px;
-}
-
-/* HERO */
-.hero {
-background: linear-gradient(160deg, #F0F7F1 0%, var(–warm) 100%);
-padding: 56px 32px 48px;
-text-align: center;
-border-bottom: 1px solid #E8EDE8;
-}
-
-.hero-eyebrow {
-font-size: 12px;
-font-weight: 600;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: var(–sage);
-margin-bottom: 16px;
-}
-
-.hero h1 {
-font-family: ‘DM Serif Display’, serif;
-font-size: clamp(28px, 5vw, 44px);
-line-height: 1.15;
-color: var(–text);
-margin-bottom: 14px;
-max-width: 560px;
-margin-left: auto;
-margin-right: auto;
-}
-
-.hero h1 em {
-color: var(–sage);
-font-style: italic;
-}
-
-.hero p {
-font-size: 16px;
-color: var(–text-soft);
-max-width: 480px;
-margin: 0 auto 36px;
-line-height: 1.6;
-}
-
-/* SEARCH SECTION */
-.search-wrap {
-max-width: 680px;
-margin: 0 auto;
-}
-
-.situation-tabs {
-display: flex;
-gap: 8px;
-margin-bottom: 16px;
-justify-content: center;
-}
-
-.tab {
-padding: 8px 20px;
-border-radius: 30px;
-font-size: 14px;
-font-weight: 500;
-cursor: pointer;
-border: 2px solid transparent;
-transition: all 0.2s;
-background: white;
-color: var(–text-soft);
-border-color: #DDD;
-}
-
-.tab.active {
-background: var(–sage);
-color: white;
-border-color: var(–sage);
-}
-
-.tab:hover:not(.active) {
-border-color: var(–sage-light);
-color: var(–sage);
-}
-
-.search-box {
-background: white;
-border-radius: var(–radius);
-box-shadow: var(–shadow), 0 0 0 1px #E8EDE8;
-padding: 8px 8px 8px 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-transition: box-shadow 0.2s;
-}
-
-.search-box:focus-within {
-box-shadow: 0 4px 32px rgba(122,158,126,0.18), 0 0 0 2px var(–sage-light);
-}
-
-.search-icon {
-font-size: 18px;
-opacity: 0.4;
-flex-shrink: 0;
-}
-
-.search-box input {
-flex: 1;
-border: none;
-outline: none;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 16px;
-color: var(–text);
-background: transparent;
-padding: 8px 0;
-}
-
-.search-box input::placeholder {
-color: #B0B0B0;
-}
-
-.search-btn {
-background: var(–sage);
-color: white;
-border: none;
-border-radius: 14px;
-padding: 12px 24px;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 15px;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.2s;
-white-space: nowrap;
-}
-
-.search-btn:hover {
-background: #6A8E6E;
-transform: translateY(-1px);
-}
-
-.search-btn:active {
-transform: translateY(0);
-}
-
-/* QUICK CHIPS */
-.quick-chips {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-margin-top: 14px;
-justify-content: center;
-}
-
-.chip {
-background: white;
-border: 1px solid #E0E0E0;
-border-radius: 20px;
-padding: 5px 14px;
-font-size: 13px;
-color: var(–text-soft);
-cursor: pointer;
-transition: all 0.15s;
-}
-
-.chip:hover {
-border-color: var(–sage);
-color: var(–sage);
-background: var(–sage-pale);
-}
-
-/* MAIN CONTENT */
-main {
-max-width: 720px;
-margin: 0 auto;
-padding: 32px 20px 80px;
-}
-
-/* RESULT CARD */
-.result-card {
-background: white;
-border-radius: var(–radius);
-box-shadow: var(–shadow);
-overflow: hidden;
-margin-bottom: 20px;
-animation: slideUp 0.35s ease;
-}
-
-@keyframes slideUp {
-from { opacity: 0; transform: translateY(16px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.result-header {
-padding: 24px 28px 20px;
-border-bottom: 1px solid #F0F0F0;
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-gap: 16px;
-}
-
-.result-name {
-font-family: ‘DM Serif Display’, serif;
-font-size: 26px;
-color: var(–text);
-line-height: 1.2;
-}
-
-.result-category {
-font-size: 13px;
-color: var(–text-soft);
-margin-top: 4px;
-font-weight: 400;
-}
-
-.result-trade {
-font-size: 12px;
-color: var(–sage);
-margin-top: 6px;
-font-weight: 500;
-}
-
-.safety-badges {
-display: flex;
-flex-direction: column;
-gap: 6px;
-flex-shrink: 0;
-}
-
-.badge {
-display: flex;
-align-items: center;
-gap: 6px;
-padding: 6px 14px;
-border-radius: 30px;
-font-size: 12px;
-font-weight: 600;
-white-space: nowrap;
-}
-
-.badge-label {
-font-size: 10px;
-font-weight: 400;
-opacity: 0.8;
-}
-
-.badge.green { background: var(–green-bg); color: var(–green-txt); }
-.badge.yellow { background: var(–yellow-bg); color: var(–yellow-txt); }
-.badge.red { background: var(–red-bg); color: var(–red-txt); }
-
-/* RESULT SECTIONS */
-.result-body {
-padding: 0;
-}
-
-.result-section {
-padding: 20px 28px;
-border-bottom: 1px solid #F5F5F5;
-}
-
-.result-section:last-child {
-border-bottom: none;
-}
-
-.section-label {
-font-size: 11px;
-font-weight: 600;
-letter-spacing: 1px;
-text-transform: uppercase;
-color: var(–text-soft);
-margin-bottom: 10px;
-display: flex;
-align-items: center;
-gap: 6px;
-}
-
-.section-text {
-font-size: 15px;
-line-height: 1.65;
-color: #3A3A3A;
-}
-
-.interactions-list {
-font-size: 13px;
-color: var(–text-soft);
-background: #FAFAFA;
-border-radius: 10px;
-padding: 12px 16px;
-line-height: 1.6;
-}
-
-.source-row {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 12px;
-}
-
-.source-tags {
-display: flex;
-flex-wrap: wrap;
-gap: 6px;
-}
-
-.source-tag {
-font-size: 11px;
-background: var(–sage-pale);
-color: var(–sage);
-padding: 3px 10px;
-border-radius: 20px;
-font-weight: 500;
-}
-
-.expert-check {
-font-size: 12px;
-color: var(–green-txt);
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 4px;
-flex-shrink: 0;
-}
-
-/* DISCLAIMER */
-.disclaimer {
-background: var(–warm);
-border: 1px solid #E8DDD0;
-border-radius: 14px;
-padding: 16px 20px;
-font-size: 13px;
-color: var(–text-soft);
-line-height: 1.6;
-margin-top: 8px;
-display: flex;
-gap: 10px;
-align-items: flex-start;
-}
-
-.disclaimer-icon {
-font-size: 16px;
-flex-shrink: 0;
-margin-top: 1px;
-}
-
-/* EMPTY / DEFAULT STATE */
-.empty-state {
-text-align: center;
-padding: 48px 20px;
-color: var(–text-soft);
-}
-
-.empty-icon {
-font-size: 48px;
-margin-bottom: 16px;
-opacity: 0.5;
-}
-
-.empty-state h3 {
-font-family: ‘DM Serif Display’, serif;
-font-size: 22px;
-color: var(–text);
-margin-bottom: 8px;
-}
-
-.empty-state p {
-font-size: 14px;
-max-width: 320px;
-margin: 0 auto;
-line-height: 1.6;
-}
-
-/* NOT FOUND */
-.not-found {
-background: white;
-border-radius: var(–radius);
-padding: 32px;
-text-align: center;
-box-shadow: var(–shadow);
-}
-
-.not-found p {
-color: var(–text-soft);
-font-size: 15px;
-line-height: 1.6;
-}
-
-/* CATEGORIES SECTION */
-.categories {
-margin-top: 32px;
-}
-
-.categories-title {
-font-size: 13px;
-font-weight: 600;
-color: var(–text-soft);
-letter-spacing: 0.5px;
-text-transform: uppercase;
-margin-bottom: 12px;
-}
-
-.cat-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-gap: 10px;
-}
-
-.cat-card {
-background: white;
-border: 1px solid #EEE;
-border-radius: 14px;
-padding: 14px 16px;
-cursor: pointer;
-transition: all 0.2s;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.cat-card:hover {
-border-color: var(–sage-light);
-box-shadow: 0 2px 12px rgba(122,158,126,0.12);
-transform: translateY(-1px);
-}
-
-.cat-card-icon { font-size: 20px; }
-.cat-card-name { font-size: 13px; font-weight: 500; color: var(–text); }
-
-/* LOADING */
-.loading {
-display: flex;
-align-items: center;
-gap: 10px;
-padding: 24px;
-color: var(–text-soft);
-font-size: 14px;
-}
-
-.spinner {
-width: 18px;
-height: 18px;
-border: 2px solid var(–sage-light);
-border-top-color: var(–sage);
-border-radius: 50%;
-animation: spin 0.7s linear infinite;
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* MOBILE */
-@media (max-width: 600px) {
-header { padding: 0 16px; }
-.hero { padding: 36px 16px 32px; }
-.result-header { flex-direction: column; }
-.safety-badges { flex-direction: row; flex-wrap: wrap; }
-.result-section { padding: 16px 20px; }
-.result-name { font-size: 22px; }
-}
+  /* ── FIX 1: все CSS-переменные исправлены с – на -- ── */
+  :root {
+    --sage: #7A9E7E;
+    --sage-dark: #5A8060;
+    --sage-light: #B8D4BB;
+    --sage-pale: #EEF5EF;
+    --cream: #FAF8F4;
+    --warm: #F5EFE6;
+    --text: #2C2C2C;
+    --text-soft: #6B6B6B;
+    --green-bg: #E8F5E9;
+    --green-txt: #2E7D32;
+    --yellow-bg: #FFF8E1;
+    --yellow-txt: #F57F17;
+    --red-bg: #FFEBEE;
+    --red-txt: #C62828;
+    --shadow: 0 4px 24px rgba(0,0,0,0.07);
+    --radius: 20px;
+  }
+
+  /* FIX 1: было "- {" — исправлено на "* {" */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: white;
+    border-bottom: 1px solid #EEE;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 12px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--sage);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    /* FIX 4: логотип в зелёном цвете */
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+
+  .logo-text span { color: var(--sage); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  /* FIX 2: переключатель языка */
+  .lang-switcher {
+    display: flex;
+    background: #F3F3F3;
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    border-radius: 16px;
+    padding: 4px 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn.active {
+    background: white;
+    color: var(--sage-dark);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  .header-note {
+    font-size: 12px;
+    color: var(--text-soft);
+    background: var(--sage-pale);
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #F0F7F1 0%, var(--warm) 100%);
+    padding: 48px 20px 40px;
+    text-align: center;
+    border-bottom: 1px solid #E8EDE8;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    /* FIX 4: зелёный цвет */
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 14px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* FIX 4: курсивные слова в нежно-зелёном */
+  .hero h1 em { color: var(--sage); font-style: italic; }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--text-soft);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  /* ── SITUATION TABS ── */
+  .search-wrap { max-width: 680px; margin: 0 auto; }
+
+  .situation-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* FIX 3: кнопки вкладок — явный цвет текста, не наследуемый */
+  .tab {
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid #DDD;
+    transition: all 0.2s;
+    background: white;
+    color: var(--text-soft);  /* явный цвет текста */
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+  }
+
+  .tab.active {
+    background: var(--sage);
+    color: #FFFFFF !important;  /* FIX 3: белый текст на активной кнопке */
+    border-color: var(--sage);
+  }
+
+  .tab:hover:not(.active) {
+    border-color: var(--sage-light);
+    color: var(--sage);
+  }
+
+  /* FIX 6: поле поиска с явной рамкой */
+  .search-box {
+    background: white;
+    border-radius: var(--radius);
+    /* FIX 6: явная видимая рамка */
+    border: 2px solid #D8E4D9;
+    box-shadow: var(--shadow);
+    padding: 8px 8px 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-box:focus-within {
+    border-color: var(--sage);
+    box-shadow: 0 4px 20px rgba(122,158,126,0.18);
+  }
+
+  .search-icon { font-size: 18px; opacity: 0.4; flex-shrink: 0; }
+
+  .search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background: transparent;
+    padding: 8px 0;
+  }
+
+  .search-box input::placeholder { color: #B0B0B0; }
+
+  .search-btn {
+    background: var(--sage);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 11px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .search-btn:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+  /* ── QUICK CHIPS ── */
+  .quick-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .chip {
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .chip:hover { border-color: var(--sage); color: var(--sage); background: var(--sage-pale); }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    /* FIX 5: safe-area для iPhone с вырезом */
+    padding: 32px 20px calc(80px + env(safe-area-inset-bottom));
+  }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: slideUp 0.35s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-header {
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #F0F0F0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .result-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .result-category {
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-top: 4px;
+  }
+
+  /* FIX 4: торговые названия в зелёном */
+  .result-trade {
+    font-size: 12px;
+    color: var(--sage);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .safety-badges { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge.green { background: var(--green-bg); color: var(--green-txt); }
+  .badge.yellow { background: var(--yellow-bg); color: var(--yellow-txt); }
+  .badge.red { background: var(--red-bg); color: var(--red-txt); }
+
+  .result-section { padding: 18px 24px; border-bottom: 1px solid #F5F5F5; }
+  .result-section:last-child { border-bottom: none; }
+
+  /* FIX 4: section-label в зелёном */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .section-text { font-size: 15px; line-height: 1.65; color: #3A3A3A; }
+
+  .interactions-list {
+    font-size: 13px;
+    color: var(--text-soft);
+    background: #FAFAFA;
+    border-radius: 10px;
+    padding: 12px 16px;
+    line-height: 1.6;
+  }
+
+  .source-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .source-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .source-tag {
+    font-size: 11px;
+    background: var(--sage-pale);
+    /* FIX 4: зелёный цвет для тегов источников */
+    color: var(--sage-dark);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .expert-check {
+    font-size: 12px;
+    color: var(--green-txt);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .disclaimer {
+    background: var(--warm);
+    border: 1px solid #E8DDD0;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .disclaimer-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state { text-align: center; padding: 40px 20px; color: var(--text-soft); }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+  .empty-state h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .empty-state p { font-size: 14px; max-width: 320px; margin: 0 auto; line-height: 1.6; }
+
+  .not-found {
+    background: white;
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .not-found p { color: var(--text-soft); font-size: 15px; line-height: 1.6; }
+
+  /* ── CATEGORIES ── */
+  .categories { margin-top: 28px; }
+
+  .categories-title {
+    font-size: 13px;
+    font-weight: 600;
+    /* FIX 4: зелёный заголовок категорий */
+    color: var(--sage-dark);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* FIX 5: категории на мобильном — фиксированный grid для iPhone */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .cat-card {
+    background: white;
+    border: 1px solid #EEE;
+    border-radius: 14px;
+    padding: 14px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* FIX 5: предотвращаем overflow на маленьких экранах */
+    min-width: 0;
+    overflow: hidden;
+  }
+  .cat-card:hover { border-color: var(--sage-light); box-shadow: 0 2px 12px rgba(122,158,126,0.12); transform: translateY(-1px); }
+  .cat-card-icon { font-size: 20px; flex-shrink: 0; }
+  .cat-card-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── FIX 1: История и сохранённые препараты ── */
+  .panel-section {
+    margin-top: 28px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 14px 20px;
+    background: var(--sage-pale);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid #E8EDE8;
+  }
+
+  .panel-header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sage-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .panel-toggle {
+    font-size: 12px;
+    color: var(--text-soft);
+    transition: transform 0.2s;
+  }
+
+  .panel-body { padding: 14px 16px; }
+  .panel-body.hidden { display: none; }
+
+  .history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+    gap: 8px;
+  }
+  .history-item:hover { background: var(--sage-pale); }
+
+  .history-item-text {
+    font-size: 13px;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .history-item-time {
+    font-size: 11px;
+    color: var(--text-soft);
+    flex-shrink: 0;
+  }
+
+  .saved-drug {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+    gap: 8px;
+  }
+  .saved-drug:hover { background: var(--sage-pale); }
+
+  .saved-drug-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .saved-drug-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .saved-drug-badge.green { background: var(--green-bg); color: var(--green-txt); }
+  .saved-drug-badge.yellow { background: var(--yellow-bg); color: var(--yellow-txt); }
+  .saved-drug-badge.red { background: var(--red-bg); color: var(--red-txt); }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.4;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .remove-btn:hover { opacity: 1; }
+
+  .save-drug-btn {
+    margin-top: 12px;
+    width: 100%;
+    background: none;
+    border: 2px dashed var(--sage-light);
+    border-radius: 12px;
+    padding: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--sage-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .save-drug-btn:hover { background: var(--sage-pale); border-color: var(--sage); }
+
+  .empty-panel {
+    text-align: center;
+    padding: 16px;
+    font-size: 13px;
+    color: var(--text-soft);
+  }
+
+  /* ── SPINNER ── */
+  .spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--sage-light);
+    border-top-color: var(--sage);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    header { padding: 0 12px; height: auto; min-height: 56px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+    .hero { padding: 28px 16px 28px; }
+    /* FIX 5: категории на iPhone — 2 колонки */
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .result-header { flex-direction: column; }
+    .safety-badges { flex-direction: row; flex-wrap: wrap; }
+    .result-section { padding: 14px 16px; }
+    .result-name { font-size: 20px; }
+    .search-btn { padding: 10px 16px; font-size: 14px; }
+    /* FIX 5: safe area для iPhone Pro Max */
+    main { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+  }
+
+  @media (max-width: 380px) {
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .tab { font-size: 13px; padding: 8px 12px; }
+  }
 </style>
-
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <div class="logo-icon">🌿</div>
-    <div class="logo-text">Farma<span>Mamá</span></div>
-  </div>
-  <div class="header-note">Solo para España 🇪🇸</div>
+  <div class="logo">
+    <div class="logo-icon">🌿</div>
+    <div class="logo-text">Farma<span>Mamá</span></div>
+  </div>
+  <div class="header-right">
+    <!-- FIX 2: переключатель языка -->
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+      <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+      <button class="lang-btn" onclick="setLang('ru', this)">RU</button>
+    </div>
+    <div class="header-note" id="headerNote">Solo para España 🇪🇸</div>
+  </div>
 </header>
 
 <div class="hero">
-  <div class="hero-eyebrow">Información farmacológica para mamás</div>
-  <h1>¿Es seguro tomar este medicamento <em>ahora</em>?</h1>
-  <p>Información clara y fiable sobre medicamentos durante el embarazo y la lactancia. Sin tecnicismos.</p>
+  <div class="hero-eyebrow" id="txt-eyebrow">Información farmacológica para mamás</div>
+  <h1 id="txt-h1">¿Es seguro tomar este medicamento <em>ahora</em>?</h1>
+  <p id="txt-subtitle">Información clara y fiable sobre medicamentos durante el embarazo y la lactancia. Sin tecnicismos.</p>
 
-  <div class="search-wrap">
-    <div class="situation-tabs">
-      <button class="tab active" onclick="setSituation('lm', this)">🤱 Estoy dando el pecho</button>
-      <button class="tab" onclick="setSituation('emb', this)">🤰 Estoy embarazada</button>
-      <button class="tab" onclick="setSituation('both', this)">Ambas situaciones</button>
-    </div>
+  <div class="search-wrap">
+    <div class="situation-tabs">
+      <!-- FIX 3: явный цвет в style чтобы точно не перекрывался -->
+      <button class="tab active" id="tab-lm" onclick="setSituation('lm', this)">🤱 <span id="txt-tab-lm">Estoy dando el pecho</span></button>
+      <button class="tab" id="tab-emb" onclick="setSituation('emb', this)">🤰 <span id="txt-tab-emb">Estoy embarazada</span></button>
+      <button class="tab" id="tab-both" onclick="setSituation('both', this)"><span id="txt-tab-both">Ambas situaciones</span></button>
+    </div>
 
-```
-<div class="search-box">
-  <span class="search-icon">🔍</span>
-  <input type="text" id="searchInput" placeholder="Escribe un medicamento, p.ej. ibuprofeno, Nolotil…"
-    oninput="onInput(this.value)"
-    onkeydown="if(event.key==='Enter') doSearch()">
-  <button class="search-btn" onclick="doSearch()">Consultar</button>
-</div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput"
+        placeholder="Escribe un medicamento, p.ej. ibuprofeno, Nolotil…"
+        oninput="onInput(this.value)"
+        onkeydown="if(event.key==='Enter') doSearch()">
+      <button class="search-btn" onclick="doSearch()" id="txt-search-btn">Consultar</button>
+    </div>
 
-<div class="quick-chips">
-  <span class="chip" onclick="quickSearch('Paracetamol')">Paracetamol</span>
-  <span class="chip" onclick="quickSearch('Ibuprofeno')">Ibuprofeno</span>
-  <span class="chip" onclick="quickSearch('Nolotil')">Nolotil</span>
-  <span class="chip" onclick="quickSearch('Amoxicilina')">Amoxicilina</span>
-  <span class="chip" onclick="quickSearch('Omeprazol')">Omeprazol</span>
-  <span class="chip" onclick="quickSearch('Loratadina')">Loratadina</span>
-  <span class="chip" onclick="quickSearch('Fluconazol')">Fluconazol</span>
-</div>
-```
-
-  </div>
+    <div class="quick-chips" id="quickChips">
+      <span class="chip" onclick="quickSearch('Paracetamol')">Paracetamol</span>
+      <span class="chip" onclick="quickSearch('Ibuprofeno')">Ibuprofeno</span>
+      <span class="chip" onclick="quickSearch('Nolotil')">Nolotil</span>
+      <span class="chip" onclick="quickSearch('Amoxicilina')">Amoxicilina</span>
+      <span class="chip" onclick="quickSearch('Omeprazol')">Omeprazol</span>
+      <span class="chip" onclick="quickSearch('Loratadina')">Loratadina</span>
+      <span class="chip" onclick="quickSearch('Fluconazol')">Fluconazol</span>
+    </div>
+  </div>
 </div>
 
 <main id="main">
-  <div class="empty-state" id="emptyState">
-    <div class="empty-icon">💊</div>
-    <h3>Consulta cualquier medicamento</h3>
-    <p>Escribe el nombre del medicamento arriba o elige una de las opciones rápidas.</p>
-  </div>
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">💊</div>
+    <h3 id="txt-empty-title">Consulta cualquier medicamento</h3>
+    <p id="txt-empty-sub">Escribe el nombre del medicamento arriba o elige una de las opciones rápidas.</p>
+  </div>
 
-  <div class="categories" id="catSection">
-    <div class="categories-title">Categorías disponibles</div>
-    <div class="cat-grid">
-      <div class="cat-card" onclick="filterCategory('analgésico')"><span class="cat-card-icon">💊</span><span class="cat-card-name">Analgésicos</span></div>
-      <div class="cat-card" onclick="filterCategory('antibiótico')"><span class="cat-card-icon">🦠</span><span class="cat-card-name">Antibióticos</span></div>
-      <div class="cat-card" onclick="filterCategory('antihistamínico')"><span class="cat-card-icon">🌸</span><span class="cat-card-name">Antihistamínicos</span></div>
-      <div class="cat-card" onclick="filterCategory('bomba')"><span class="cat-card-icon">🫃</span><span class="cat-card-name">Digestivo / GI</span></div>
-      <div class="cat-card" onclick="filterCategory('corticoide')"><span class="cat-card-icon">💉</span><span class="cat-card-name">Corticoides</span></div>
-      <div class="cat-card" onclick="filterCategory('hierro')"><span class="cat-card-icon">🩸</span><span class="cat-card-name">Suplementos</span></div>
-    </div>
-  </div>
+  <div class="categories" id="catSection">
+    <div class="categories-title" id="txt-cat-title">Categorías disponibles</div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="filterCategory('analgésico')"><span class="cat-card-icon">💊</span><span class="cat-card-name" data-i18n="cat-analg">Analgésicos</span></div>
+      <div class="cat-card" onclick="filterCategory('antibiótico')"><span class="cat-card-icon">🦠</span><span class="cat-card-name" data-i18n="cat-antib">Antibióticos</span></div>
+      <div class="cat-card" onclick="filterCategory('antihistamínico')"><span class="cat-card-icon">🌸</span><span class="cat-card-name" data-i18n="cat-antih">Antihistamínicos</span></div>
+      <div class="cat-card" onclick="filterCategory('bomba')"><span class="cat-card-icon">🫃</span><span class="cat-card-name" data-i18n="cat-gi">Digestivo / GI</span></div>
+      <div class="cat-card" onclick="filterCategory('corticoide')"><span class="cat-card-icon">💉</span><span class="cat-card-name" data-i18n="cat-cort">Corticoides</span></div>
+      <div class="cat-card" onclick="filterCategory('hierro')"><span class="cat-card-icon">🩸</span><span class="cat-card-name" data-i18n="cat-supl">Suplementos</span></div>
+      <div class="cat-card" onclick="filterCategory('opioide')"><span class="cat-card-icon">💫</span><span class="cat-card-name" data-i18n="cat-opio">Opioides</span></div>
+      <div class="cat-card" onclick="filterCategory('antifúngico')"><span class="cat-card-icon">🍄</span><span class="cat-card-name" data-i18n="cat-antif">Antifúngicos</span></div>
+    </div>
+  </div>
+
+  <!-- FIX 1: История -->
+  <div class="panel-section" id="historyPanel" style="display:none">
+    <div class="panel-header" onclick="togglePanel('historyBody', 'historyArrow')">
+      <div class="panel-header-title">🕐 <span id="txt-history">Búsquedas recientes</span></div>
+      <span class="panel-toggle" id="historyArrow">▼</span>
+    </div>
+    <div class="panel-body" id="historyBody">
+      <div id="historyList"></div>
+      <button class="save-drug-btn" onclick="clearHistory()" id="txt-clear-history" style="border-style:solid; border-color:#F5C0C0; color:#C62828; margin-top:8px">🗑 Borrar historial</button>
+    </div>
+  </div>
+
+  <!-- FIX 1: Сохранённые препараты -->
+  <div class="panel-section" id="savedPanel" style="display:none">
+    <div class="panel-header" onclick="togglePanel('savedBody', 'savedArrow')">
+      <div class="panel-header-title">⭐ <span id="txt-saved">Mis medicamentos guardados</span></div>
+      <span class="panel-toggle" id="savedArrow">▼</span>
+    </div>
+    <div class="panel-body" id="savedBody">
+      <div id="savedList"></div>
+    </div>
+  </div>
 </main>
 
 <script>
-// ─── DATABASE ───────────────────────────────────────────────────────────────
-const DB = [
-  {
-    inn: "Paracetamol",
-    trade: "Apiretal, Efferalgan, Gelocatil, Termalgín",
-    category: "Analgésico / Antipirético",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Es el analgésico más seguro durante la lactancia. Pasa a la leche en cantidades muy pequeñas (menos del 2% de la dosis materna) y no se han descrito efectos adversos en bebés lactantes. Puedes tomarlo con tranquilidad si lo necesitas.",
-    text_emb: "Es el analgésico de elección durante todo el embarazo. Se puede usar en los tres trimestres a dosis habituales y durante el tiempo necesario. Consulta a tu médico si necesitas tomarlo más de unos pocos días seguidos.",
-    interactions: "Warfarina (puede potenciar efecto anticoagulante con uso prolongado)",
-    sources: ["LactMed", "e-lactancia"],
-    tags: ["analgésico", "antipirético"]
-  },
-  {
-    inn: "Ibuprofeno",
-    trade: "Nurofen, Bexifen, Espidifen, Dalsy",
-    category: "Analgésico / Antiinflamatorio (AINE)",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Precaución — ver trimestre",
-    trimestres: "T1, T2 (evitar T3)",
-    text_lm: "Compatible con la lactancia. La cantidad que pasa a la leche es muy baja. Es de hecho uno de los antiinflamatorios preferidos en madres lactantes. Puedes tomarlo puntualmente sin interrumpir la lactancia.",
-    text_emb: "Evitar en el tercer trimestre (a partir de la semana 28): puede afectar al riñón del bebé y cerrar prematuramente el ductus arterioso. En el primer y segundo trimestre se puede usar puntualmente, pero siempre a la dosis mínima eficaz y el menor tiempo posible.",
-    interactions: "AAS, corticoides, anticoagulantes, litio (aumenta niveles)",
-    sources: ["LactMed", "AEMPS", "e-lactancia"],
-    tags: ["analgésico", "aine", "antiinflamatorio"]
-  },
-  {
-    inn: "Metamizol",
-    trade: "Nolotil, Lasain, Metalgial",
-    category: "Analgésico / Antipirético",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "⚠️ Precaución — evitar T3",
-    trimestres: "Evitar T3",
-    text_lm: "Se recomienda precaución. Aunque los datos disponibles no muestran toxicidad grave, existe riesgo teórico de agranulocitosis en el bebé. Si necesitas un analgésico, el paracetamol es la primera opción. Si tu médico considera necesario el metamizol, se puede usar de forma puntual.",
-    text_emb: "Usar solo si otros analgésicos no son suficientes y bajo prescripción médica. Evitar en el tercer trimestre. No está recomendado como primera opción durante el embarazo por riesgo de cierre prematuro del ductus.",
-    interactions: "Ciclosporina (reduce niveles), metotrexato (aumenta toxicidad)",
-    sources: ["e-lactancia", "AEMPS"],
-    tags: ["analgésico", "antipirético"]
-  },
-  {
-    inn: "Ácido acetilsalicílico",
-    trade: "Aspirina, AAS, Adiro",
-    category: "Analgésico / Antiagregante / AINE",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "⚠️ Depende de la dosis",
-    trimestres: "T1-T2 (dosis baja); evitar T3 a dosis analgésica",
-    text_lm: "A dosis analgésicas (500–1000 mg) se desaconseja durante la lactancia por riesgo de síndrome de Reye en el bebé. A dosis bajas antiagregantes (75–150 mg/día), como las usadas en prevención de preeclampsia, es compatible con la lactancia bajo control médico.",
-    text_emb: "A dosis bajas (75–150 mg/día) está indicado en ciertos embarazos de riesgo (prevención de preeclampsia). A dosis analgésicas, evitar especialmente en el tercer trimestre: riesgo de cierre del ductus, sangrado y retraso del parto.",
-    interactions: "Anticoagulantes, ibuprofeno, corticoides, metotrexato",
-    sources: ["LactMed", "AEMPS", "e-lactancia"],
-    tags: ["analgésico", "aine", "antiagregante"]
-  },
-  {
-    inn: "Amoxicilina",
-    trade: "Amoxicilina Normon, Clamoxyl, Ardine",
-    category: "Antibiótico (penicilina)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Compatible con la lactancia. Pasa a la leche en cantidades muy pequeñas. Puede alterar ligeramente la flora intestinal del bebé (heces blandas), pero no representa un riesgo real. No es necesario interrumpir la lactancia.",
-    text_emb: "Antibiótico de primera elección en el embarazo para muchas infecciones. Amplia experiencia de uso sin efectos teratogénicos conocidos. Se puede usar en los tres trimestres bajo prescripción médica.",
-    interactions: "Anticoagulantes orales, metotrexato",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antibiótico", "penicilina"]
-  },
-  {
-    inn: "Amoxicilina / Ácido clavulánico",
-    trade: "Augmentine, Clavumox, Duonasa",
-    category: "Antibiótico (penicilina + inhibidor β-lactamasa)",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Precaución — ver contexto",
-    trimestres: "Precaución en parto prematuro",
-    text_lm: "Compatible con la lactancia. Similar a amoxicilina sola. Puede causar heces blandas o candidiasis oral en el bebé por alteración de la flora. No es necesario interrumpir la lactancia.",
-    text_emb: "Se puede usar durante el embarazo cuando está indicado. Precaución: un estudio asoció su uso en amenaza de parto prematuro con mayor riesgo de enterocolitis necrotizante en el recién nacido. En embarazos a término no hay esta preocupación. Siempre bajo prescripción.",
-    interactions: "Anticoagulantes orales, metotrexato, alopurinol",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antibiótico", "penicilina"]
-  },
-  {
-    inn: "Azitromicina",
-    trade: "Zitromax, Hemomycin, Vinzam",
-    category: "Antibiótico (macrólido)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Compatible con la lactancia. Aunque pasa a la leche en mayor proporción que otros antibióticos, la dosis que recibe el bebé es pequeña y no se han reportado efectos adversos relevantes. Alternativa útil en alérgicas a penicilina.",
-    text_emb: "Se puede usar durante el embarazo cuando está indicado clínicamente. No es teratogénico. Es una alternativa habitual en alérgicas a penicilina para infecciones respiratorias o de transmisión sexual.",
-    interactions: "Antiácidos (reducen absorción), warfarina, digoxina, ergotamina",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antibiótico", "macrólido"]
-  },
-  {
-    inn: "Cefalexina",
-    trade: "Keflex, Cefalexina Normon, Ceporexin",
-    category: "Antibiótico (cefalosporina 1ª generación)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Compatible con la lactancia. Pasa a la leche en cantidades mínimas. Buena opción en infecciones de piel, urinarias o mastitis. No es necesario interrumpir la lactancia.",
-    text_emb: "Sin efectos teratogénicos conocidos. Amplia experiencia de uso durante el embarazo. Buena opción para infecciones urinarias, cutáneas o dentales en embarazadas.",
-    interactions: "Probenecid (aumenta niveles de cefalexina), anticoagulantes orales",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antibiótico", "cefalosporina"]
-  },
-  {
-    inn: "Metronidazol",
-    trade: "Flagyl, Metronidazol Normon",
-    category: "Antibiótico / Antiparasitario",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución — ver dosis",
-    label_emb: "⚠️ Evitar T1 a dosis altas",
-    trimestres: "Evitar T1 (dosis altas)",
-    text_lm: "Se recomienda precaución a dosis altas o tratamientos prolongados. A dosis única (2 g), algunos expertos recomiendan interrumpir la lactancia 12–24h. A dosis habituales de 250–500 mg/8h, la mayoría de fuentes lo considera compatible. Consulta con tu médico.",
-    text_emb: "Evitar en el primer trimestre a dosis altas por precaución. En segundo y tercer trimestre se puede usar cuando está indicado (vaginosis bacteriana, tricomoniasis). Bajo prescripción médica.",
-    interactions: "Alcohol (efecto disulfiram), warfarina, litio, ciclosporina",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antibiótico", "antiparasitario"]
-  },
-  {
-    inn: "Loratadina",
-    trade: "Clarityne, Loratadina Normon",
-    category: "Antihistamínico (2ª generación)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Es el antihistamínico de primera elección en madres lactantes. Pasa a la leche en cantidades mínimas y no produce sedación en el bebé. Puedes tomarlo con tranquilidad.",
-    text_emb: "Es el antihistamínico preferido durante el embarazo. Amplia experiencia de uso sin efectos teratogénicos conocidos. Se puede usar en los tres trimestres.",
-    interactions: "Ketoconazol, eritromicina (aumentan niveles levemente)",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antihistamínico"]
-  },
-  {
-    inn: "Cetirizina",
-    trade: "Zyrtec, Alerlisin, Reactine",
-    category: "Antihistamínico (2ª generación)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Compatible con la lactancia. No produce sedación significativa en el bebé. Buena alternativa a loratadina si ya la usabas antes del embarazo o lactancia.",
-    text_emb: "Sin efectos teratogénicos conocidos. Se puede usar durante los tres trimestres. Junto con loratadina, es una de las opciones preferidas para el tratamiento de alergias en el embarazo.",
-    interactions: "Depresores del SNC (potencia sedación leve), teofilina",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antihistamínico"]
-  },
-  {
-    inn: "Dexclorfeniramina",
-    trade: "Polaramine, Dexclorfeniramina Normon",
-    category: "Antihistamínico (1ª generación)",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "⚠️ Evitar al final del T3",
-    trimestres: "Evitar T3 tardío",
-    text_lm: "Se recomienda precaución. Puede causar sedación en el bebé lactante. Si necesitas un antihistamínico, loratadina o cetirizina son opciones más seguras. El uso puntual no es motivo de alarma.",
-    text_emb: "Evitar en el tercer trimestre tardío: puede causar depresión respiratoria neonatal o síndrome de abstinencia en el recién nacido. En el primer y segundo trimestre se puede usar puntualmente si es necesario.",
-    interactions: "Alcohol, sedantes, IMAO (contraindicado con IMAO)",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antihistamínico"]
-  },
-  {
-    inn: "Omeprazol",
-    trade: "Losec, Omeprazol Normon, Belfa",
-    category: "Inhibidor de la bomba de protones (IBP)",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Compatible con la lactancia. Se destruye en el estómago ácido del bebé y no se absorbe de forma significativa. Es el IBP más estudiado en lactancia. Puedes tomarlo con tranquilidad.",
-    text_emb: "No es teratogénico. Es el IBP con más datos de seguridad en el embarazo. Especialmente útil en el segundo y tercer trimestre cuando el reflujo es más frecuente.",
-    interactions: "Clopidogrel (reduce efecto antiagregante), metotrexato, atazanavir",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["bomba de protones", "digestivo", "reflujo"]
-  },
-  {
-    inn: "Domperidona",
-    trade: "Motilium, Domperidona Normon",
-    category: "Procinético / Antiemético",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "⚠️ Precaución — evitar T1",
-    trimestres: "Evitar T1",
-    text_lm: "Precaución. Aumenta la prolactina y se usa a veces para estimular la leche, pero no es una indicación oficial aprobada. Existe un riesgo teórico de arritmia cardíaca en el bebé a dosis altas, aunque es raro. No usar sin valoración médica.",
-    text_emb: "Evitar en el primer trimestre (datos insuficientes). En segundo y tercer trimestre se puede usar puntualmente para náuseas bajo prescripción. La AEMPS limita su uso por riesgo cardiovascular.",
-    interactions: "Antifúngicos azólicos, macrólidos, antiarrítmicos (riesgo QT prolongado)",
-    sources: ["e-lactancia", "AEMPS", "EMA"],
-    tags: ["procinético", "antiemético", "digestivo"]
-  },
-  {
-    inn: "Loperamida",
-    trade: "Fortasec, Imodium, Loperamida Normon",
-    category: "Antidiarreico",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Precaución — ver trimestre",
-    trimestres: "Evitar T1, precaución T3",
-    text_lm: "Compatible con la lactancia. Pasa muy poco a la leche materna. No se han descrito efectos adversos en bebés lactantes. Se puede usar puntualmente para diarrea aguda.",
-    text_emb: "Usar con precaución. Evitar en el primer trimestre. En el segundo trimestre se puede usar puntualmente. En el tercer trimestre, precaución a dosis altas. Nunca usar en diarrea con fiebre o sangre sin valoración médica.",
-    interactions: "Quinidina, ritonavir (aumentan niveles de loperamida)",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antidiarreico", "digestivo"]
-  },
-  {
-    inn: "Metoclopramida",
-    trade: "Primperán, Metoclopramida Normon",
-    category: "Antiemético / Procinético",
-    safety_lm: "yellow",
-    safety_emb: "green",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Precaución en lactancia. Aumenta la prolactina. Pasa a la leche en cantidades moderadas. Uso prolongado puede causar irritabilidad o somnolencia en el bebé. El uso breve y puntual es aceptable bajo supervisión médica.",
-    text_emb: "Bien estudiada en el embarazo para náuseas y vómitos. Sin efectos teratogénicos conocidos. Una de las opciones para hiperemesis gravídica. Se puede usar en los tres trimestres bajo prescripción.",
-    interactions: "Anticolinérgicos, opioides, antipsicóticos (riesgo extrapiramidal)",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["antiemético", "procinético", "digestivo"]
-  },
-  {
-    inn: "Ibuprofeno tópico",
-    trade: "Dolocyl gel, Nurofen gel, Dolgit",
-    category: "Analgésico / Antiinflamatorio tópico (AINE)",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Evitar en T3",
-    trimestres: "Evitar T3",
-    text_lm: "Compatible con la lactancia cuando se usa en forma tópica. La absorción sistémica es muy baja. Evitar aplicar cerca del pezón.",
-    text_emb: "Por precaución se recomienda evitar en el tercer trimestre (igual que el ibuprofeno oral). En el primer y segundo trimestre se puede usar puntualmente en zonas pequeñas.",
-    interactions: "Mínimas por vía tópica. Precaución con anticoagulantes si se aplica en grandes superficies.",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["analgésico", "tópico", "aine"]
-  },
-  {
-    inn: "Dexametasona",
-    trade: "Fortecortin, Dexametasona Normon, Decadron",
-    category: "Corticoide sistémico",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "⚠️ Depende de la dosis y contexto",
-    trimestres: "Precaución T1; indicado sem. 24–34 (maduración pulmonar)",
-    text_lm: "Precaución en lactancia. Con dosis bajas y uso puntual, el riesgo para el bebé es mínimo. Con dosis altas o tratamientos prolongados, puede afectar el crecimiento del lactante. Consulta con tu médico si necesitas dosis altas.",
-    text_emb: "Evitar a dosis altas en el primer trimestre. Paradójicamente, en el tercer trimestre está indicado entre las semanas 24–34 para acelerar la maduración pulmonar fetal en riesgo de parto prematuro: en ese contexto es un tratamiento establecido y beneficioso.",
-    interactions: "AINE (aumenta riesgo GI), diuréticos (hipopotasemia), antidiabéticos, vacunas vivas",
-    sources: ["LactMed", "e-lactancia", "AEMPS"],
-    tags: ["corticoide"]
-  },
-  {
-    inn: "Fluconazol",
-    trade: "Diflucan, Fluconazol Normon, Zoltec",
-    category: "Antifúngico (azol)",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución — ver dosis",
-    label_emb: "⚠️ Evitar T1 a dosis altas",
-    trimestres: "Evitar T1 (dosis altas); precaución T2-T3",
-    text_lm: "Precaución en lactancia. A dosis única de 150 mg (candidiasis vaginal), la exposición del bebé es baja y generalmente aceptada. En tratamientos prolongados o dosis altas, consulta con tu médico.",
-    text_emb: "Evitar en el primer trimestre a dosis altas o prolongadas: riesgo de malformaciones con dosis de 400–800 mg/día. A dosis única de 150 mg para candidiasis vaginal, el riesgo es menor. Se prefieren alternativas tópicas (clotrimazol) siempre que sea posible.",
-    interactions: "Warfarina, estatinas, fenitoína, ciclosporina, domperidona (riesgo QT)",
-    sources: ["LactMed", "e-lactancia", "AEMPS", "EMA"],
-    tags: ["antifúngico"]
-  },
-  {
-    inn: "Hierro (sulfato ferroso)",
-    trade: "Tardyferon, Ferogradumet, Ferrograd, Ferplex",
-    category: "Suplemento mineral / Antianémico",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro y frecuentemente necesario",
-    trimestres: "T1, T2, T3",
-    text_lm: "Completamente seguro durante la lactancia. El hierro pasa a la leche de forma regulada independientemente de la ingesta materna. Corregir una anemia materna mejora el bienestar general y la calidad de la lactancia.",
-    text_emb: "Seguro y frecuentemente necesario durante el embarazo. La demanda de hierro aumenta significativamente, especialmente en el segundo y tercer trimestre. Tomar preferiblemente en ayunas o con vitamina C para mejorar la absorción.",
-    interactions: "Antiácidos, IBP, calcio, tetraciclinas, quinolonas, levotiroxina (reducen absorción — separar tomas al menos 2h)",
-    sources: ["LactMed", "OMS", "AEMPS", "SEGO"],
-    tags: ["hierro", "suplemento", "anemia"]
-  },
-   {
-    inn: "Dexketoprofeno",
-    trade: "Enantyum",
-    category: "Analgésico / AINE",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Evitar a partir semana 20",
-    trimestres: "Evitar T3 (y T2 tardío)",
-    text_lm: "Compatible con la lactancia. Tiene una vida media corta y se une altamente a proteínas, por lo que su paso a la leche materna es clínicamente insignificante. Es una excelente opción analgésica en el posparto.",
-    text_emb: "Como todos los AINEs, debe evitarse a partir de la semana 20 de gestación por riesgo de oligohidramnios y cierre prematuro del ductus arterioso fetal. En T1 y T2 temprano usar solo si es estrictamente necesario, a la menor dosis.",
-    interactions: "Anticoagulantes, litio, metotrexato, otros AINEs",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["analgésico", "aine", "dolor"]
+// ══════════════════════════════════════════════════════════
+// FIX 2: ПЕРЕВОДЫ
+// ══════════════════════════════════════════════════════════
+const TRANSLATIONS = {
+  es: {
+    eyebrow: "Información farmacológica para mamás",
+    h1: '¿Es seguro tomar este medicamento <em>ahora</em>?',
+    subtitle: "Información clara y fiable sobre medicamentos durante el embarazo y la lactancia. Sin tecnicismos.",
+    tabLm: "Estoy dando el pecho",
+    tabEmb: "Estoy embarazada",
+    tabBoth: "Ambas situaciones",
+    searchBtn: "Consultar",
+    emptyTitle: "Consulta cualquier medicamento",
+    emptySub: "Escribe el nombre del medicamento arriba o elige una de las opciones rápidas.",
+    catTitle: "Categorías disponibles",
+    cats: ["Analgésicos","Antibióticos","Antihistamínicos","Digestivo / GI","Corticoides","Suplementos","Opioides","Antifúngicos"],
+    history: "Búsquedas recientes",
+    saved: "Mis medicamentos guardados",
+    clearHistory: "🗑 Borrar historial",
+    saveBtn: "⭐ Guardar este medicamento",
+    savedEmpty: "Aún no has guardado ningún medicamento.",
+    historyEmpty: "Aún no hay búsquedas recientes.",
+    notFoundPre: "No encontramos",
+    notFoundPost: "en nuestra base de datos actual.",
+    notFoundLink: "Estamos ampliando el listado continuamente. Mientras tanto, consulta",
+    disclaimer: "Esta información es orientativa y no sustituye la consulta con tu médico, matrona o farmacéutico. Ante cualquier duda, consulta siempre a un profesional sanitario.",
+    labelLm: "Durante la lactancia",
+    labelEmb: "Durante el embarazo",
+    labelInteract: "Interacciones principales",
+    labelSources: "Fuentes",
+    expertCheck: "✅ Revisado por experto",
+    headerNote: "Solo para España 🇪🇸",
+    removeTooltip: "Eliminar",
   },
-  {
-    inn: "Naproxeno",
-    trade: "Naprosyn, Antalgin",
-    category: "Analgésico / AINE",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Evitar a partir semana 20",
-    trimestres: "Evitar T3 (y T2 tardío)",
-    text_lm: "Compatible. Se excreta en la leche en cantidades muy pequeñas. Debido a su vida media más larga que el ibuprofeno, el ibuprofeno suele ser de primera elección, pero el naproxeno es seguro en pautas cortas.",
-    text_emb: "Contraindicado en el tercer trimestre (cierre del ductus arterioso, toxicidad renal fetal). La AEMPS y EMA recomiendan evitar su uso a partir de la semana 20.",
-    interactions: "ISRS, anticoagulantes, antihipertensivos",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["analgésico", "aine", "inflamación"]
+  en: {
+    eyebrow: "Pharmacological info for moms",
+    h1: 'Is it safe to take this medication <em>now</em>?',
+    subtitle: "Clear and reliable information about medications during pregnancy and breastfeeding. No jargon.",
+    tabLm: "I'm breastfeeding",
+    tabEmb: "I'm pregnant",
+    tabBoth: "Both situations",
+    searchBtn: "Search",
+    emptyTitle: "Look up any medication",
+    emptySub: "Type the medication name above or choose one of the quick options.",
+    catTitle: "Available categories",
+    cats: ["Painkillers","Antibiotics","Antihistamines","Digestive / GI","Corticosteroids","Supplements","Opioids","Antifungals"],
+    history: "Recent searches",
+    saved: "My saved medications",
+    clearHistory: "🗑 Clear history",
+    saveBtn: "⭐ Save this medication",
+    savedEmpty: "You haven't saved any medications yet.",
+    historyEmpty: "No recent searches yet.",
+    notFoundPre: "We couldn't find",
+    notFoundPost: "in our current database.",
+    notFoundLink: "We're expanding the list. In the meantime, check",
+    disclaimer: "This information is for guidance only and does not replace consultation with your doctor, midwife or pharmacist.",
+    labelLm: "During breastfeeding",
+    labelEmb: "During pregnancy",
+    labelInteract: "Main interactions",
+    labelSources: "Sources",
+    expertCheck: "✅ Expert reviewed",
+    headerNote: "Spain only 🇪🇸",
+    removeTooltip: "Remove",
   },
-  {
-    inn: "Diclofenaco",
-    trade: "Voltaren, Voltarol",
-    category: "Analgésico / AINE",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Evitar a partir semana 20",
-    trimestres: "Evitar T3 (y T2 tardío)",
-    text_lm: "Es uno de los AINEs de elección durante la lactancia. Se excreta en cantidades indetectables o mínimas en la leche materna debido a su corta vida media y alta unión a proteínas.",
-    text_emb: "Evitar a partir de la semana 20. Uso restringido en T1 y T2 por posible aumento del riesgo de aborto espontáneo y malformaciones, usar solo si el beneficio supera claramente el riesgo.",
-    interactions: "Litio, digoxina, diuréticos, anticoagulantes",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["analgésico", "aine", "inflamación"]
-  },
-  {
-    inn: "Celecoxib",
-    trade: "Celebrex",
-    category: "AINE (Inhibidor COX-2)",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Evitar en T3",
-    trimestres: "Evitar T3",
-    text_lm: "Compatible. Los niveles en la leche materna son extremadamente bajos y no se han observado efectos adversos en los lactantes. Es el inhibidor de la COX-2 preferido si se necesita usar uno.",
-    text_emb: "No se recomienda durante el embarazo, y está contraindicado en el tercer trimestre por los riesgos compartidos con otros AINEs (cierre del ductus, disfunción renal fetal).",
-    interactions: "Fluconazol, rifampicina, antidepresivos, litio",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["analgésico", "aine", "cox2"]
-  },
-  {
-    inn: "Etoricoxib",
-    trade: "Arcoxia",
-    category: "AINE (Inhibidor COX-2)",
-    safety_lm: "yellow",
-    safety_emb: "red",
-    label_lm: "⚠️ Precaución en lactancia",
-    label_emb: "❌ Contraindicado en T3",
-    trimestres: "Evitar en todo embarazo, prohibido T3",
-    text_lm: "Precaución. Tiene una vida media muy larga (22 horas). Aunque se excreta en la leche, se carece de datos clínicos suficientes. Se prefieren alternativas más seguras como celecoxib o ibuprofeno.",
-    text_emb: "Se recomienda evitar durante todo el embarazo por falta de datos de seguridad, y está estrictamente contraindicado en el último trimestre.",
-    interactions: "Anticoagulantes orales, rifampicina, etinilestradiol",
-    sources: ["e-lactancia", "AEMPS", "Reprotox"],
-    tags: ["analgésico", "aine", "cox2"]
-  },
-  {
-    inn: "Tramadol",
-    trade: "Adolonta, Zaldiar",
-    category: "Analgésico Opioide",
-    safety_lm: "yellow",
-    safety_emb: "yellow",
-    label_lm: "⚠️ Precaución — Evitar si es posible",
-    label_emb: "⚠️ Precaución — Riesgo neonatal",
-    trimestres: "Precaución T1-T3, riesgo parto",
-    text_lm: "La FDA y AEMPS advierten sobre su uso en lactancia debido al riesgo de depresión respiratoria y sedación excesiva en el lactante, especialmente si la madre es metabolizadora ultrarrápida (CYP2D6). e-lactancia lo clasifica como riesgo alto. Evitar y buscar alternativas (ibuprofeno, paracetamol).",
-    text_emb: "No se recomienda su uso prolongado. Si se usa cerca del parto, puede causar depresión respiratoria y síndrome de abstinencia en el recién nacido.",
-    interactions: "ISRS, IMAO (riesgo síndrome serotoninérgico), depresores del SNC",
-    sources: ["e-lactancia", "AEMPS", "LactMed", "FDA"],
-    tags: ["analgésico", "opioide", "dolor fuerte"]
-  },
-  {
-    inn: "Codeína",
-    trade: "Bisolvon Antitusivo, Termalgin Codeína",
-    category: "Analgésico Opioide / Antitusígeno",
-    safety_lm: "red",
-    safety_emb: "yellow",
-    label_lm: "❌ Contraindicado en lactancia",
-    label_emb: "⚠️ Precaución",
-    trimestres: "Evitar cerca del parto",
-    text_lm: "CONTRAINDICADO. Su metabolismo a morfina es variable. Las madres metabolizadoras ultrarrápidas pueden producir niveles letales de morfina en la leche, habiéndose reportado casos de fallecimiento neonatal. No usar bajo ningún concepto.",
-    text_emb: "Se puede usar puntualmente si es indispensable, pero su uso continuado o cerca del parto conlleva riesgo de síndrome de abstinencia y depresión respiratoria neonatal.",
-    interactions: "Depresores del SNC, alcohol, otros opioides",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["analgésico", "opioide", "tos"]
-  },
-  {
-    inn: "Morfina",
-    trade: "MST Continus, Oramorph",
-    category: "Analgésico Opioide",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro (dosis únicas/bajas)",
-    label_emb: "⚠️ Precaución",
-    trimestres: "Evitar cerca del parto prolongadamente",
-    text_lm: "Paradójicamente, es más segura que la codeína o el tramadol para la lactancia debido a su pobre biodisponibilidad oral en el lactante y metabolismo predecible. Compatible en dosis bajas y tratamientos cortos (p. ej. postcesárea). Vigilar sedación en el bebé.",
-    text_emb: "Uso reservado para dolor intenso bajo estricta vigilancia médica. El uso crónico causa dependencia fetal y síndrome de abstinencia neonatal.",
-    interactions: "Depresores del SNC, gabapentinoides, sedantes",
-    sources: ["e-lactancia", "LactMed", "AEMPS"],
-    tags: ["analgésico", "opioide", "dolor severo"]
-  },
-  {
-    inn: "Fentanilo",
-    trade: "Durogesic, Fentanilo Matrix",
-    category: "Analgésico Opioide",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro (anestesia/dosis única)",
-    label_emb: "⚠️ Precaución",
-    trimestres: "Vigilancia en el parto",
-    text_lm: "Seguro cuando se usa como anestesia intraparto (epidural/raquídea) o dosis únicas breves. Los parches transdérmicos para dolor crónico requieren mucha precaución (riesgo moderado/alto) por paso constante a la leche.",
-    text_emb: "Usado comúnmente en analgesia epidural durante el parto con buen perfil de seguridad. El uso crónico durante la gestación puede provocar síndrome de abstinencia neonatal.",
-    interactions: "Inhibidores CYP3A4, depresores del SNC",
-    sources: ["e-lactancia", "LactMed", "AEMPS"],
-    tags: ["analgésico", "opioide", "anestesia"]
-  },
-  {
-    inn: "Lidocaína",
-    trade: "Versatis, EMLA",
-    category: "Anestésico Local",
-    safety_lm: "green",
-    safety_emb: "green",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "✅ Seguro en embarazo",
-    trimestres: "T1, T2, T3",
-    text_lm: "Es el anestésico local de elección. Pasa en cantidades ínfimas a la leche y se destruye en el tracto gastrointestinal del lactante. Totalmente compatible en uso dental, dermatológico o epidural.",
-    text_emb: "Anestésico local de elección durante la gestación (categoría B de riesgo). No se han demostrado efectos teratogénicos.",
-    interactions: "Antiarrítmicos, betabloqueantes (en uso sistémico)",
-    sources: ["e-lactancia", "AEMPS", "LactMed"],
-    tags: ["anestésico", "local", "tópico"]
-  },
-  {
-    inn: "Benzocaína",
-    trade: "Angileptol, Hibitane",
-    category: "Anestésico Local",
-    safety_lm: "green",
-    safety_emb: "yellow",
-    label_lm: "✅ Seguro en lactancia",
-    label_emb: "⚠️ Precaución",
-    trimestres: "Uso puntual",
-    text_lm: "Compatible. Por vía tópica o bucal (pastillas para la garganta) la absorción sistémica es mínima. Vigilar que el lactante no entre en contacto con la zona tratada si es piel.",
-    text_emb: "Su absorción sistémica es baja, pero su uso intensivo se ha asociado a un riesgo raro de metahemoglobinemia. Usar solo de forma puntual y a las dosis recomendadas.",
-    interactions: "Sulfamidas (puede antagonizar su efecto)",
-    sources: ["e-lactancia", "AEMPS"],
-    tags: ["anestésico", "bucal", "garganta"]
+  ru: {
+    eyebrow: "Фармакологическая информация для мам",
+    h1: 'Безопасно ли принимать этот препарат <em>сейчас</em>?',
+    subtitle: "Чёткая и достоверная информация о препаратах при беременности и грудном вскармливании. Без медицинских терминов.",
+    tabLm: "Я кормлю грудью",
+    tabEmb: "Я беременна",
+    tabBoth: "Оба случая",
+    searchBtn: "Найти",
+    emptyTitle: "Найдите любой препарат",
+    emptySub: "Введите название препарата выше или выберите одну из быстрых опций.",
+    catTitle: "Доступные категории",
+    cats: ["Обезболивающие","Антибиотики","Антигистаминные","Пищеварение / ЖКТ","Кортикостероиды","Добавки","Опиоиды","Антигрибковые"],
+    history: "Недавние поиски",
+    saved: "Мои сохранённые препараты",
+    clearHistory: "🗑 Очистить историю",
+    saveBtn: "⭐ Сохранить препарат",
+    savedEmpty: "Вы ещё не сохранили ни одного препарата.",
+    historyEmpty: "Поиска ещё не было.",
+    notFoundPre: "Не найдено",
+    notFoundPost: "в нашей базе данных.",
+    notFoundLink: "Мы постоянно расширяем список. Пока можете проверить",
+    disclaimer: "Эта информация носит ознакомительный характер и не заменяет консультацию врача, акушера или фармацевта.",
+    labelLm: "При грудном вскармливании",
+    labelEmb: "При беременности",
+    labelInteract: "Основные взаимодействия",
+    labelSources: "Источники",
+    expertCheck: "✅ Проверено экспертом",
+    headerNote: "Только для Испании 🇪🇸",
+    removeTooltip: "Удалить",
   }
+};
+
+let currentLang = 'es';
+
+function setLang(lang, el) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  applyTranslations();
+}
+
+function t(key) { return TRANSLATIONS[currentLang][key] || TRANSLATIONS['es'][key]; }
+
+function applyTranslations() {
+  const T = TRANSLATIONS[currentLang];
+  document.getElementById('txt-eyebrow').textContent = T.eyebrow;
+  document.getElementById('txt-h1').innerHTML = T.h1;
+  document.getElementById('txt-subtitle').textContent = T.subtitle;
+  document.getElementById('txt-tab-lm').textContent = T.tabLm;
+  document.getElementById('txt-tab-emb').textContent = T.tabEmb;
+  document.getElementById('txt-tab-both').textContent = T.tabBoth;
+  document.getElementById('txt-search-btn').textContent = T.searchBtn;
+  document.getElementById('txt-empty-title').textContent = T.emptyTitle;
+  document.getElementById('txt-empty-sub').textContent = T.emptySub;
+  document.getElementById('txt-cat-title').textContent = T.catTitle;
+  document.getElementById('txt-history').textContent = T.history;
+  document.getElementById('txt-saved').textContent = T.saved;
+  document.getElementById('txt-clear-history').textContent = T.clearHistory;
+  document.getElementById('headerNote').textContent = T.headerNote;
+  document.getElementById('searchInput').placeholder =
+    currentLang === 'en' ? 'Type a medication, e.g. ibuprofen, paracetamol…' :
+    currentLang === 'ru' ? 'Введите препарат, напр. ибупрофен, парацетамол…' :
+    'Escribe un medicamento, p.ej. ibuprofeno, Nolotil…';
+  // category names
+  const catKeys = ['cat-analg','cat-antib','cat-antih','cat-gi','cat-cort','cat-supl','cat-opio','cat-antif'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const idx = catKeys.indexOf(el.dataset.i18n);
+    if (idx >= 0 && T.cats[idx]) el.textContent = T.cats[idx];
+  });
+  renderSavedList();
+  renderHistoryList();
+}
+
+// ══════════════════════════════════════════════════════════
+// DATABASE
+// ══════════════════════════════════════════════════════════
+const DB = [
+  { inn:"Paracetamol", trade:"Apiretal, Efferalgan, Gelocatil, Termalgín", category:"Analgésico / Antipirético", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Es el analgésico más seguro durante la lactancia. Pasa a la leche en cantidades muy pequeñas (menos del 2% de la dosis materna) y no se han descrito efectos adversos en bebés lactantes. Puedes tomarlo con tranquilidad si lo necesitas.", text_emb:"Es el analgésico de elección durante todo el embarazo. Se puede usar en los tres trimestres a dosis habituales y durante el tiempo necesario. Consulta a tu médico si necesitas tomarlo más de unos pocos días seguidos.", interactions:"Warfarina (puede potenciar efecto anticoagulante con uso prolongado)", sources:["LactMed","e-lactancia"], tags:["analgésico","antipirético"] },
+  { inn:"Ibuprofeno", trade:"Nurofen, Bexifen, Espidifen, Dalsy", category:"Analgésico / Antiinflamatorio (AINE)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver trimestre", trimestres:"T1, T2 (evitar T3)", text_lm:"Compatible con la lactancia. La cantidad que pasa a la leche es muy baja. Es uno de los antiinflamatorios preferidos en madres lactantes. Puedes tomarlo puntualmente sin interrumpir la lactancia.", text_emb:"Evitar en el tercer trimestre (semana 28+): puede afectar al riñón del bebé y cerrar prematuramente el ductus arterioso. En T1 y T2 usar a dosis mínima el menor tiempo posible.", interactions:"AAS, corticoides, anticoagulantes, litio (aumenta niveles)", sources:["LactMed","AEMPS","e-lactancia"], tags:["analgésico","aine","antiinflamatorio"] },
+  { inn:"Metamizol", trade:"Nolotil, Lasain, Metalgial", category:"Analgésico / Antipirético", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Precaución — evitar T3", trimestres:"Evitar T3", text_lm:"Riesgo teórico de agranulocitosis en el bebé. Primera opción siempre: paracetamol. Si el médico considera necesario el metamizol, uso puntual aceptable.", text_emb:"No es la primera opción. Evitar en T3 por riesgo de cierre del ductus. Usar solo si otros analgésicos son insuficientes, bajo prescripción.", interactions:"Ciclosporina (reduce niveles), metotrexato (aumenta toxicidad)", sources:["e-lactancia","AEMPS"], tags:["analgésico","antipirético"] },
+  { inn:"Ácido acetilsalicílico", trade:"Aspirina, AAS, Adiro", category:"Analgésico / Antiagregante / AINE", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución según dosis", label_emb:"⚠️ Depende de la dosis", trimestres:"Dosis baja T1-T3; evitar dosis analgésica en T3", text_lm:"A dosis analgésicas (500–1000 mg) desaconsejado: riesgo de síndrome de Reye. A dosis bajas antiagregantes (75–150 mg/día) compatible bajo control médico.", text_emb:"A dosis bajas indicado en embarazos de riesgo (preeclampsia). A dosis analgésicas evitar en T3 especialmente.", interactions:"Anticoagulantes, ibuprofeno, corticoides, metotrexato", sources:["LactMed","AEMPS","e-lactancia"], tags:["analgésico","aine","antiagregante"] },
+  { inn:"Amoxicilina", trade:"Amoxicilina Normon, Clamoxyl, Ardine", category:"Antibiótico (penicilina)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Cantidades en leche muy pequeñas. Puede alterar ligeramente la flora del bebé (heces blandas) sin representar riesgo real.", text_emb:"Antibiótico de primera elección en el embarazo. Sin efectos teratogénicos conocidos. Los tres trimestres bajo prescripción.", interactions:"Anticoagulantes orales, metotrexato", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","penicilina"] },
+  { inn:"Amoxicilina / Ácido clavulánico", trade:"Augmentine, Clavumox, Duonasa", category:"Antibiótico (penicilina + inhibidor β-lactamasa)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver contexto", trimestres:"Precaución en amenaza de parto prematuro", text_lm:"Compatible. Puede causar heces blandas o candidiasis oral en el bebé. No interrumpir lactancia.", text_emb:"Precaución en amenaza de parto prematuro: asociado a mayor riesgo de enterocolitis necrotizante. En embarazos a término sin esa preocupación.", interactions:"Anticoagulantes, metotrexato, alopurinol", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","penicilina"] },
+  { inn:"Azitromicina", trade:"Zitromax, Hemomycin, Vinzam", category:"Antibiótico (macrólido)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. Buena alternativa en alérgicas a penicilina.", text_emb:"Sin efectos teratogénicos conocidos. Alternativa habitual en alérgicas a penicilina.", interactions:"Warfarina, digoxina, ergotamina, antiácidos (reducen absorción)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","macrólido"] },
+  { inn:"Cefalexina", trade:"Keflex, Cefalexina Normon, Ceporexin", category:"Antibiótico (cefalosporina 1ª gen.)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. Cantidades en leche mínimas. Buena opción en mastitis, infecciones urinarias o cutáneas.", text_emb:"Sin efectos teratogénicos conocidos. Buena opción para infecciones urinarias, cutáneas o dentales.", interactions:"Probenecid, anticoagulantes orales", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","cefalosporina"] },
+  { inn:"Metronidazol", trade:"Flagyl, Metronidazol Normon", category:"Antibiótico / Antiparasitario", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución según dosis", label_emb:"⚠️ Evitar T1 a dosis altas", trimestres:"Evitar T1 a dosis altas", text_lm:"A dosis única (2g) interrumpir lactancia 12–24h. A dosis habituales (250–500 mg/8h) la mayoría lo considera compatible.", text_emb:"Evitar en T1 a dosis altas. En T2 y T3 usar cuando indicado bajo prescripción.", interactions:"Alcohol (efecto disulfiram), warfarina, litio, ciclosporina", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","antiparasitario"] },
+  { inn:"Loratadina", trade:"Clarityne, Loratadina Normon", category:"Antihistamínico (2ª generación)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Antihistamínico de primera elección en lactancia. Cantidades en leche mínimas. No produce sedación en el bebé.", text_emb:"Antihistamínico preferido en el embarazo. Sin efectos teratogénicos conocidos. Útil en rinitis alérgica gestacional.", interactions:"Ketoconazol, eritromicina (aumentan niveles levemente)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
+  { inn:"Cetirizina", trade:"Zyrtec, Alerlisin, Reactine", category:"Antihistamínico (2ª generación)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. No produce sedación significativa. Buena alternativa a loratadina.", text_emb:"Sin efectos teratogénicos conocidos. Junto con loratadina, opción preferida para alergias.", interactions:"Depresores del SNC (sedación leve), teofilina", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
+  { inn:"Dexclorfeniramina", trade:"Polaramine", category:"Antihistamínico (1ª generación)", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Evitar T3 tardío", trimestres:"Evitar T3 tardío", text_lm:"Puede causar sedación en el bebé. Preferir loratadina o cetirizina.", text_emb:"Evitar en T3 tardío: depresión respiratoria neonatal o síndrome de abstinencia.", interactions:"Alcohol, sedantes, IMAO (contraindicado)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
+  { inn:"Omeprazol", trade:"Losec, Omeprazol Normon, Belfa", category:"Inhibidor bomba de protones (IBP)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. Se destruye en el estómago ácido del bebé. IBP más estudiado en lactancia.", text_emb:"No teratogénico. IBP con más datos de seguridad. Útil en reflujo gestacional.", interactions:"Clopidogrel, metotrexato, atazanavir", sources:["LactMed","e-lactancia","AEMPS"], tags:["bomba de protones","digestivo","reflujo"] },
+  { inn:"Domperidona", trade:"Motilium, Domperidona Normon", category:"Procinético / Antiemético", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Precaución — evitar T1", trimestres:"Evitar T1", text_lm:"Aumenta prolactina. Riesgo teórico de arritmia en el bebé a dosis altas. No usar sin valoración médica.", text_emb:"Evitar en T1. En T2–T3 uso puntual bajo prescripción. AEMPS limita uso por riesgo cardiovascular.", interactions:"Antifúngicos azólicos, macrólidos, antiarrítmicos (riesgo QT)", sources:["e-lactancia","AEMPS","EMA"], tags:["procinético","antiemético","digestivo"] },
+  { inn:"Loperamida", trade:"Fortasec, Imodium", category:"Antidiarreico", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver trimestre", trimestres:"Evitar T1, precaución T3", text_lm:"Pasa muy poco a la leche. Sin efectos adversos descritos. Uso puntual para diarrea aguda.", text_emb:"Evitar en T1. En T2 uso puntual. En T3 precaución a dosis altas.", interactions:"Quinidina, ritonavir (aumentan niveles)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antidiarreico","digestivo"] },
+  { inn:"Metoclopramida", trade:"Primperán, Metoclopramida Normon", category:"Antiemético / Procinético", safety_lm:"yellow", safety_emb:"green", label_lm:"⚠️ Precaución en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Aumenta prolactina. Pasa a leche en cantidades moderadas. Puede causar irritabilidad en el bebé con uso prolongado.", text_emb:"Sin efectos teratogénicos. Opción para hiperemesis gravídica. Los tres trimestres bajo prescripción.", interactions:"Anticolinérgicos, opioides, antipsicóticos (riesgo extrapiramidal)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antiemético","procinético","digestivo"] },
+  { inn:"Ibuprofeno tópico", trade:"Dolocyl gel, Nurofen gel, Dolgit", category:"Analgésico tópico (AINE)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Evitar en T3", trimestres:"Evitar T3", text_lm:"Absorción sistémica muy baja. Cantidad en leche insignificante. Evitar aplicar cerca del pezón.", text_emb:"Evitar en T3. En T1 y T2 uso puntual en zonas pequeñas.", interactions:"Mínimas. Precaución con anticoagulantes en grandes superficies.", sources:["LactMed","e-lactancia","AEMPS"], tags:["analgésico","tópico","aine"] },
+  { inn:"Dexametasona", trade:"Fortecortin, Dexametasona Normon, Decadron", category:"Corticoide sistémico", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Depende de dosis y contexto", trimestres:"Precaución T1; indicado sem. 24–34", text_lm:"Con dosis bajas y uso puntual el riesgo es mínimo. Dosis altas/prolongadas: posible supresión hormonal del lactante.", text_emb:"Evitar dosis altas en T1. En semanas 24–34 indicado para maduración pulmonar fetal: tratamiento establecido y beneficioso.", interactions:"AINE (riesgo GI), diuréticos, antidiabéticos, vacunas vivas", sources:["LactMed","e-lactancia","AEMPS"], tags:["corticoide"] },
+  { inn:"Fluconazol", trade:"Diflucan, Fluconazol Normon, Zoltec", category:"Antifúngico (azol)", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución según dosis", label_emb:"⚠️ Evitar T1 a dosis altas", trimestres:"Evitar T1 (dosis altas); precaución T2–T3", text_lm:"A dosis única 150 mg exposición del bebé baja y generalmente aceptada. En tratamientos prolongados consultar.", text_emb:"Evitar en T1 a dosis altas. A dosis única 150 mg el riesgo es menor. Preferir alternativas tópicas siempre que sea posible.", interactions:"Warfarina, estatinas, fenitoína, ciclosporina, domperidona (QT)", sources:["LactMed","e-lactancia","AEMPS","EMA"], tags:["antifúngico"] },
+  { inn:"Hierro (sulfato ferroso)", trade:"Tardyferon, Ferogradumet, Ferrograd, Ferplex", category:"Suplemento mineral / Antianémico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro y frecuentemente necesario", trimestres:"T1, T2, T3", text_lm:"Completamente seguro. El hierro en leche se regula independientemente de la ingesta materna.", text_emb:"Seguro y frecuentemente necesario. La demanda aumenta en T2 y T3. Tomar en ayunas o con vitamina C.", interactions:"Antiácidos, IBP, calcio, tetraciclinas, quinolonas, levotiroxina (separar 2h)", sources:["LactMed","OMS","AEMPS","SEGO"], tags:["hierro","suplemento","anemia"] },
+  { inn:"Dexketoprofeno", trade:"Enantyum", category:"Analgésico / AINE", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Evitar a partir semana 20", trimestres:"Evitar T3 (y T2 tardío)", text_lm:"Compatible. Paso a leche clínicamente insignificante. Excelente opción analgésica en el posparto.", text_emb:"Evitar a partir de semana 20 por riesgo de oligohidramnios y cierre del ductus.", interactions:"Anticoagulantes, litio, metotrexato, otros AINEs", sources:["e-lactancia","AEMPS","LactMed"], tags:["analgésico","aine","dolor"] },
+  { inn:"Naproxeno", trade:"Naprosyn, Antalgin", category:"Analgésico / AINE", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Evitar a partir semana 20", trimestres:"Evitar T3 (y T2 tardío)", text_lm:"Compatible. Excreción en leche muy pequeña. Preferible ibuprofeno por vida media más corta.", text_emb:"Contraindicado en T3. AEMPS y EMA recomiendan evitar desde semana 20.", interactions:"ISRS, anticoagulantes, antihipertensivos", sources:["e-lactancia","AEMPS","LactMed"], tags:["analgésico","aine","inflamación"] },
+  { inn:"Diclofenaco", trade:"Voltaren, Voltarol", category:"Analgésico / AINE", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Evitar a partir semana 20", trimestres:"Evitar T3 (y T2 tardío)", text_lm:"AINE de elección en lactancia. Cantidades indetectables en leche materna.", text_emb:"Evitar a partir de semana 20. En T1 y T2 solo si beneficio supera claramente el riesgo.", interactions:"Litio, digoxina, diuréticos, anticoagulantes", sources:["e-lactancia","AEMPS","LactMed"], tags:["analgésico","aine","inflamación"] },
+  { inn:"Celecoxib", trade:"Celebrex", category:"AINE (Inhibidor COX-2)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Evitar en T3", trimestres:"Evitar T3", text_lm:"Compatible. Niveles en leche extremadamente bajos. Inhibidor COX-2 preferido si se necesita uno.", text_emb:"No recomendado en embarazo. Contraindicado en T3 (cierre del ductus, toxicidad renal fetal).", interactions:"Fluconazol, rifampicina, antidepresivos, litio", sources:["e-lactancia","AEMPS","LactMed"], tags:["analgésico","aine","cox2"] },
+  { inn:"Tramadol", trade:"Adolonta, Zaldiar", category:"Analgésico Opioide", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución — Evitar si es posible", label_emb:"⚠️ Precaución — Riesgo neonatal", trimestres:"Precaución T1-T3", text_lm:"FDA y AEMPS advierten sobre riesgo de depresión respiratoria y sedación excesiva en el lactante. Buscar alternativas.", text_emb:"No recomendado de forma prolongada. Cerca del parto: depresión respiratoria y síndrome de abstinencia en el recién nacido.", interactions:"ISRS, IMAO (riesgo serotoninérgico), depresores del SNC", sources:["e-lactancia","AEMPS","LactMed","FDA"], tags:["analgésico","opioide","dolor fuerte"] },
+  { inn:"Codeína", trade:"Bisolvon Antitusivo, Termalgin Codeína", category:"Analgésico Opioide / Antitusígeno", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ Contraindicado en lactancia", label_emb:"⚠️ Precaución", trimestres:"Evitar cerca del parto", text_lm:"CONTRAINDICADO. Metabolismo a morfina variable. Madres metabolizadoras ultrarrápidas pueden producir niveles letales en leche. Se han reportado fallecimientos neonatales.", text_emb:"Uso puntual si indispensable. Uso continuado o cerca del parto: síndrome de abstinencia y depresión respiratoria neonatal.", interactions:"Depresores del SNC, alcohol, otros opioides", sources:["e-lactancia","AEMPS","LactMed"], tags:["analgésico","opioide","tos"] },
+  { inn:"Morfina", trade:"MST Continus, Oramorph", category:"Analgésico Opioide", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro (dosis únicas/bajas)", label_emb:"⚠️ Precaución", trimestres:"Evitar uso prolongado cerca del parto", text_lm:"Paradójicamente más segura que codeína o tramadol. Pobre biodisponibilidad oral en el lactante. Compatible en dosis bajas y tratamientos cortos.", text_emb:"Solo para dolor intenso bajo estricta vigilancia. Uso crónico causa dependencia fetal.", interactions:"Depresores del SNC, gabapentinoides, sedantes", sources:["e-lactancia","LactMed","AEMPS"], tags:["analgésico","opioide","dolor severo"] },
+  { inn:"Lidocaína", trade:"Versatis, EMLA", category:"Anestésico Local", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Anestésico local de elección. Pasa en cantidades ínfimas a la leche. Compatible en uso dental, dermatológico o epidural.", text_emb:"Anestésico local de elección durante la gestación. Sin efectos teratogénicos.", interactions:"Antiarrítmicos, betabloqueantes (en uso sistémico)", sources:["e-lactancia","AEMPS","LactMed"], tags:["anestésico","local","tópico"] }
 ];
 
-// ─── STATE ────────────────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════
+// FIX 1: ИСТОРИЯ И СОХРАНЁННЫЕ ПРЕПАРАТЫ
+// ══════════════════════════════════════════════════════════
+let searchHistory = JSON.parse(localStorage.getItem('fm_history') || '[]');
+let savedDrugs = JSON.parse(localStorage.getItem('fm_saved') || '[]');
+
+function saveToHistory(query) {
+  searchHistory = searchHistory.filter(h => h.query !== query);
+  searchHistory.unshift({ query, time: new Date().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) });
+  if (searchHistory.length > 15) searchHistory = searchHistory.slice(0, 15);
+  localStorage.setItem('fm_history', JSON.stringify(searchHistory));
+  renderHistoryList();
+  document.getElementById('historyPanel').style.display = 'block';
+}
+
+function clearHistory() {
+  searchHistory = [];
+  localStorage.setItem('fm_history', JSON.stringify([]));
+  renderHistoryList();
+}
+
+function saveDrug(drug) {
+  if (savedDrugs.find(d => d.inn === drug.inn)) return;
+  savedDrugs.push({ inn: drug.inn, trade: drug.trade, safety_lm: drug.safety_lm, safety_emb: drug.safety_emb, label_lm: drug.label_lm, label_emb: drug.label_emb });
+  localStorage.setItem('fm_saved', JSON.stringify(savedDrugs));
+  renderSavedList();
+  document.getElementById('savedPanel').style.display = 'block';
+}
+
+function removeSavedDrug(inn) {
+  savedDrugs = savedDrugs.filter(d => d.inn !== inn);
+  localStorage.setItem('fm_saved', JSON.stringify(savedDrugs));
+  renderSavedList();
+  if (savedDrugs.length === 0) document.getElementById('savedPanel').style.display = 'none';
+}
+
+function renderHistoryList() {
+  const list = document.getElementById('historyList');
+  if (!list) return;
+  if (searchHistory.length === 0) {
+    list.innerHTML = `<div class="empty-panel">${t('historyEmpty')}</div>`;
+    return;
+  }
+  list.innerHTML = searchHistory.map(h => `
+    <div class="history-item" onclick="quickSearch('${h.query.replace(/'/g,"\\'")}')">
+      <span class="history-item-text">🔍 ${h.query}</span>
+      <span class="history-item-time">${h.time}</span>
+    </div>
+  `).join('');
+}
+
+function renderSavedList() {
+  const list = document.getElementById('savedList');
+  if (!list) return;
+  if (savedDrugs.length === 0) {
+    list.innerHTML = `<div class="empty-panel">${t('savedEmpty')}</div>`;
+    return;
+  }
+  const badgeClass = situation === 'emb' ? 'safety_emb' : 'safety_lm';
+  const labelKey = situation === 'emb' ? 'label_emb' : 'label_lm';
+  list.innerHTML = savedDrugs.map(d => `
+    <div class="saved-drug">
+      <span class="saved-drug-name" onclick="quickSearch('${d.inn.replace(/'/g,"\\'")}')">💊 ${d.inn}</span>
+      <span class="saved-drug-badge ${d[badgeClass]}">${d[labelKey]}</span>
+      <button class="remove-btn" onclick="removeSavedDrug('${d.inn.replace(/'/g,"\\'")}') " title="${t('removeTooltip')}">✕</button>
+    </div>
+  `).join('');
+}
+
+function togglePanel(bodyId, arrowId) {
+  const body = document.getElementById(bodyId);
+  const arrow = document.getElementById(arrowId);
+  body.classList.toggle('hidden');
+  arrow.textContent = body.classList.contains('hidden') ? '▶' : '▼';
+}
+
+// Show panels if data exists on load
+window.addEventListener('DOMContentLoaded', () => {
+  if (searchHistory.length > 0) {
+    document.getElementById('historyPanel').style.display = 'block';
+    renderHistoryList();
+  }
+  if (savedDrugs.length > 0) {
+    document.getElementById('savedPanel').style.display = 'block';
+    renderSavedList();
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+// STATE & SEARCH
+// ══════════════════════════════════════════════════════════
 let situation = 'lm';
 
 function setSituation(s, el) {
-  situation = s;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  const q = document.getElementById('searchInput').value.trim();
-  if (q) doSearch();
+  situation = s;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const q = document.getElementById('searchInput').value.trim();
+  if (q) doSearch();
+  renderSavedList();
 }
 
-function onInput(val) {
-  if (!val.trim()) {
-    showEmpty();
-  }
-}
+function onInput(val) { if (!val.trim()) showEmpty(); }
 
 function quickSearch(term) {
-  document.getElementById('searchInput').value = term;
-  doSearch();
+  document.getElementById('searchInput').value = term;
+  doSearch();
 }
 
 function filterCategory(tag) {
-  const results = DB.filter(d => d.tags.some(t => t.includes(tag)));
-  renderResults(results, tag);
-  document.getElementById('searchInput').value = '';
+  const results = DB.filter(d => d.tags.some(t => t.includes(tag)));
+  renderResults(results, tag);
+  document.getElementById('searchInput').value = '';
 }
 
 function doSearch() {
-  const q = document.getElementById('searchInput').value.trim().toLowerCase();
-  if (!q) { showEmpty(); return; }
-
-  const results = DB.filter(d =>
-    d.inn.toLowerCase().includes(q) ||
-    d.trade.toLowerCase().includes(q) ||
-    d.category.toLowerCase().includes(q) ||
-    d.tags.some(t => t.includes(q))
-  );
-  renderResults(results, q);
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) { showEmpty(); return; }
+  const results = DB.filter(d =>
+    d.inn.toLowerCase().includes(q) ||
+    d.trade.toLowerCase().includes(q) ||
+    d.category.toLowerCase().includes(q) ||
+    d.tags.some(tg => tg.includes(q))
+  );
+  if (results.length > 0) saveToHistory(document.getElementById('searchInput').value.trim());
+  renderResults(results, q);
 }
 
 function showEmpty() {
-  document.getElementById('emptyState').style.display = 'block';
-  document.getElementById('catSection').style.display = 'block';
-  document.querySelectorAll('.result-card, .not-found').forEach(e => e.remove());
+  document.getElementById('emptyState').style.display = 'block';
+  document.getElementById('catSection').style.display = 'block';
+  document.querySelectorAll('.result-card, .not-found').forEach(e => e.remove());
 }
 
 function renderResults(results, query) {
-  const main = document.getElementById('main');
-  document.querySelectorAll('.result-card, .not-found').forEach(e => e.remove());
-  document.getElementById('emptyState').style.display = 'none';
-  document.getElementById('catSection').style.display = 'none';
+  const main = document.getElementById('main');
+  document.querySelectorAll('.result-card, .not-found').forEach(e => e.remove());
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('catSection').style.display = 'none';
+  const T = TRANSLATIONS[currentLang];
 
-  if (!results.length) {
-    const nf = document.createElement('div');
-    nf.className = 'not-found';
-    nf.innerHTML = `
-      <div style="font-size:36px;margin-bottom:12px">🔍</div>
-      <p><strong>No encontramos "${query}"</strong> en nuestra base de datos actual.</p>
-      <p style="margin-top:8px">Estamos ampliando el listado continuamente. Mientras tanto, consulta <a href="https://e-lactancia.org" target="_blank" style="color:var(--sage)">e-lactancia.org</a> o <a href="https://www.aemps.gob.es" target="_blank" style="color:var(--sage)">AEMPS</a>.</p>
-    `;
-    main.appendChild(nf);
-    return;
-  }
+  if (!results.length) {
+    const nf = document.createElement('div');
+    nf.className = 'not-found';
+    nf.innerHTML = `
+      <div style="font-size:36px;margin-bottom:12px">🔍</div>
+      <p><strong>${T.notFoundPre} "${query}"</strong> ${T.notFoundPost}</p>
+      <p style="margin-top:8px">${T.notFoundLink} <a href="https://e-lactancia.org" target="_blank" style="color:var(--sage)">e-lactancia.org</a> o <a href="https://www.aemps.gob.es" target="_blank" style="color:var(--sage)">AEMPS</a>.</p>
+    `;
+    main.insertBefore(nf, document.getElementById('historyPanel'));
+    return;
+  }
 
-  results.forEach(drug => {
-    const card = document.createElement('div');
-    card.className = 'result-card';
+  const showLM = situation === 'lm' || situation === 'both';
+  const showEmb = situation === 'emb' || situation === 'both';
 
-    const showLM = situation === 'lm' || situation === 'both';
-    const showEmb = situation === 'emb' || situation === 'both';
+  results.forEach(drug => {
+    const card = document.createElement('div');
+    card.className = 'result-card';
 
-    const badgeHTML = `
-      ${showLM ? `<div class="badge ${drug.safety_lm}"><span>🤱</span> ${drug.label_lm}</div>` : ''}
-      ${showEmb ? `<div class="badge ${drug.safety_emb}"><span>🤰</span> ${drug.label_emb}</div>` : ''}
-    `;
+    const badgeHTML = `
+      ${showLM ? `<div class="badge ${drug.safety_lm}"><span>🤱</span> ${drug.label_lm}</div>` : ''}
+      ${showEmb ? `<div class="badge ${drug.safety_emb}"><span>🤰</span> ${drug.label_emb}</div>` : ''}
+    `;
 
-    const lmSection = showLM ? `
-      <div class="result-section">
-        <div class="section-label">🤱 Durante la lactancia</div>
-        <div class="section-text">${drug.text_lm}</div>
-      </div>` : '';
+    const lmSection = showLM ? `
+      <div class="result-section">
+        <div class="section-label">🤱 ${T.labelLm}</div>
+        <div class="section-text">${drug.text_lm}</div>
+      </div>` : '';
 
-    const embSection = showEmb ? `
-      <div class="result-section">
-        <div class="section-label">🤰 Durante el embarazo</div>
-        <div class="section-text">${drug.text_emb}</div>
-      </div>` : '';
+    const embSection = showEmb ? `
+      <div class="result-section">
+        <div class="section-label">🤰 ${T.labelEmb}</div>
+        <div class="section-text">${drug.text_emb}</div>
+      </div>` : '';
 
-    const sourceTags = drug.sources.map(s => `<span class="source-tag">${s}</span>`).join('');
+    const sourceTags = drug.sources.map(s => `<span class="source-tag">${s}</span>`).join('');
+    const alreadySaved = savedDrugs.find(d => d.inn === drug.inn);
 
-    card.innerHTML = `
-      <div class="result-header">
-        <div>
-          <div class="result-name">${drug.inn}</div>
-          <div class="result-category">${drug.category}</div>
-          <div class="result-trade">📦 ${drug.trade}</div>
-        </div>
-        <div class="safety-badges">${badgeHTML}</div>
-      </div>
-      <div class="result-body">
-        ${lmSection}
-        ${embSection}
-        <div class="result-section">
-          <div class="section-label">⚠️ Interacciones principales</div>
-          <div class="interactions-list">${drug.interactions}</div>
-        </div>
-        <div class="result-section">
-          <div class="section-label">📚 Fuentes</div>
-          <div class="source-row">
-            <div class="source-tags">${sourceTags}</div>
-            <div class="expert-check">✅ Revisado por experto</div>
-          </div>
-        </div>
-      </div>
-    `;
-    main.appendChild(card);
-  });
+    card.innerHTML = `
+      <div class="result-header">
+        <div>
+          <div class="result-name">${drug.inn}</div>
+          <div class="result-category">${drug.category}</div>
+          <div class="result-trade">📦 ${drug.trade}</div>
+        </div>
+        <div class="safety-badges">${badgeHTML}</div>
+      </div>
+      <div class="result-body">
+        ${lmSection}
+        ${embSection}
+        <div class="result-section">
+          <div class="section-label">⚠️ ${T.labelInteract}</div>
+          <div class="interactions-list">${drug.interactions}</div>
+        </div>
+        <div class="result-section">
+          <div class="section-label">📚 ${T.labelSources}</div>
+          <div class="source-row">
+            <div class="source-tags">${sourceTags}</div>
+            <div class="expert-check">${T.expertCheck}</div>
+          </div>
+          ${!alreadySaved ? `<button class="save-drug-btn" onclick="saveDrug(DB.find(d=>d.inn==='${drug.inn.replace(/'/g,"\\'")}'))">${T.saveBtn}</button>` : ''}
+        </div>
+      </div>
+    `;
+    main.insertBefore(card, document.getElementById('historyPanel'));
+  });
 
-  // Disclaimer always at end
-  const disc = document.createElement('div');
-  disc.className = 'disclaimer';
-  disc.innerHTML = `
-    <span class="disclaimer-icon">ℹ️</span>
-    <span>Esta información es orientativa y no sustituye la consulta con tu médico, matrona o farmacéutico. Ante cualquier duda, consulta siempre a un profesional sanitario.</span>
-  `;
-  main.appendChild(disc);
+  const disc = document.createElement('div');
+  disc.className = 'disclaimer';
+  disc.innerHTML = `<span class="disclaimer-icon">ℹ️</span><span>${T.disclaimer}</span>`;
+  main.insertBefore(disc, document.getElementById('historyPanel'));
 }
 </script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
-}
-</script>  
-  
 </body>
 </html>
