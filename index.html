@@ -61,7 +61,7 @@
 
   .logo-icon {
     width: 36px; height: 36px;
-    background: var(--sage);
+    background: #D6EBD8;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -627,7 +627,7 @@
 <body>
 
 <header>
-  <div class="logo">
+  <div class="logo" onclick="goHome()" style="cursor:pointer" title="Inicio">
     <div class="logo-icon">🌿</div>
     <div class="logo-text">Farma<span>Mamá</span></div>
   </div>
@@ -863,8 +863,8 @@ function applyTranslations() {
 // DATABASE
 // ══════════════════════════════════════════════════════════
 const DB = [
-  { inn:"Paracetamol", trade:"Apiretal, Efferalgan, Gelocatil, Termalgín", category:"Analgésico / Antipirético", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Es el analgésico más seguro durante la lactancia. Pasa a la leche en cantidades muy pequeñas (menos del 2% de la dosis materna) y no se han descrito efectos adversos en bebés lactantes. Puedes tomarlo con tranquilidad si lo necesitas.", text_emb:"Es el analgésico de elección durante todo el embarazo. Se puede usar en los tres trimestres a dosis habituales y durante el tiempo necesario. Consulta a tu médico si necesitas tomarlo más de unos pocos días seguidos.", interactions:"Warfarina (puede potenciar efecto anticoagulante con uso prolongado)", sources:["LactMed","e-lactancia"], tags:["analgésico","antipirético"] },
-  { inn:"Ibuprofeno", trade:"Nurofen, Bexifen, Espidifen, Dalsy", category:"Analgésico / Antiinflamatorio (AINE)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver trimestre", trimestres:"T1, T2 (evitar T3)", text_lm:"Compatible con la lactancia. La cantidad que pasa a la leche es muy baja. Es uno de los antiinflamatorios preferidos en madres lactantes. Puedes tomarlo puntualmente sin interrumpir la lactancia.", text_emb:"Evitar en el tercer trimestre (semana 28+): puede afectar al riñón del bebé y cerrar prematuramente el ductus arterioso. En T1 y T2 usar a dosis mínima el menor tiempo posible.", interactions:"AAS, corticoides, anticoagulantes, litio (aumenta niveles)", sources:["LactMed","AEMPS","e-lactancia"], tags:["analgésico","aine","antiinflamatorio"] },
+  { inn:"Paracetamol", trade:"Apiretal, Efferalgan, Gelocatil, Termalgín", category:"Analgésico / Antipirético", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", label_lm_en:"✅ Safe during breastfeeding", label_emb_en:"✅ Safe during pregnancy", label_lm_ru:"✅ Безопасно при ГВ", label_emb_ru:"✅ Безопасно при беременности", trimestres:"T1, T2, T3", text_lm:"Es el analgésico más seguro durante la lactancia. Pasa a la leche en cantidades muy pequeñas (menos del 2% de la dosis materna) y no se han descrito efectos adversos en bebés lactantes. Puedes tomarlo con tranquilidad si lo necesitas.", text_emb:"Es el analgésico de elección durante todo el embarazo. Se puede usar en los tres trimestres a dosis habituales y durante el tiempo necesario. Consulta a tu médico si necesitas tomarlo más de unos pocos días seguidos.", text_lm_en:"The safest painkiller during breastfeeding. It passes into milk in very small amounts (less than 2% of the maternal dose) and no adverse effects in breastfed babies have been reported.", text_emb_en:"The painkiller of choice throughout pregnancy. It can be used in all three trimesters at standard doses. Consult your doctor if you need to take it for more than a few days in a row.", text_lm_ru:"Самый безопасный обезболивающий при ГВ. Переходит в молоко в минимальных количествах (менее 2% дозы матери). Нежелательных эффектов у детей не описано.", text_emb_ru:"Препарат выбора при беременности. Можно применять во всех трёх триместрах в обычных дозах. Если нужен более нескольких дней — проконсультируйтесь с врачом.", interactions:"Warfarina (puede potenciar efecto anticoagulante con uso prolongado)", interactions_en:"Warfarin (may potentiate anticoagulant effect with prolonged use)", interactions_ru:"Варфарин (может усиливать антикоагулянтный эффект при длительном применении)", sources:["LactMed","e-lactancia"], tags:["analgésico","antipirético"] },
+  { inn:"Ibuprofeno", trade:"Nurofen, Bexifen, Espidifen, Dalsy", category:"Analgésico / Antiinflamatorio (AINE)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver trimestre", label_lm_en:"✅ Safe during breastfeeding", label_emb_en:"⚠️ Caution — check trimester", label_lm_ru:"✅ Безопасно при ГВ", label_emb_ru:"⚠️ Осторожно — зависит от триместра", trimestres:"T1, T2 (evitar T3)", text_lm:"Compatible con la lactancia. La cantidad que pasa a la leche es muy baja. Es uno de los antiinflamatorios preferidos en madres lactantes. Puedes tomarlo puntualmente sin interrumpir la lactancia.", text_emb:"Evitar en el tercer trimestre (semana 28+): puede afectar al riñón del bebé y cerrar prematuramente el ductus arterioso. En T1 y T2 usar a dosis mínima el menor tiempo posible.", text_lm_en:"Compatible with breastfeeding. Very little passes into breast milk. It is one of the preferred anti-inflammatory drugs for breastfeeding mothers and can be taken occasionally without stopping breastfeeding.", text_emb_en:"Avoid in the third trimester (week 28+): it can affect the baby's kidneys and cause premature closure of the ductus arteriosus. In T1 and T2 use the lowest dose for the shortest time possible.", text_lm_ru:"Совместим с ГВ. В молоко переходит очень мало. Один из предпочтительных НПВП при кормлении. Можно принять однократно, не прерывая ГВ.", text_emb_ru:"Избегать в третьем триместре (с 28-й недели): может нарушить функцию почек плода и вызвать преждевременное закрытие боталлова протока. В T1–T2 — минимальная доза, минимальный срок.", interactions:"AAS, corticoides, anticoagulantes, litio (aumenta niveles)", interactions_en:"Aspirin, corticosteroids, anticoagulants, lithium (increases levels)", interactions_ru:"АСК, кортикостероиды, антикоагулянты, литий (повышает его уровень)", sources:["LactMed","AEMPS","e-lactancia"], tags:["analgésico","aine","antiinflamatorio"] },
   { inn:"Metamizol", trade:"Nolotil, Lasain, Metalgial", category:"Analgésico / Antipirético", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Precaución — evitar T3", trimestres:"Evitar T3", text_lm:"Riesgo teórico de agranulocitosis en el bebé. Primera opción siempre: paracetamol. Si el médico considera necesario el metamizol, uso puntual aceptable.", text_emb:"No es la primera opción. Evitar en T3 por riesgo de cierre del ductus. Usar solo si otros analgésicos son insuficientes, bajo prescripción.", interactions:"Ciclosporina (reduce niveles), metotrexato (aumenta toxicidad)", sources:["e-lactancia","AEMPS"], tags:["analgésico","antipirético"] },
   { inn:"Ácido acetilsalicílico", trade:"Aspirina, AAS, Adiro", category:"Analgésico / Antiagregante / AINE", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución según dosis", label_emb:"⚠️ Depende de la dosis", trimestres:"Dosis baja T1-T3; evitar dosis analgésica en T3", text_lm:"A dosis analgésicas (500–1000 mg) desaconsejado: riesgo de síndrome de Reye. A dosis bajas antiagregantes (75–150 mg/día) compatible bajo control médico.", text_emb:"A dosis bajas indicado en embarazos de riesgo (preeclampsia). A dosis analgésicas evitar en T3 especialmente.", interactions:"Anticoagulantes, ibuprofeno, corticoides, metotrexato", sources:["LactMed","AEMPS","e-lactancia"], tags:["analgésico","aine","antiagregante"] },
   { inn:"Amoxicilina", trade:"Amoxicilina Normon, Clamoxyl, Ardine", category:"Antibiótico (penicilina)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Cantidades en leche muy pequeñas. Puede alterar ligeramente la flora del bebé (heces blandas) sin representar riesgo real.", text_emb:"Antibiótico de primera elección en el embarazo. Sin efectos teratogénicos conocidos. Los tres trimestres bajo prescripción.", interactions:"Anticoagulantes orales, metotrexato", sources:["LactMed","e-lactancia","AEMPS"], tags:["antibiótico","penicilina"] },
@@ -875,7 +875,7 @@ const DB = [
   { inn:"Loratadina", trade:"Clarityne, Loratadina Normon", category:"Antihistamínico (2ª generación)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Antihistamínico de primera elección en lactancia. Cantidades en leche mínimas. No produce sedación en el bebé.", text_emb:"Antihistamínico preferido en el embarazo. Sin efectos teratogénicos conocidos. Útil en rinitis alérgica gestacional.", interactions:"Ketoconazol, eritromicina (aumentan niveles levemente)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
   { inn:"Cetirizina", trade:"Zyrtec, Alerlisin, Reactine", category:"Antihistamínico (2ª generación)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. No produce sedación significativa. Buena alternativa a loratadina.", text_emb:"Sin efectos teratogénicos conocidos. Junto con loratadina, opción preferida para alergias.", interactions:"Depresores del SNC (sedación leve), teofilina", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
   { inn:"Dexclorfeniramina", trade:"Polaramine", category:"Antihistamínico (1ª generación)", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Evitar T3 tardío", trimestres:"Evitar T3 tardío", text_lm:"Puede causar sedación en el bebé. Preferir loratadina o cetirizina.", text_emb:"Evitar en T3 tardío: depresión respiratoria neonatal o síndrome de abstinencia.", interactions:"Alcohol, sedantes, IMAO (contraindicado)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antihistamínico"] },
-  { inn:"Omeprazol", trade:"Losec, Omeprazol Normon, Belfa", category:"Inhibidor bomba de protones (IBP)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Compatible. Se destruye en el estómago ácido del bebé. IBP más estudiado en lactancia.", text_emb:"No teratogénico. IBP con más datos de seguridad. Útil en reflujo gestacional.", interactions:"Clopidogrel, metotrexato, atazanavir", sources:["LactMed","e-lactancia","AEMPS"], tags:["bomba de protones","digestivo","reflujo"] },
+  { inn:"Omeprazol", trade:"Losec, Omeprazol Normon, Belfa", category:"Inhibidor bomba de protones (IBP)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", label_lm_en:"✅ Safe during breastfeeding", label_emb_en:"✅ Safe during pregnancy", label_lm_ru:"✅ Безопасно при ГВ", label_emb_ru:"✅ Безопасно при беременности", trimestres:"T1, T2, T3", text_lm:"Compatible. Se destruye en el estómago ácido del bebé. IBP más estudiado en lactancia.", text_emb:"No teratogénico. IBP con más datos de seguridad. Útil en reflujo gestacional.", text_lm_en:"Compatible. It is destroyed in the baby's acidic stomach. The most studied proton pump inhibitor during breastfeeding.", text_emb_en:"Not teratogenic. The PPI with the most safety data. Useful for gestational reflux.", text_lm_ru:"Совместим с ГВ. Разрушается в кислой среде желудка ребёнка. Наиболее изученный ИПП при ГВ.", text_emb_ru:"Не тератогенен. Наибольшая доказательная база безопасности. Эффективен при изжоге беременных.", interactions:"Clopidogrel, metotrexato, atazanavir", interactions_en:"Clopidogrel, methotrexate, atazanavir", interactions_ru:"Клопидогрел, метотрексат, атазанавир", sources:["LactMed","e-lactancia","AEMPS"], tags:["bomba de protones","digestivo","reflujo"] },
   { inn:"Domperidona", trade:"Motilium, Domperidona Normon", category:"Procinético / Antiemético", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Precaución en lactancia", label_emb:"⚠️ Precaución — evitar T1", trimestres:"Evitar T1", text_lm:"Aumenta prolactina. Riesgo teórico de arritmia en el bebé a dosis altas. No usar sin valoración médica.", text_emb:"Evitar en T1. En T2–T3 uso puntual bajo prescripción. AEMPS limita uso por riesgo cardiovascular.", interactions:"Antifúngicos azólicos, macrólidos, antiarrítmicos (riesgo QT)", sources:["e-lactancia","AEMPS","EMA"], tags:["procinético","antiemético","digestivo"] },
   { inn:"Loperamida", trade:"Fortasec, Imodium", category:"Antidiarreico", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia", label_emb:"⚠️ Precaución — ver trimestre", trimestres:"Evitar T1, precaución T3", text_lm:"Pasa muy poco a la leche. Sin efectos adversos descritos. Uso puntual para diarrea aguda.", text_emb:"Evitar en T1. En T2 uso puntual. En T3 precaución a dosis altas.", interactions:"Quinidina, ritonavir (aumentan niveles)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antidiarreico","digestivo"] },
   { inn:"Metoclopramida", trade:"Primperán, Metoclopramida Normon", category:"Antiemético / Procinético", safety_lm:"yellow", safety_emb:"green", label_lm:"⚠️ Precaución en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Aumenta prolactina. Pasa a leche en cantidades moderadas. Puede causar irritabilidad en el bebé con uso prolongado.", text_emb:"Sin efectos teratogénicos. Opción para hiperemesis gravídica. Los tres trimestres bajo prescripción.", interactions:"Anticolinérgicos, opioides, antipsicóticos (riesgo extrapiramidal)", sources:["LactMed","e-lactancia","AEMPS"], tags:["antiemético","procinético","digestivo"] },
@@ -909,6 +909,15 @@ const DB = [
 ];
 
 // ══════════════════════════════════════════════════════════
+// HOME NAVIGATION
+// ══════════════════════════════════════════════════════════
+function goHome() {
+  document.getElementById('searchInput').value = '';
+  showEmpty();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ══════════════════════════════════════════════════════════
 // FIX 1: ИСТОРИЯ И СОХРАНЁННЫЕ ПРЕПАРАТЫ
 // ══════════════════════════════════════════════════════════
 let searchHistory = JSON.parse(localStorage.getItem('fm_history') || '[]');
@@ -930,11 +939,15 @@ function clearHistory() {
 }
 
 function saveDrug(drug) {
+  if (!drug) return;
   if (savedDrugs.find(d => d.inn === drug.inn)) return;
   savedDrugs.push({ inn: drug.inn, trade: drug.trade, safety_lm: drug.safety_lm, safety_emb: drug.safety_emb, label_lm: drug.label_lm, label_emb: drug.label_emb });
   localStorage.setItem('fm_saved', JSON.stringify(savedDrugs));
   renderSavedList();
   document.getElementById('savedPanel').style.display = 'block';
+  // Re-render current search so the save button updates to "already saved"
+  const q = document.getElementById('searchInput').value.trim();
+  if (q) doSearch();
 }
 
 function removeSavedDrug(inn) {
@@ -1064,25 +1077,31 @@ function renderResults(results, query) {
   const showLM = situation === 'lm' || situation === 'both';
   const showEmb = situation === 'emb' || situation === 'both';
 
-  results.forEach(drug => {
+    const getLmText = drug => (currentLang === 'en' && drug.text_lm_en) ? drug.text_lm_en : (currentLang === 'ru' && drug.text_lm_ru) ? drug.text_lm_ru : drug.text_lm;
+    const getEmbText = drug => (currentLang === 'en' && drug.text_emb_en) ? drug.text_emb_en : (currentLang === 'ru' && drug.text_emb_ru) ? drug.text_emb_ru : drug.text_emb;
+    const getInteract = drug => (currentLang === 'en' && drug.interactions_en) ? drug.interactions_en : (currentLang === 'ru' && drug.interactions_ru) ? drug.interactions_ru : drug.interactions;
+    const getLmLabel = drug => (currentLang === 'en' && drug.label_lm_en) ? drug.label_lm_en : (currentLang === 'ru' && drug.label_lm_ru) ? drug.label_lm_ru : drug.label_lm;
+    const getEmbLabel = drug => (currentLang === 'en' && drug.label_emb_en) ? drug.label_emb_en : (currentLang === 'ru' && drug.label_emb_ru) ? drug.label_emb_ru : drug.label_emb;
+
+
     const card = document.createElement('div');
     card.className = 'result-card';
 
     const badgeHTML = `
-      ${showLM ? `<div class="badge ${drug.safety_lm}"><span>🤱</span> ${drug.label_lm}</div>` : ''}
-      ${showEmb ? `<div class="badge ${drug.safety_emb}"><span>🤰</span> ${drug.label_emb}</div>` : ''}
+      ${showLM ? `<div class="badge ${drug.safety_lm}"><span>🤱</span> ${getLmLabel(drug)}</div>` : ''}
+      ${showEmb ? `<div class="badge ${drug.safety_emb}"><span>🤰</span> ${getEmbLabel(drug)}</div>` : ''}
     `;
 
     const lmSection = showLM ? `
       <div class="result-section">
         <div class="section-label">🤱 ${T.labelLm}</div>
-        <div class="section-text">${drug.text_lm}</div>
+        <div class="section-text">${getLmText(drug)}</div>
       </div>` : '';
 
     const embSection = showEmb ? `
       <div class="result-section">
         <div class="section-label">🤰 ${T.labelEmb}</div>
-        <div class="section-text">${drug.text_emb}</div>
+        <div class="section-text">${getEmbText(drug)}</div>
       </div>` : '';
 
     const sourceTags = drug.sources.map(s => `<span class="source-tag">${s}</span>`).join('');
@@ -1102,7 +1121,7 @@ function renderResults(results, query) {
         ${embSection}
         <div class="result-section">
           <div class="section-label">⚠️ ${T.labelInteract}</div>
-          <div class="interactions-list">${drug.interactions}</div>
+          <div class="interactions-list">${getInteract(drug)}</div>
         </div>
         <div class="result-section">
           <div class="section-label">📚 ${T.labelSources}</div>
