@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarmaMamá — Tu farmacéutica de confianza</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #6B9E78;
+  --sage-dark: #4E7A5A;
+  --sage-light: #A8CBAF;
+  --sage-pale: #EDF5EF;
+  --cream: #FDFAF6;
+  --warm-white: #FAF7F2;
+  --text: #2A2A2A;
+  --text-soft: #6B6B6B;
+  --text-lighter: #9E9E9E;
+  --green-bg: #E8F5E9; --green-txt: #2E7D32;
+  --yellow-bg: #FFF8E1; --yellow-txt: #E65100;
+  --red-bg: #FFEBEE; --red-txt: #C62828;
+  --border: #EAE6DF;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.09);
+  --r: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.logo-mark {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  box-shadow: 0 2px 8px rgba(107,158,120,0.35);
+}
+
+.logo-name {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
+.logo-name span { color: var(--sage); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.situation-pill {
+  display: flex;
+  background: var(--sage-pale);
+  border-radius: 30px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.sit-btn {
+  border: none;
+  background: transparent;
+  border-radius: 24px;
+  padding: 5px 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.sit-btn.active {
+  background: white;
+  color: var(--sage-dark);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+/* ── LAYOUT ── */
+.app {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: white;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-top {
+  padding: 20px 16px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-lighter);
+  margin-bottom: 10px;
+}
+
+.new-chat-btn {
+  width: 100%;
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.new-chat-btn:hover { background: var(--sage-dark); }
+
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 10px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-lighter);
+  padding: 0 6px;
+  margin-bottom: 6px;
+}
+
+.quick-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-soft);
+  font-weight: 500;
+  transition: all 0.15s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.quick-item:hover { background: var(--sage-pale); color: var(--sage-dark); }
+.quick-item-icon { font-size: 15px; width: 20px; flex-shrink: 0; }
+
+.drug-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--sage-pale);
+  border: 1px solid var(--sage-light);
+  color: var(--sage-dark);
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 3px;
+  transition: all 0.15s;
+}
+.drug-chip:hover { background: var(--sage); color: white; border-color: var(--sage); }
+
+/* ── CHAT AREA ── */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Welcome screen */
+.welcome {
+  max-width: 560px;
+  margin: 40px auto 0;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+
+.welcome-icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.welcome h2 {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.welcome h2 em {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.welcome p {
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.welcome-examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  text-align: left;
+}
+
+.example-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+.example-card:hover {
+  border-color: var(--sage-light);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+.example-card strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* Messages */
+.msg {
+  display: flex;
+  gap: 10px;
+  max-width: 760px;
+  animation: msgIn 0.3s ease;
+}
+
+@keyframes msgIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+
+.msg.user { flex-direction: row-reverse; align-self: flex-end; }
+.msg.assistant { align-self: flex-start; }
+
+.msg-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.msg.user .msg-avatar {
+  background: linear-gradient(135deg, #B8D4BB, var(--sage-light));
+}
+
+.msg.assistant .msg-avatar {
+  background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+  box-shadow: 0 2px 8px rgba(107,158,120,0.3);
+}
+
+.msg-bubble {
+  max-width: 85%;
+  padding: 14px 18px;
+  border-radius: var(--r);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.msg.user .msg-bubble {
+  background: var(--sage);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.msg.assistant .msg-bubble {
+  background: white;
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/* AI response formatting */
+.msg.assistant .msg-bubble h3 {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 12px 0 6px;
+}
+.msg.assistant .msg-bubble h3:first-child { margin-top: 0; }
+
+.msg.assistant .msg-bubble p { margin-bottom: 8px; }
+.msg.assistant .msg-bubble p:last-child { margin-bottom: 0; }
+
+.msg.assistant .msg-bubble ul {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+.msg.assistant .msg-bubble li { margin-bottom: 4px; }
+
+.safety-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.safety-inline.green { background: var(--green-bg); color: var(--green-txt); }
+.safety-inline.yellow { background: var(--yellow-bg); color: var(--yellow-txt); }
+.safety-inline.red { background: var(--red-bg); color: var(--red-txt); }
+
+.disclaimer-inline {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #FFF8F0;
+  border-left: 3px solid #FFB74D;
+  border-radius: 0 10px 10px 0;
+  font-size: 12.5px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+/* Typing indicator */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  width: fit-content;
+}
+.dot {
+  width: 7px; height: 7px;
+  background: var(--sage-light);
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); background: var(--sage); }
+}
+
+/* ── INPUT BAR ── */
+.input-bar {
+  padding: 16px 20px;
+  background: white;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.input-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 8px 8px 8px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-wrap:focus-within {
+  border-color: var(--sage-light);
+  box-shadow: 0 0 0 3px rgba(107,158,120,0.12);
+}
+
+#userInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14.5px;
+  color: var(--text);
+  outline: none;
+  resize: none;
+  max-height: 120px;
+  line-height: 1.5;
+  padding: 6px 0;
+}
+#userInput::placeholder { color: var(--text-lighter); }
+
+.send-btn {
+  width: 38px; height: 38px;
+  background: var(--sage);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.send-btn:hover { background: var(--sage-dark); transform: scale(1.05); }
+.send-btn:disabled { background: var(--sage-light); cursor: not-allowed; transform: none; }
+
+.input-hint {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-lighter);
+  margin-top: 8px;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .sidebar { display: none; }
+  .situation-pill .sit-btn { padding: 5px 9px; font-size: 11px; }
+  .welcome-examples { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">🌿</div>
+    <div class="logo-name">Farma<span>Mamá</span></div>
+  </div>
+  <div class="header-right">
+    <div class="situation-pill">
+      <button class="sit-btn active" onclick="setSituation('lm', this)">🤱 Lactancia</button>
+      <button class="sit-btn" onclick="setSituation('emb', this)">🤰 Embarazo</button>
+      <button class="sit-btn" onclick="setSituation('both', this)">Ambas</button>
+    </div>
+  </div>
+</header>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="sidebar-title">Consultas</div>
+      <button class="new-chat-btn" onclick="newChat()">✏️ Nueva consulta</button>
+    </div>
+    <div class="sidebar-scroll">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Preguntas frecuentes</div>
+        <button class="quick-item" onclick="sendQuick('¿Puedo tomar ibuprofeno dando el pecho?')">
+          <span class="quick-item-icon">💊</span> Ibuprofeno y lactancia
+        </button>
+        <button class="quick-item" onclick="sendQuick('¿Es seguro el Nolotil en el embarazo?')">
+          <span class="quick-item-icon">🤰</span> Nolotil en embarazo
+        </button>
+        <button class="quick-item" onclick="sendQuick('¿Qué antibiótico puedo tomar si estoy dando el pecho?')">
+          <span class="quick-item-icon">🦠</span> Antibióticos seguros
+        </button>
+        <button class="quick-item" onclick="sendQuick('Tengo alergia y quiero tomar antihistamínico, ¿cuál es más seguro en la lactancia?')">
+          <span class="quick-item-icon">🌸</span> Antihistamínicos
+        </button>
+        <button class="quick-item" onclick="sendQuick('¿Puedo tomar omeprazol durante el embarazo?')">
+          <span class="quick-item-icon">🫃</span> Omeprazol embarazo
+        </button>
+        <button class="quick-item" onclick="sendQuick('¿El fluconazol es compatible con la lactancia?')">
+          <span class="quick-item-icon">🍄</span> Fluconazol y lactancia
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Buscar medicamento</div>
+        <div style="padding: 0 4px; line-height: 1.8;">
+          <span class="drug-chip" onclick="sendQuick('¿Paracetamol en lactancia?')">Paracetamol</span>
+          <span class="drug-chip" onclick="sendQuick('¿Ibuprofeno en embarazo?')">Ibuprofeno</span>
+          <span class="drug-chip" onclick="sendQuick('¿Nolotil en lactancia?')">Nolotil</span>
+          <span class="drug-chip" onclick="sendQuick('¿Augmentine en embarazo?')">Augmentine</span>
+          <span class="drug-chip" onclick="sendQuick('¿Polaramine en lactancia?')">Polaramine</span>
+          <span class="drug-chip" onclick="sendQuick('¿Primperán en embarazo?')">Primperán</span>
+          <span class="drug-chip" onclick="sendQuick('¿Motilium en lactancia?')">Motilium</span>
+          <span class="drug-chip" onclick="sendQuick('¿Hierro en embarazo?')">Hierro</span>
+          <span class="drug-chip" onclick="sendQuick('¿Fortecortin en lactancia?')">Fortecortin</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <div class="chat-area">
+    <div class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <span class="welcome-icon">👩‍⚕️</span>
+        <h2>Hola, soy tu <em>farmacéutica virtual</em></h2>
+        <p>Puedes preguntarme sobre cualquier medicamento durante el embarazo o la lactancia. Te explicaré si es seguro, qué precauciones tener y qué alternativas existen — en lenguaje claro, sin tecnicismos.</p>
+        <div class="welcome-examples">
+          <div class="example-card" onclick="sendQuick('Me duele la cabeza y estoy dando el pecho. ¿Puedo tomar algo?')">
+            <strong>💊 Dolor / Fiebre</strong>
+            Me duele la cabeza y estoy dando el pecho. ¿Puedo tomar algo?
+          </div>
+          <div class="example-card" onclick="sendQuick('Tengo una infección urinaria en el embarazo. ¿Qué antibiótico es seguro?')">
+            <strong>🦠 Infección</strong>
+            Tengo una infección urinaria en el embarazo. ¿Qué antibiótico es seguro?
+          </div>
+          <div class="example-card" onclick="sendQuick('¿Puedo tomar Nurofen gel para el dolor de espalda en el tercer trimestre?')">
+            <strong>🌿 Tópicos</strong>
+            ¿Puedo tomar Nurofen gel para el dolor de espalda en el tercer trimestre?
+          </div>
+          <div class="example-card" onclick="sendQuick('Estoy tomando amoxicilina y omeprazol. ¿Son compatibles entre sí durante la lactancia?')">
+            <strong>⚠️ Combinaciones</strong>
+            Estoy tomando amoxicilina y omeprazol. ¿Son compatibles entre sí en lactancia?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-bar">
+      <div class="input-wrap">
+        <textarea id="userInput" rows="1"
+          placeholder="Escribe tu pregunta sobre un medicamento…"
+          onkeydown="handleKey(event)"
+          oninput="autoResize(this)"></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()">➤</button>
+      </div>
+      <div class="input-hint">ℹ️ Información orientativa — no sustituye la consulta con tu médico o farmacéutico</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── DATABASE ──────────────────────────────────────────────────────────────────
+const DB = [
+  { inn:"Paracetamol", trade:"Apiretal, Efferalgan, Gelocatil, Termalgín", category:"Analgésico / Antipirético", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Es el analgésico más seguro durante la lactancia. Pasa a la leche en cantidades muy pequeñas (menos del 2% de la dosis materna). No se han descrito efectos adversos en bebés lactantes.", text_emb:"Analgésico de elección durante todo el embarazo. Se puede usar en los tres trimestres a dosis habituales. Consultar al médico si se necesita más de unos pocos días seguidos.", interactions:"Warfarina (potencia efecto anticoagulante con uso prolongado)", sources:"LactMed, e-lactancia" },
+  { inn:"Ibuprofeno", trade:"Nurofen, Bexifen, Espidifen, Dalsy", category:"Analgésico / Antiinflamatorio (AINE)", safety_lm:"🟢 Seguro", safety_emb:"🟡 Precaución — evitar T3", trimestres:"T1, T2 (evitar T3)", text_lm:"Compatible con la lactancia. Cantidad que pasa a la leche muy baja. Uno de los antiinflamatorios preferidos en madres lactantes.", text_emb:"Evitar en el tercer trimestre (semana 28+): puede afectar al riñón del bebé y cerrar prematuramente el ductus arterioso. En T1 y T2 usar a dosis mínima el menor tiempo posible.", interactions:"AAS, corticoides, anticoagulantes, litio", sources:"LactMed, AEMPS, e-lactancia" },
+  { inn:"Metamizol", trade:"Nolotil, Lasain, Metalgial", category:"Analgésico / Antipirético", safety_lm:"🟡 Precaución", safety_emb:"🟡 Precaución — evitar T3", trimestres:"Evitar T3", text_lm:"Riesgo teórico de agranulocitosis en el bebé. Primera opción: paracetamol. Si el médico lo considera necesario, uso puntual aceptable.", text_emb:"No es la primera opción. Evitar en T3 por riesgo de cierre del ductus. Usar solo si otros analgésicos son insuficientes, bajo prescripción.", interactions:"Ciclosporina, metotrexato", sources:"e-lactancia, AEMPS" },
+  { inn:"Ácido acetilsalicílico", trade:"Aspirina, AAS, Adiro", category:"Analgésico / Antiagregante / AINE", safety_lm:"🟡 Precaución según dosis", safety_emb:"🟡 Precaución — depende de dosis", trimestres:"Dosis baja T1-T3; evitar dosis analgésica en T3", text_lm:"A dosis analgésicas desaconsejado (riesgo síndrome de Reye). A dosis bajas antiagregantes (75–150 mg) es compatible bajo control médico.", text_emb:"A dosis bajas indicado en embarazos de riesgo (preeclampsia). A dosis analgésicas evitar especialmente en T3.", interactions:"Anticoagulantes, ibuprofeno, corticoides, metotrexato", sources:"LactMed, AEMPS, e-lactancia" },
+  { inn:"Amoxicilina", trade:"Amoxicilina Normon, Clamoxyl, Ardine", category:"Antibiótico (penicilina)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Cantidades en leche muy pequeñas. Puede alterar ligeramente la flora del bebé (heces blandas) sin representar riesgo real.", text_emb:"Antibiótico de primera elección en el embarazo. Sin efectos teratogénicos conocidos. Uso en los tres trimestres bajo prescripción.", interactions:"Anticoagulantes orales, metotrexato", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Amoxicilina/clavulánico", trade:"Augmentine, Clavumox, Duonasa", category:"Antibiótico (penicilina + inhibidor β-lactamasa)", safety_lm:"🟢 Seguro", safety_emb:"🟡 Precaución — ver contexto", trimestres:"Precaución en amenaza de parto prematuro", text_lm:"Compatible con la lactancia. Puede causar heces blandas o candidiasis oral en el bebé. No interrumpir lactancia.", text_emb:"Precaución en amenaza de parto prematuro: asociado a mayor riesgo de enterocolitis necrotizante. En embarazos a término, sin esa preocupación.", interactions:"Anticoagulantes, metotrexato, alopurinol", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Azitromicina", trade:"Zitromax, Hemomycin, Vinzam", category:"Antibiótico (macrólido)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Buena alternativa en alérgicas a penicilina.", text_emb:"Sin efectos teratogénicos conocidos. Alternativa habitual en alérgicas a penicilina.", interactions:"Warfarina, digoxina, ergotamina, antiácidos (reducen absorción)", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Cefalexina", trade:"Keflex, Cefalexina Normon", category:"Antibiótico (cefalosporina 1ª gen.)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Cantidades en leche mínimas. Buena opción en mastitis, infecciones urinarias o cutáneas.", text_emb:"Sin efectos teratogénicos conocidos. Buena opción para infecciones urinarias, cutáneas o dentales.", interactions:"Probenecid, anticoagulantes orales", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Metronidazol", trade:"Flagyl, Metronidazol Normon", category:"Antibiótico / Antiparasitario", safety_lm:"🟡 Precaución según dosis", safety_emb:"🟡 Precaución — evitar T1 a dosis altas", trimestres:"Evitar T1 a dosis altas", text_lm:"A dosis única (2g) algunos expertos recomiendan interrumpir lactancia 12–24h. A dosis habituales (250–500 mg/8h) mayoría de fuentes lo considera compatible.", text_emb:"Evitar en T1 a dosis altas. En T2 y T3 usar cuando indicado (vaginosis, tricomoniasis) bajo prescripción.", interactions:"Alcohol (efecto disulfiram), warfarina, litio, ciclosporina", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Loratadina", trade:"Clarityne, Loratadina Normon", category:"Antihistamínico (2ª generación)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Antihistamínico de primera elección en lactancia. Cantidades en leche mínimas. No produce sedación en el bebé.", text_emb:"Antihistamínico preferido en el embarazo. Sin efectos teratogénicos conocidos. Útil en rinitis alérgica gestacional.", interactions:"Ketoconazol, eritromicina (aumentan niveles levemente)", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Cetirizina", trade:"Zyrtec, Alerlisin, Reactine", category:"Antihistamínico (2ª generación)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. No produce sedación significativa. Buena alternativa a loratadina.", text_emb:"Sin efectos teratogénicos conocidos. Junto con loratadina, opción preferida para alergias en el embarazo.", interactions:"Depresores del SNC (sedación leve), teofilina", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Dexclorfeniramina", trade:"Polaramine", category:"Antihistamínico (1ª generación)", safety_lm:"🟡 Precaución", safety_emb:"🟡 Precaución — evitar T3 tardío", trimestres:"Evitar T3 tardío", text_lm:"Puede causar sedación en el bebé. Preferir loratadina o cetirizina. Uso puntual no es motivo de alarma.", text_emb:"Evitar en T3 tardío: depresión respiratoria neonatal o síndrome de abstinencia en el recién nacido.", interactions:"Alcohol, sedantes, IMAO (contraindicado)", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Omeprazol", trade:"Losec, Omeprazol Normon, Belfa", category:"Inhibidor bomba de protones (IBP)", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Compatible con la lactancia. Se destruye en estómago ácido del bebé y no se absorbe significativamente. IBP más estudiado en lactancia.", text_emb:"No es teratogénico. IBP con más datos de seguridad en el embarazo. Útil en reflujo gestacional.", interactions:"Clopidogrel (reduce efecto antiagregante), metotrexato, atazanavir", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Domperidona", trade:"Motilium, Domperidona Normon", category:"Procinético / Antiemético", safety_lm:"🟡 Precaución", safety_emb:"🟡 Precaución — evitar T1", trimestres:"Evitar T1", text_lm:"Aumenta prolactina. Riesgo teórico de arritmia en el bebé a dosis altas. No usar sin valoración médica.", text_emb:"Evitar en T1. En T2–T3 uso puntual bajo prescripción. AEMPS limita su uso por riesgo cardiovascular.", interactions:"Antifúngicos azólicos, macrólidos, antiarrítmicos (riesgo QT)", sources:"e-lactancia, AEMPS, EMA" },
+  { inn:"Loperamida", trade:"Fortasec, Imodium", category:"Antidiarreico", safety_lm:"🟢 Seguro", safety_emb:"🟡 Precaución", trimestres:"Evitar T1, precaución T3", text_lm:"Pasa muy poco a la leche. Sin efectos adversos descritos en lactantes. Uso puntual para diarrea aguda.", text_emb:"Evitar en T1. En T2 uso puntual. En T3 precaución a dosis altas. Nunca en diarrea con fiebre o sangre sin evaluación médica.", interactions:"Quinidina, ritonavir (aumentan niveles)", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Metoclopramida", trade:"Primperán, Metoclopramida Normon", category:"Antiemético / Procinético", safety_lm:"🟡 Precaución", safety_emb:"🟢 Seguro", trimestres:"T1, T2, T3", text_lm:"Aumenta prolactina. Pasa a la leche en cantidades moderadas. Puede causar irritabilidad o somnolencia en el bebé con uso prolongado. Uso breve aceptable bajo supervisión.", text_emb:"Sin efectos teratogénicos. Opción para náuseas/hiperemesis gravídica. Los tres trimestres bajo prescripción.", interactions:"Anticolinérgicos, opioides, antipsicóticos (riesgo extrapiramidal)", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Ibuprofeno tópico", trade:"Dolocyl gel, Nurofen gel, Dolgit", category:"Analgésico tópico (AINE)", safety_lm:"🟢 Seguro", safety_emb:"🟡 Precaución — evitar T3", trimestres:"Evitar T3", text_lm:"Absorción sistémica muy baja. Cantidad en leche insignificante. Evitar aplicar cerca del pezón.", text_emb:"Evitar en T3 por precaución (igual que oral). En T1 y T2 uso puntual en zonas pequeñas.", interactions:"Mínimas. Precaución con anticoagulantes en grandes superficies.", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Dexametasona", trade:"Fortecortin, Dexametasona Normon, Decadron", category:"Corticoide sistémico", safety_lm:"🟡 Precaución", safety_emb:"🟡 Depende de dosis y contexto", trimestres:"Precaución T1; indicado semanas 24–34 (maduración pulmonar)", text_lm:"Con dosis bajas y uso puntual el riesgo es mínimo. Dosis altas/prolongadas: posible supresión del eje hormonal del lactante.", text_emb:"Evitar dosis altas en T1. En semanas 24–34 indicado para maduración pulmonar fetal en riesgo de parto prematuro: tratamiento establecido y beneficioso.", interactions:"AINE (riesgo GI), diuréticos, antidiabéticos, vacunas vivas", sources:"LactMed, e-lactancia, AEMPS" },
+  { inn:"Fluconazol", trade:"Diflucan, Fluconazol Normon, Zoltec", category:"Antifúngico (azol)", safety_lm:"🟡 Precaución según dosis", safety_emb:"🟡 Evitar T1 a dosis altas", trimestres:"Evitar T1 (dosis altas); precaución T2–T3", text_lm:"A dosis única 150 mg (candidiasis vaginal) exposición del bebé baja y generalmente aceptada. En tratamientos prolongados, consultar.", text_emb:"Evitar en T1 a dosis altas (riesgo malformaciones con 400–800 mg/día). A dosis única 150 mg el riesgo es menor. Preferir alternativas tópicas (clotrimazol) siempre que sea posible.", interactions:"Warfarina, estatinas, fenitoína, ciclosporina, domperidona (QT)", sources:"LactMed, e-lactancia, AEMPS, EMA" },
+  { inn:"Hierro (sulfato ferroso)", trade:"Tardyferon, Ferogradumet, Ferrograd, Ferplex", category:"Suplemento mineral / Antianémico", safety_lm:"🟢 Seguro", safety_emb:"🟢 Seguro y frecuentemente necesario", trimestres:"T1, T2, T3", text_lm:"Completamente seguro. El hierro en leche se regula independientemente de la ingesta materna. Corregir anemia mejora el bienestar general.", text_emb:"Seguro y frecuentemente necesario. La demanda de hierro aumenta en T2 y T3. Tomar en ayunas o con vitamina C para mejor absorción.", interactions:"Antiácidos, IBP, calcio, tetraciclinas, quinolonas, levotiroxina (reducen absorción — separar 2h)", sources:"LactMed, OMS, AEMPS, SEGO" }
+];
+
+const DB_TEXT = DB.map(d =>
+  `[${d.inn} | ${d.trade} | ${d.category}]
+  LM: ${d.safety_lm} — ${d.text_lm}
+  EMB: ${d.safety_emb} — ${d.text_emb}
+  Interacciones: ${d.interactions}
+  Fuentes: ${d.sources}`
+).join('\n\n');
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let situation = 'lm';
+let conversationHistory = [];
+let isLoading = false;
+
+const SITUATION_LABELS = {
+  lm: 'lactancia materna',
+  emb: 'embarazo',
+  both: 'lactancia materna y embarazo'
+};
+
+function setSituation(s, el) {
+  situation = s;
+  document.querySelectorAll('.sit-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── SYSTEM PROMPT ─────────────────────────────────────────────────────────────
+function buildSystemPrompt() {
+  return `Eres FarmaMamá, una farmacéutica clínica experta en medicamentos durante el embarazo y la lactancia materna. Trabajas para una aplicación española dirigida a madres.
+
+Tu misión: responder de forma clara, cálida y sin tecnicismos sobre la seguridad de medicamentos. La usuaria es una madre española, no una profesional médica.
+
+CONTEXTO ACTUAL: La usuaria está en situación de: ${SITUATION_LABELS[situation]}.
+
+BASE DE DATOS DE MEDICAMENTOS (usa esta información como fuente primaria):
+${DB_TEXT}
+
+INSTRUCCIONES DE RESPUESTA:
+1. Responde SIEMPRE en español, con tono cálido y cercano (como una farmacéutica de confianza, no un robot).
+2. Sé concisa: máximo 150–200 palabras por respuesta. Sin introducciones largas.
+3. Estructura tu respuesta así cuando sea relevante:
+   - Veredicto claro al inicio: ✅ Seguro / ⚠️ Con precaución / 🔴 Evitar
+   - Explicación breve en 2–3 frases
+   - Si hay condición importante (trimestre, dosis), menciónala
+   - Si hay alternativa más segura, sugiérela
+4. Si preguntan por un medicamento que NO está en tu base de datos, dilo honestamente y sugiere consultar e-lactancia.org o AEMPS.
+5. Si preguntan por combinaciones de medicamentos, analiza cada uno y comenta si hay interacciones relevantes.
+6. SIEMPRE termina recordando en 1 frase que consulten a su médico o farmacéutico para casos específicos.
+7. NO uses listas largas. Párrafos cortos. Lenguaje humano.
+8. Si la pregunta no es sobre medicamentos en embarazo/lactancia, redirige amablemente al tema.`;
+}
+
+// ── CHAT LOGIC ─────────────────────────────────────────────────────────────────
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function sendQuick(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+function newChat() {
+  conversationHistory = [];
+  const messages = document.getElementById('messages');
+  messages.innerHTML = `
+    <div class="welcome" id="welcome">
+      <span class="welcome-icon">👩‍⚕️</span>
+      <h2>Hola, soy tu <em>farmacéutica virtual</em></h2>
+      <p>Puedes preguntarme sobre cualquier medicamento durante el embarazo o la lactancia. Te explicaré si es seguro, qué precauciones tener y qué alternativas existen — en lenguaje claro, sin tecnicismos.</p>
+      <div class="welcome-examples">
+        <div class="example-card" onclick="sendQuick('Me duele la cabeza y estoy dando el pecho. ¿Puedo tomar algo?')">
+          <strong>💊 Dolor / Fiebre</strong>
+          Me duele la cabeza y estoy dando el pecho. ¿Puedo tomar algo?
+        </div>
+        <div class="example-card" onclick="sendQuick('Tengo una infección urinaria en el embarazo. ¿Qué antibiótico es seguro?')">
+          <strong>🦠 Infección</strong>
+          Tengo una infección urinaria en el embarazo. ¿Qué antibiótico es seguro?
+        </div>
+        <div class="example-card" onclick="sendQuick('¿Puedo tomar Nurofen gel para el dolor de espalda en el tercer trimestre?')">
+          <strong>🌿 Tópicos</strong>
+          ¿Puedo tomar Nurofen gel para el dolor de espalda en el tercer trimestre?
+        </div>
+        <div class="example-card" onclick="sendQuick('Estoy tomando amoxicilina y omeprazol. ¿Son compatibles entre sí durante la lactancia?')">
+          <strong>⚠️ Combinaciones</strong>
+          Estoy tomando amoxicilina y omeprazol. ¿Son compatibles entre sí en lactancia?
+        </div>
+      </div>
+    </div>`;
+}
+
+async function sendMessage() {
+  if (isLoading) return;
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  // Hide welcome
+  const welcome = document.getElementById('welcome');
+  if (welcome) welcome.remove();
+
+  // Add user message
+  addMessage('user', text);
+  input.value = '';
+  input.style.height = 'auto';
+  conversationHistory.push({ role: 'user', content: text });
+
+  // Show typing
+  const typingEl = addTyping();
+  isLoading = true;
+  document.getElementById('sendBtn').disabled = true;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: buildSystemPrompt(),
+        messages: conversationHistory
+      })
+    });
+
+    const data = await response.json();
+    typingEl.remove();
+
+    if (data.error) {
+      addMessage('assistant', `Lo siento, ha ocurrido un error: ${data.error.message}`);
+      conversationHistory.pop();
+    } else {
+      const reply = data.content.map(b => b.text || '').join('');
+      addMessage('assistant', reply);
+      conversationHistory.push({ role: 'assistant', content: reply });
+    }
+  } catch (err) {
+    typingEl.remove();
+    addMessage('assistant', 'Lo siento, no he podido conectar con el servidor. Por favor, inténtalo de nuevo.');
+    conversationHistory.pop();
+  }
+
+  isLoading = false;
+  document.getElementById('sendBtn').disabled = false;
+}
+
+function addMessage(role, text) {
+  const messages = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+
+  const avatar = role === 'user' ? '👤' : '🌿';
+  const content = role === 'assistant' ? formatAI(text) : escapeHTML(text);
+
+  div.innerHTML = `
+    <div class="msg-avatar">${avatar}</div>
+    <div class="msg-bubble">${content}</div>
+  `;
+
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const messages = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg assistant';
+  div.innerHTML = `
+    <div class="msg-avatar">🌿</div>
+    <div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  `;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+function formatAI(text) {
+  // Convert markdown-like formatting to HTML
+  let html = escapeHTML(text);
+
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+  // Safety emojis → styled badges
+  html = html.replace(/✅\s*(Seguro[^\n<]*)/g, '<span class="safety-inline green">✅ $1</span>');
+  html = html.replace(/⚠️\s*(Con precaución[^\n<]*|Precaución[^\n<]*)/g, '<span class="safety-inline yellow">⚠️ $1</span>');
+  html = html.replace(/🔴\s*(Evitar[^\n<]*)/g, '<span class="safety-inline red">🔴 $1</span>');
+
+  // Line breaks → paragraphs
+  const parts = html.split(/\n\n+/);
+  html = parts.map(p => {
+    p = p.trim();
+    if (!p) return '';
+    // Handle single line breaks
+    p = p.replace(/\n/g, '<br>');
+    return `<p>${p}</p>`;
+  }).filter(Boolean).join('');
+
+  return html;
+}
+
+function escapeHTML(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
