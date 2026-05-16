@@ -286,23 +286,18 @@ line-height: 1.65;
 display: flex;
 gap: 7px;
 margin-bottom: 14px;
-justify-content: flex-start;
-flex-wrap: nowrap;
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-scrollbar-width: none;
-padding-bottom: 4px;
+justify-content: center;
+flex-wrap: wrap;
+padding-bottom: 2px;
 }
-
-.type-filter::-webkit-scrollbar { display: none; }
 
 .type-btn {
 display: flex;
 align-items: center;
 gap: 4px;
-padding: 7px 14px;
+padding: 6px 12px;
 border-radius: 30px;
-font-size: 13px;
+font-size: 12px;
 font-weight: 600;
 border: 2px solid #C8E0C4;
 background: white;
@@ -990,7 +985,7 @@ margin-top: 4px;
 position: fixed;
 bottom: 24px;
 right: 20px;
-background: var(–green);
+background: #3D6B38;
 color: white;
 border-radius: 28px;
 padding: 12px 18px 12px 14px;
@@ -998,7 +993,7 @@ display: flex;
 align-items: center;
 gap: 8px;
 cursor: pointer;
-box-shadow: 0 6px 20px rgba(61,107,56,0.4);
+box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(255,255,255,0.9);
 z-index: 999;
 font-weight: 700;
 font-size: 14px;
@@ -1161,18 +1156,21 @@ margin-bottom: 10px;
 display: flex;
 align-items: center;
 gap: 12px;
-padding: 11px 14px;
-border: 1.5px solid var(–warm-border);
+padding: 12px 14px;
+border: 1.5px solid #E8EFE5;
 border-radius: 12px;
 text-decoration: none;
-color: var(–text);
+color: #1E3A1B;
 font-size: 13px;
 transition: all 0.15s;
+background: white;
+box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-.nf-link:hover { border-color: var(–green); background: var(–green-pale); }
+.nf-link:hover { border-color: #3D6B38; background: #EEF7EB; }
 .nf-link > span:first-child { font-size: 22px; flex-shrink: 0; }
-.nf-link small { color: var(–text-soft); font-size: 11px; display: block; margin-top: 1px; }
+.nf-link strong { color: #1E3A1B; font-size: 13px; display: block; }
+.nf-link small { color: #6B8C65; font-size: 11px; display: block; margin-top: 2px; }
 
 .nf-consult {
 display: flex;
@@ -2067,7 +2065,13 @@ const DB = [
   // ══ SUPLEMENTOS ADICIONALES ══
   { type:"suplemento", inn:"Hierba de San Benito / Agnus castus", trade:"Vitex agnus-castus, Mastodynon, Femicur", category:"Hierba medicinal — Hormonal / Galactagogo débil", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado — actúa sobre prolactina", label_emb:"❌ Contraindicado — actividad hormonal", trimestres:"Contraindicado", text_lm:"El agnus castus actúa sobre la dopamina y la prolactina. Contraindicado en lactancia. Puede reducir o aumentar la producción de leche de forma impredecible.", text_emb:"Contraindicado en embarazo por actividad hormonal. Puede interferir con el equilibrio hormonal del embarazo.", interactions:"No combinar con antipsicóticos ni con medicación hormonal", sources:["e-lactancia","EMA","ESCOP"], tags:["hierba","hormonal","prolactina","galactagogo","galactofugo","contraindicado"] },
 
-  { type:"suplemento", inn:"Aceite de onagra / Borraja", trade:"Aceite de onagra, evening primrose oil, aceite de borraja", category:"Suplemento — Ácidos grasos gamma-linolénico", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Datos limitados en LM — uso puntual de bajo riesgo", label_emb:"❌ Evitar en T3 — puede inducir contracciones", trimestres:"Contraindicado en T3", text_lm:"El aceite de onagra tiene datos limitados en lactancia. Uso puntual para piel seca o síndrome premenstrual se considera de bajo riesgo. Sin evidencia sólida de beneficio.", text_emb:"El aceite de onagra puede estimular contracciones uterinas — evitar especialmente en T3. Datos insuficientes de seguridad en T1 y T2.", interactions:"Puede potenciar anticoagulantes y aumentar riesgo de hemorragia con AINEs", sources:["e-lactancia","NIH"], tags:["suplemento","onagra","borraja","omega6","piel","hormonal"] }
+  { type:"suplemento", inn:"Aceite de onagra / Borraja", trade:"Aceite de onagra, evening primrose oil, aceite de borraja", category:"Suplemento — Ácidos grasos gamma-linolénico", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Datos limitados en LM — uso puntual de bajo riesgo", label_emb:"❌ Evitar en T3 — puede inducir contracciones", trimestres:"Contraindicado en T3", text_lm:"El aceite de onagra tiene datos limitados en lactancia. Uso puntual para piel seca o síndrome premenstrual se considera de bajo riesgo. Sin evidencia sólida de beneficio.", text_emb:"El aceite de onagra puede estimular contracciones uterinas — evitar especialmente en T3. Datos insuficientes de seguridad en T1 y T2.", interactions:"Puede potenciar anticoagulantes y aumentar riesgo de hemorragia con AINEs", sources:["e-lactancia","NIH"], tags:["suplemento","onagra","borraja","omega6","piel","hormonal"] },
+
+  { type:"procedimiento", inn:"Colonoscopia", trade:"Colonoscopia diagnóstica, colonoscopia terapéutica, rectoscopia", category:"Procedimiento diagnóstico — Endoscopia digestiva", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Posible si es urgente — sedación con precaución", label_emb:"❌ Evitar salvo urgencia — riesgo por sedación y posición", trimestres:"Solo si urgente; preferir T2 si imprescindible", text_lm:"La colonoscopia en lactancia es posible si hay indicación médica. La sedación utilizada (propofol, midazolam) pasa a la leche en pequeñas cantidades — se recomienda extraer y desechar la leche de las siguientes 4-6h tras el procedimiento como medida de precaución. La colonoscopia en sí no afecta a la producción.", text_emb:"En embarazo se evita salvo urgencia (hemorragia activa, masa sospechosa). Si es imprescindible, preferir el segundo trimestre. Riesgos: la posición en decúbito lateral puede comprimir la vena cava, la sedación cruza la placenta y existe riesgo de parto prematuro por estimulación. Siempre en centro hospitalario con monitorización fetal.", interactions:"Laxantes de preparación: algunos están contraindicados en embarazo (fosfato sódico). Preferir polietilenglicol (macrogol) que es seguro.", sources:["ACOG","SEGO","e-lactancia"], tags:["procedimiento","colonoscopia","endoscopia","digestivo","sedación","diagnóstico"] },
+
+  { type:"procedimiento", inn:"Gastroscopia (endoscopia digestiva alta)", trade:"Gastroscopia, endoscopia alta, EDA", category:"Procedimiento diagnóstico — Endoscopia digestiva alta", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Posible si indicada — desechar leche 4-6h post-sedación", label_emb:"⚠️ Solo si urgente — preferir T2", trimestres:"T2 preferiblemente si imprescindible", text_lm:"La gastroscopia es posible durante la lactancia. Si se usa sedación, extraer y desechar la leche de las 4-6h siguientes al procedimiento. Sin sedación (solo anestesia local faríngea), no hay restricción.", text_emb:"Posible en embarazo si hay indicación urgente (hemorragia digestiva, sospecha de obstrucción). Preferir T2. La posición de decúbito lateral izquierdo es la más segura en embarazo.", interactions:"Sedación: propofol y midazolam son los más estudiados. Informar siempre al equipo del estado de lactancia/embarazo.", sources:["ACOG","SEGO","e-lactancia"], tags:["procedimiento","gastroscopia","endoscopia","digestivo","sedación","diagnóstico"] },
+
+  { type:"procedimiento", inn:"Cirugía (anestesia general)", trade:"Anestesia general, cirugía bajo anestesia, operación quirúrgica", category:"Procedimiento quirúrgico — Anestesia general", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Reanudar lactancia cuando estés despierta y alerta", label_emb:"⚠️ Solo urgente o imprescindible — riesgo por anestesia", trimestres:"Preferir T2 para cirugías electivas", text_lm:"La anestesia general es compatible con la lactancia. Los anestésicos modernos (propofol, sevoflurano) se eliminan rápidamente. Puedes reanudar la lactancia cuando estés despierta y alerta, sin necesidad de esperar tiempos específicos ni desechar la leche según las guías más actuales (ABM). Mantener extracción durante el ingreso para no perder producción.", text_emb:"La cirugía electiva se pospone hasta después del parto siempre que sea posible. Si es urgente o imprescindible, preferir T2 (menor riesgo que T1 y T3). La anestesia general conlleva riesgo de parto prematuro y requiere monitorización fetal. Informar siempre al equipo del embarazo.", interactions:"Algunos relajantes musculares y opioides requieren ajuste de dosis. Informar de todos los medicamentos tomados.", sources:["ABM","ACOG","SEGO","e-lactancia"], tags:["procedimiento","anestesia general","cirugía","operación","quirúrgico"] }
 
 ];
 // ══════════════════════════════════════════════
@@ -2198,6 +2202,9 @@ const SYNONYMS = {
   'depresion posparto':'sertralina','tristeza':'sertralina',
   'coagulacion':'heparina de bajo peso molecular','trombosis':'heparina de bajo peso molecular',
   'embarazo riesgo':'progesterona micronizada','fiv':'progesterona micronizada',
+  'colonoscopia':'colonoscopia','endoscopia':'colonoscopia','rectoscopia':'colonoscopia',
+  'gastroscopia':'gastroscopia (endoscopia digestiva alta)',
+  'cirugia':'cirugía (anestesia general)','cirugía':'cirugía (anestesia general)','operacion':'cirugía (anestesia general)',
   'moco nasal':'oximetazolina nasal','nariz taponada':'oximetazolina nasal',
 };
 
@@ -2249,9 +2256,10 @@ function smartSearch(raw) {
     });
   }
 
-  if (currentType !== 'all') results = results.filter(d => d.type === currentType);
+  // Type filter only applies if user explicitly chose a type (not 'all')
+  // But we NEVER filter by type when searching by text — too restrictive
+  // Type filter only acts as visual highlight, not search restriction
 
-  // Sort: relevance first, then safety (green > yellow > red), then alphabetical
   results.sort((a, b) => {
     const rel = relevanceScore(a, q) - relevanceScore(b, q);
     if (rel !== 0) return rel;
@@ -2306,14 +2314,13 @@ function filterCategory(tag) {
     return haystack.includes(normTag);
   });
   if (!results.length) {
-    // fallback: synonym expand
     const expanded = SYNONYMS[normTag];
     if (expanded) {
       const exp = norm(expanded);
       results = DB.filter(d => norm([d.inn, d.trade, d.category, ...d.tags].join(' ')).includes(exp));
     }
   }
-  if (currentType !== 'all') results = results.filter(d => d.type === currentType);
+  // No type restriction — always show all matches
   results.sort((a,b) => safetySortScore(a) - safetySortScore(b) || a.inn.localeCompare(b.inn,'es'));
   document.getElementById('searchInput').value = tag;
   renderResults(results, tag);
