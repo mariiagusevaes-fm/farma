@@ -118,7 +118,7 @@
 - { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, ‘Segoe UI’, sans-serif;
 background: var(–cream);
 color: var(–text);
 min-height: 100vh;
@@ -189,7 +189,7 @@ border: none;
 background: transparent;
 border-radius: 16px;
 padding: 4px 10px;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 font-size: 11px;
 font-weight: 700;
 color: var(–text-soft);
@@ -284,33 +284,40 @@ line-height: 1.65;
 
 .type-filter {
 display: flex;
-gap: 8px;
+gap: 7px;
 margin-bottom: 14px;
-justify-content: center;
-flex-wrap: wrap;
+justify-content: flex-start;
+flex-wrap: nowrap;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding-bottom: 4px;
 }
+
+.type-filter::-webkit-scrollbar { display: none; }
 
 .type-btn {
 display: flex;
 align-items: center;
-gap: 5px;
-padding: 7px 16px;
+gap: 4px;
+padding: 7px 14px;
 border-radius: 30px;
 font-size: 13px;
 font-weight: 600;
-border: 2px solid var(–green-light);
+border: 2px solid #C8E0C4;
 background: white;
-color: var(–green);
+color: #3D6B38;
 cursor: pointer;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, ‘Plus Jakarta Sans’, sans-serif;
 transition: all 0.2s;
 white-space: nowrap;
+flex-shrink: 0;
 }
 
 .type-btn.active, .type-btn:hover {
-background: var(–green);
+background: #3D6B38;
 color: white;
-border-color: var(–green);
+border-color: #3D6B38;
 }
 
 /* ── SITUATION TABS ── */
@@ -323,28 +330,30 @@ flex-wrap: wrap;
 }
 
 .tab {
-padding: 8px 18px;
+padding: 9px 20px;
 border-radius: 30px;
 font-size: 13px;
 font-weight: 600;
 cursor: pointer;
-border: 2px solid var(–green-light);
+border: 2px solid #C8E0C4;
 transition: all 0.2s;
 background: white;
-color: var(–text-soft);
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+color: #6B8C65;
+font-family: -apple-system, ‘Plus Jakarta Sans’, sans-serif;
 white-space: nowrap;
+min-width: 120px;
+text-align: center;
 }
 
 .tab.active {
-background: var(–forest);
+background: #1E3A1B;
 color: #fff !important;
-border-color: var(–forest);
+border-color: #1E3A1B;
 }
 
 .tab:hover:not(.active) {
-border-color: var(–green);
-color: var(–green);
+border-color: #3D6B38;
+color: #3D6B38;
 }
 
 /* ── SEARCH BOX ── */
@@ -371,7 +380,7 @@ box-shadow: 0 4px 20px rgba(61,107,56,0.15);
 flex: 1;
 border: none;
 outline: none;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 font-size: 15px;
 color: var(–text);
 background: transparent;
@@ -386,7 +395,7 @@ color: white;
 border: none;
 border-radius: 40px;
 padding: 10px 22px;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 font-size: 13px;
 font-weight: 700;
 cursor: pointer;
@@ -416,7 +425,7 @@ font-weight: 600;
 color: var(–text-soft);
 cursor: pointer;
 transition: all 0.15s;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 }
 
 .chip:hover { border-color: var(–green); color: var(–green); background: var(–green-pale); }
@@ -725,7 +734,7 @@ opacity: 0.35; padding: 2px 4px; border-radius: 4px; transition: opacity 0.15s; 
 .save-drug-btn {
 margin-top: 10px; width: 100%; background: none;
 border: 2px dashed var(–green-light); border-radius: 10px; padding: 9px;
-font-family: ‘Plus Jakarta Sans’, sans-serif; font-size: 12px; font-weight: 600;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif; font-size: 12px; font-weight: 600;
 color: var(–green); cursor: pointer; transition: all 0.2s;
 }
 .save-drug-btn:hover { background: var(–green-pale); border-color: var(–green); }
@@ -884,7 +893,7 @@ color: var(–text-soft);
 cursor: pointer;
 transition: all 0.15s;
 white-space: nowrap;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 }
 
 .symptom-chip:hover {
@@ -921,10 +930,12 @@ main { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
 }
 /* ══ TRUST SECTION ══ */
 .trust-section {
-background: linear-gradient(135deg, var(–forest) 0%, var(–green) 100%);
+background: linear-gradient(135deg, #1E3A1B 0%, #3D6B38 100%);
 color: white;
 padding: 32px 20px;
-margin-top: 32px;
+margin-top: 0;
+width: 100%;
+box-sizing: border-box;
 }
 
 .trust-inner { max-width: 600px; margin: 0 auto; }
@@ -944,32 +955,34 @@ letter-spacing: 0.2px;
 .trust-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 14px;
+gap: 12px;
 margin-bottom: 18px;
 }
-
-@media (max-width: 480px) { .trust-grid { grid-template-columns: 1fr; } }
 
 .trust-item {
 display: flex;
 align-items: flex-start;
 gap: 10px;
-background: rgba(255,255,255,0.1);
+background: rgba(255,255,255,0.12);
 border-radius: 12px;
 padding: 12px 14px;
 }
 
-.trust-item-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.trust-item-icon { font-size: 20px; flex-shrink: 0; }
 .trust-item-text { font-size: 12px; line-height: 1.5; opacity: 0.95; }
-.trust-item-text strong { display: block; margin-bottom: 2px; font-size: 13px; }
+.trust-item-text strong { display: block; margin-bottom: 2px; font-size: 12px; }
 
 .trust-disclaimer {
 font-size: 11px;
-opacity: 0.75;
+opacity: 0.72;
 line-height: 1.5;
 border-top: 1px solid rgba(255,255,255,0.2);
 padding-top: 14px;
 margin-top: 4px;
+}
+
+@media (max-width: 500px) {
+.trust-grid { grid-template-columns: 1fr; }
 }
 
 /* ══ CHAT FAB ══ */
@@ -995,7 +1008,7 @@ user-select: none;
 
 .chat-fab:hover { background: var(–forest); transform: translateY(-2px); }
 .chat-fab-icon { font-size: 20px; }
-.chat-fab-label { font-family: ‘Plus Jakarta Sans’, sans-serif; }
+.chat-fab-label { font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif; }
 
 .chat-online-dot {
 width: 9px; height: 9px;
@@ -1085,7 +1098,7 @@ font-size: 14px;
 font-weight: 700;
 text-decoration: none;
 transition: all 0.15s;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 }
 
 .chat-option-btn.whatsapp {
@@ -1185,7 +1198,7 @@ font-size: 12px;
 font-weight: 700;
 cursor: pointer;
 white-space: nowrap;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 flex-shrink: 0;
 transition: background 0.15s;
 }
@@ -1222,7 +1235,7 @@ font-size: 13px;
 font-weight: 700;
 cursor: pointer;
 white-space: nowrap;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 transition: all 0.15s;
 flex-shrink: 0;
 }
@@ -1359,7 +1372,7 @@ border-radius: 9px;
 font-size: 12px;
 font-weight: 700;
 text-decoration: none;
-font-family: ‘Plus Jakarta Sans’, sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
 }
 
 .already-taken-cta:hover { background: #B71C1C; }
