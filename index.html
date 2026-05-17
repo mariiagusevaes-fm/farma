@@ -549,7 +549,7 @@ line-height: 1.6;
 .source-tag {
 font-size: 11px !important;
 background: #EEF7EB !important;
-border: 1.5px solid #3D6B38 !important;
+border: 1.5px solid #5A8A54 !important;
 color: #1E3A1B !important;
 padding: 4px 10px !important;
 border-radius: 20px !important;
@@ -727,7 +727,7 @@ opacity: 0.35; padding: 2px 4px; border-radius: 4px; transition: opacity 0.15s; 
 margin-top: 10px !important;
 width: 100% !important;
 background: #EEF7EB !important;
-border: 2px solid #3D6B38 !important;
+border: 2px solid #5A8A54 !important;
 border-radius: 10px !important;
 padding: 11px !important;
 font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
@@ -1513,6 +1513,62 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
     <div class="symptom-chip" onclick="quickSearch('TAC')">🖥️ TAC / Scanner</div>
     <div class="symptom-chip" onclick="quickSearch('Colonoscopia')">🔬 Colonoscopia</div>
     <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunación</div>
+    <div class="symptom-chip" onclick="quickSearch('Cirugía')">🏥 Cirugía / Operación</div>
+    <div class="symptom-chip" onclick="quickSearch('Gastroscopia')">🔭 Gastroscopia</div>
+  </div>
+</div>
+
+<!-- SITUACIONES FRECUENTES -->
+<div class="section-block" style="margin-top:24px">
+  <div class="categories-title">💬 PREGUNTAS FRECUENTES</div>
+  <div class="top-grid">
+    <div class="top-card" onclick="quickSearch('Alcohol')">
+      <span class="top-card-icon">🍷</span>
+      <span class="top-card-name">¿Puedo tomar alcohol?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Cafeína')">
+      <span class="top-card-icon">☕</span>
+      <span class="top-card-name">¿Cuánto café puedo tomar?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Sushi')">
+      <span class="top-card-icon">🍣</span>
+      <span class="top-card-name">¿Puedo comer sushi?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Salvia')">
+      <span class="top-card-icon">🌿</span>
+      <span class="top-card-name">¿Salvia para destetar?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Ibuprofeno')">
+      <span class="top-card-icon">💊</span>
+      <span class="top-card-name">¿Ibuprofeno en lactancia?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Vitamina D')">
+      <span class="top-card-icon">☀️</span>
+      <span class="top-card-name">¿Vitamina D para el bebé?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Melatonina')">
+      <span class="top-card-icon">🌙</span>
+      <span class="top-card-name">¿Melatonina para dormir?</span>
+    </div>
+    <div class="top-card" onclick="quickSearch('Valeriana')">
+      <span class="top-card-icon">😴</span>
+      <span class="top-card-name">¿Valeriana para el insomnio?</span>
+    </div>
+  </div>
+</div>
+
+<!-- DURANTE EL VIAJE -->
+<div class="section-block" style="margin-top:24px">
+  <div class="categories-title">✈️ VIAJES Y SITUACIONES ESPECIALES</div>
+  <div class="symptom-grid">
+    <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunas de viaje</div>
+    <div class="symptom-chip" onclick="quickSearch('Antihistamínico')">🤧 Mareo en viaje</div>
+    <div class="symptom-chip" onclick="quickSearch('Loratadina')">🌸 Alergia en verano</div>
+    <div class="symptom-chip" onclick="quickSearch('Ciprofloxacino')">🦠 Diarrea del viajero</div>
+    <div class="symptom-chip" onclick="quickSearch('Crema solar')">☀️ Crema solar</div>
+    <div class="symptom-chip" onclick="quickSearch('Repelente mosquitos')">🦟 Repelente de mosquitos</div>
+    <div class="symptom-chip" onclick="quickSearch('Melatonina')">🌙 Jet lag / Melatonina</div>
+    <div class="symptom-chip" onclick="quickSearch('Cloruro de sodio')">🏖️ Agua de mar / Rinitis</div>
   </div>
 </div>
 ```
@@ -2071,7 +2127,15 @@ const DB = [
 
   { type:"procedimiento", inn:"Gastroscopia (endoscopia digestiva alta)", trade:"Gastroscopia, endoscopia alta, EDA", category:"Procedimiento diagnóstico — Endoscopia digestiva alta", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Posible si indicada — desechar leche 4-6h post-sedación", label_emb:"⚠️ Solo si urgente — preferir T2", trimestres:"T2 preferiblemente si imprescindible", text_lm:"La gastroscopia es posible durante la lactancia. Si se usa sedación, extraer y desechar la leche de las 4-6h siguientes al procedimiento. Sin sedación (solo anestesia local faríngea), no hay restricción.", text_emb:"Posible en embarazo si hay indicación urgente (hemorragia digestiva, sospecha de obstrucción). Preferir T2. La posición de decúbito lateral izquierdo es la más segura en embarazo.", interactions:"Sedación: propofol y midazolam son los más estudiados. Informar siempre al equipo del estado de lactancia/embarazo.", sources:["ACOG","SEGO","e-lactancia"], tags:["procedimiento","gastroscopia","endoscopia","digestivo","sedación","diagnóstico"] },
 
-  { type:"procedimiento", inn:"Cirugía (anestesia general)", trade:"Anestesia general, cirugía bajo anestesia, operación quirúrgica", category:"Procedimiento quirúrgico — Anestesia general", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Reanudar lactancia cuando estés despierta y alerta", label_emb:"⚠️ Solo urgente o imprescindible — riesgo por anestesia", trimestres:"Preferir T2 para cirugías electivas", text_lm:"La anestesia general es compatible con la lactancia. Los anestésicos modernos (propofol, sevoflurano) se eliminan rápidamente. Puedes reanudar la lactancia cuando estés despierta y alerta, sin necesidad de esperar tiempos específicos ni desechar la leche según las guías más actuales (ABM). Mantener extracción durante el ingreso para no perder producción.", text_emb:"La cirugía electiva se pospone hasta después del parto siempre que sea posible. Si es urgente o imprescindible, preferir T2 (menor riesgo que T1 y T3). La anestesia general conlleva riesgo de parto prematuro y requiere monitorización fetal. Informar siempre al equipo del embarazo.", interactions:"Algunos relajantes musculares y opioides requieren ajuste de dosis. Informar de todos los medicamentos tomados.", sources:["ABM","ACOG","SEGO","e-lactancia"], tags:["procedimiento","anestesia general","cirugía","operación","quirúrgico"] }
+  { type:"procedimiento", inn:"Cirugía (anestesia general)", trade:"Anestesia general, cirugía bajo anestesia, operación quirúrgica", category:"Procedimiento quirúrgico — Anestesia general", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Reanudar lactancia cuando estés despierta y alerta", label_emb:"⚠️ Solo urgente o imprescindible — riesgo por anestesia", trimestres:"Preferir T2 para cirugías electivas", text_lm:"La anestesia general es compatible con la lactancia. Los anestésicos modernos (propofol, sevoflurano) se eliminan rápidamente. Puedes reanudar la lactancia cuando estés despierta y alerta, sin necesidad de esperar tiempos específicos ni desechar la leche según las guías más actuales (ABM). Mantener extracción durante el ingreso para no perder producción.", text_emb:"La cirugía electiva se pospone hasta después del parto siempre que sea posible. Si es urgente o imprescindible, preferir T2 (menor riesgo que T1 y T3). La anestesia general conlleva riesgo de parto prematuro y requiere monitorización fetal. Informar siempre al equipo del embarazo.", interactions:"Algunos relajantes musculares y opioides requieren ajuste de dosis. Informar de todos los medicamentos tomados.", sources:["ABM","ACOG","SEGO","e-lactancia"], tags:["procedimiento","anestesia general","cirugía","operación","quirúrgico"] },
+
+  { type:"medicamento", inn:"Melatonina", trade:"Melatonina 1mg, Circadin, Paidopin, Sleepmik", category:"Suplemento / Medicamento — Regulador del sueño", safety_lm:"red", safety_emb:"red", label_lm:"❌ Evitar en lactancia — datos insuficientes", label_emb:"❌ Evitar en embarazo — datos insuficientes", trimestres:"Contraindicada en embarazo y lactancia", text_lm:"La melatonina es una hormona. No hay datos de seguridad en lactancia. Se desconoce su efecto sobre el lactante. Se prefieren alternativas no farmacológicas para el insomnio (tila, melisa, lavanda, rutinas de sueño). Por principio de precaución se evita en lactancia.", text_emb:"Sin estudios de seguridad en embarazo. La melatonina es una hormona endógena con potencial actividad sobre el ritmo circadiano fetal. Por principio de precaución se evita. Alternativas: tila, melisa, relajación, higiene del sueño.", interactions:"Puede potenciar sedantes, benzodiacepinas y anticoagulantes", sources:["e-lactancia","LactMed","NIH"], tags:["medicamento","suplemento","insomnio","sueño","hormona","jet lag","sedante"] },
+
+  { type:"medicamento", inn:"Crema solar / Fotoprotector", trade:"Photoderm, Heliocare, Isdin Fotoprotector, SPF 50", category:"Producto cosmético — Fotoprotector tópico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro — usar siempre en verano", label_emb:"✅ Imprescindible en embarazo", trimestres:"T1, T2, T3", text_lm:"Los filtros solares tópicos son seguros durante la lactancia. Absorción sistémica mínima. Aplicar generosamente y reaplicar cada 2h. Evitar aplicar en el área del pezón justo antes de dar el pecho. Preferir filtros minerales (óxido de zinc, dióxido de titanio) si quieres extremar la precaución.", text_emb:"Imprescindible en el embarazo. El embarazo aumenta el riesgo de melasma (manchas). Usar SPF 50 diariamente incluso en días nublados. Los filtros minerales son los más seguros. Evitar filtros con oxybenzona en concentraciones altas durante el primer trimestre.", interactions:"Sin interacciones farmacológicas relevantes", sources:["AEMPS","e-lactancia","AAD"], tags:["medicamento","crema solar","fotoprotector","sol","verano","piel","viaje","cosmético"] },
+
+  { type:"medicamento", inn:"Repelente de mosquitos (DEET / Icaridina)", trade:"Relec, Autan, Goibi, Babaria DEET, icaridina", category:"Medicamento / Producto — Repelente insectos tópico", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Icaridina: preferible. DEET al 20-30%: aceptable con precaución", label_emb:"⚠️ Icaridina: primera elección. DEET: solo si zona de riesgo", trimestres:"T2, T3 si viaje a zona de riesgo", text_lm:"La icaridina (picaridina) es el repelente de primera elección en lactancia: mayor margen de seguridad que el DEET. El DEET al 20-30% se considera aceptable en zonas con riesgo de enfermedades vectoriales (dengue, zika, malaria). No aplicar en manos ni zona del pecho que el bebé pueda contactar.", text_emb:"La icaridina es la primera elección en embarazo. El DEET se usa en zonas de riesgo real (el riesgo del dengue/malaria supera al del repelente). Aplicar solo en piel expuesta, evitar mucosas y no inhalar. El aceite de citronela y otros repelentes naturales tienen eficacia limitada.", interactions:"Sin interacciones sistémicas relevantes a uso tópico correcto", sources:["CDC","SEGO","e-lactancia","OMS"], tags:["medicamento","repelente","mosquitos","DEET","icaridina","viaje","verano","dengue","zika"] },
+
+  { type:"alimento", inn:"Agua de mar isotónica / Suero salino nasal", trade:"Sterimar, Physiomer, Nasalmer, Rhinomer, agua de mar", category:"Producto sanitario — Higiene nasal", safety_lm:"green", safety_emb:"green", label_lm:"✅ Totalmente seguro — ideal para rinitis", label_emb:"✅ Totalmente seguro — primera opción rinitis", trimestres:"T1, T2, T3", text_lm:"El agua de mar isotónica para lavados nasales es totalmente segura durante la lactancia. Sin contraindicaciones. Ideal para rinitis, congestión nasal, alergia y resfriado. Primera opción antes de cualquier medicamento descongestionante.", text_emb:"Primera opción para rinitis y congestión nasal en el embarazo. Completamente segura. Se puede usar tantas veces como se necesite. Alivia la congestión sin riesgos fetales.", interactions:"Sin interacciones", sources:["SEGO","AEP","e-lactancia"], tags:["medicamento","suero salino","agua de mar","nasal","rinitis","resfriado","congestión","viaje"] }
 
 ];
 // ══════════════════════════════════════════════
@@ -2205,6 +2269,10 @@ const SYNONYMS = {
   'colonoscopia':'colonoscopia','endoscopia':'colonoscopia','rectoscopia':'colonoscopia',
   'gastroscopia':'gastroscopia (endoscopia digestiva alta)',
   'cirugia':'cirugía (anestesia general)','cirugía':'cirugía (anestesia general)','operacion':'cirugía (anestesia general)',
+  'melatonina':'melatonina','sueño':'melatonina','jet lag':'melatonina','dormir':'melatonina',
+  'crema solar':'crema solar / fotoprotector','protector solar':'crema solar / fotoprotector','fotoprotector':'crema solar / fotoprotector','spf':'crema solar / fotoprotector','melasma':'crema solar / fotoprotector',
+  'repelente':'repelente de mosquitos (deet / icaridina)','deet':'repelente de mosquitos (deet / icaridina)','icaridina':'repelente de mosquitos (deet / icaridina)','mosquitos':'repelente de mosquitos (deet / icaridina)','dengue':'repelente de mosquitos (deet / icaridina)',
+  'agua de mar':'agua de mar isotónica / suero salino nasal','cloruro de sodio':'agua de mar isotónica / suero salino nasal',
   'moco nasal':'oximetazolina nasal','nariz taponada':'oximetazolina nasal',
 };
 
