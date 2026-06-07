@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mariiagusevaes-fm.github.io/sitemap.xml
