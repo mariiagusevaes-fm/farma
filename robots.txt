@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mariiagusevaes-fm.github.io/sitemap.xml
+Sitemap: https://mama-clara.es/sitemap.xml
