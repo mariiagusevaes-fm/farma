@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
 
 <!-- ══ SEO PRIMARY ══ -->
-
 <title>Mama Clara — Medicamentos y alimentos seguros en embarazo y lactancia</title>
 <meta name="description" content="Comprueba si un medicamento, hierba, suplemento o alimento es seguro durante el embarazo o la lactancia. Base de datos revisada por farmacólogos clínicos y consultoras IBCLC. 300+ sustancias verificadas.">
 <meta name="keywords" content="medicamentos lactancia, medicamentos embarazo, seguridad medicamentos embarazo, hierbas embarazo, alimentos prohibidos embarazo, compatibilidad lactancia, e-lactancia, farmacología perinatal, España">
@@ -15,7 +13,6 @@
 <link rel="canonical" href="https://mamaclaraapp.es/">
 
 <!-- ══ OPEN GRAPH (WhatsApp, Facebook) ══ -->
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mamaclaraapp.es/">
 <meta property="og:title" content="Mama Clara — ¿Es seguro durante el embarazo o la lactancia?">
@@ -25,14 +22,12 @@
 <meta property="og:site_name" content="Mama Clara">
 
 <!-- ══ TWITTER CARD ══ -->
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mama Clara — Medicamentos seguros en embarazo y lactancia">
 <meta name="twitter:description" content="¿Puedo tomar esto? Consulta más de 300 medicamentos, hierbas y alimentos. Revisado por expertos.">
 <meta name="twitter:image" content="https://mamaclaraapp.es/og-image.jpg">
 
 <!-- ══ PWA / MOBILE ══ -->
-
 <meta name="theme-color" content="#3D6B38">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -40,7 +35,6 @@
 <link rel="manifest" href="/manifest.json">
 
 <!-- ══ STRUCTURED DATA ══ -->
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,7 +57,6 @@
   }
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,407 +83,399 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* ── iOS SAFE AREA FIX ── */
-
-- { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html { overflow-x: hidden; max-width: 100vw; }
-  body {
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  overflow-x: hidden;
-  max-width: 100vw;
-  }
-  .result-card, .result-section, .card-consult,
-  .alternatives-block, .disclaimer, .results-bar, .not-found {
-  max-width: 100%;
-  overflow: hidden;
-  word-break: break-word;
-  }
-
 :root {
-–forest: #1E3A1B;
-–green: #3D6B38;
-–green-mid: #5A8A54;
-–green-light: #C8E0C4;
-–green-pale: #EEF7EB;
-–green-bg: #E8F5E9;
-–green-txt: #2E7D32;
-–cream: #FAFDF8;
-–warm-cream: #F5F0E8;
-–warm-border: #E8EFE5;
-–yellow-bg: #FFF8E1;
-–yellow-txt: #E65100;
-–red-bg: #FFEBEE;
-–red-txt: #C62828;
-–text: #1E3A1B;
-–text-mid: #4A6645;
-–text-soft: #6B8C65;
-–text-lighter: #9DB896;
-–shadow: 0 4px 20px rgba(61,107,56,0.08);
-–shadow-md: 0 8px 32px rgba(61,107,56,0.12);
-–radius: 20px;
-–radius-sm: 12px;
+  --forest: #1E3A1B;
+  --green: #3D6B38;
+  --green-mid: #5A8A54;
+  --green-light: #C8E0C4;
+  --green-pale: #EEF7EB;
+  --green-bg: #E8F5E9;
+  --green-txt: #2E7D32;
+  --cream: #FAFDF8;
+  --warm-cream: #F5F0E8;
+  --warm-border: #E8EFE5;
+  --yellow-bg: #FFF8E1;
+  --yellow-txt: #E65100;
+  --red-bg: #FFEBEE;
+  --red-txt: #C62828;
+  --text: #1E3A1B;
+  --text-mid: #4A6645;
+  --text-soft: #6B8C65;
+  --text-lighter: #9DB896;
+  --shadow: 0 4px 20px rgba(61,107,56,0.08);
+  --shadow-md: 0 8px 32px rgba(61,107,56,0.12);
+  --radius: 20px;
+  --radius-sm: 12px;
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, ‘Segoe UI’, sans-serif;
-background: #FAFDF8;
-color: #1E3A1B;
-min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  background: #FAFDF8;
+  color: #1E3A1B;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ── HEADER ── */
 header {
-background: white;
-border-bottom: 1px solid #E8EFE5;
-padding: 0 20px;
-height: 62px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-position: sticky;
-top: 0;
-z-index: 100;
-gap: 12px;
+  background: white;
+  border-bottom: 1px solid #E8EFE5;
+  padding: 0 20px;
+  padding-top: env(safe-area-inset-top);
+  height: calc(62px + env(safe-area-inset-top));
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 12px;
 }
 
 .logo {
-display: flex;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
-cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .logo-leaf {
-font-size: 26px;
-line-height: 1;
+  font-size: 26px;
+  line-height: 1;
 }
 
 .logo-text {
-font-family: ‘Crimson Pro’, serif;
-font-size: 24px;
-font-style: italic;
-font-weight: 300;
-color: #1E3A1B;
-letter-spacing: -0.3px;
-line-height: 1;
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  color: #1E3A1B;
+  letter-spacing: -0.3px;
+  line-height: 1;
 }
 
 .logo-text strong {
-font-style: normal;
-font-weight: 600;
-color: #3D6B38;
+  font-style: normal;
+  font-weight: 600;
+  color: #3D6B38;
 }
 
 .header-right {
-display: flex;
-align-items: center;
-gap: 8px;
-flex-wrap: wrap;
-justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .lang-switcher {
-display: flex;
-background: #EEF7EB;
-border-radius: 20px;
-padding: 3px;
-gap: 2px;
+  display: flex;
+  background: #EEF7EB;
+  border-radius: 20px;
+  padding: 3px;
+  gap: 2px;
 }
 
 .lang-btn {
-border: none;
-background: transparent;
-border-radius: 16px;
-padding: 4px 10px;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
-font-size: 11px;
-font-weight: 700;
-color: #6B8C65;
-cursor: pointer;
-transition: all 0.2s;
-letter-spacing: 0.3px;
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B8C65;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
 }
 
 .lang-btn.active {
-background: white;
-color: #3D6B38;
-box-shadow: 0 1px 6px rgba(61,107,56,0.15);
+  background: white;
+  color: #3D6B38;
+  box-shadow: 0 1px 6px rgba(61,107,56,0.15);
 }
 
 .header-note {
-font-size: 11px;
-color: #6B8C65;
-background: #EEF7EB;
-border: 1px solid #C8E0C4;
-padding: 5px 12px;
-border-radius: 20px;
-white-space: nowrap;
-font-weight: 500;
+  font-size: 11px;
+  color: #6B8C65;
+  background: #EEF7EB;
+  border: 1px solid #C8E0C4;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 /* ── HERO ── */
 .hero {
-padding-top: max(20px, calc(env(safe-area-inset-top) + 12px));
-background: linear-gradient(135deg, #EEF7EB 0%, #F5FAF3 55%, #FDF9F0 100%);
-padding: 44px 20px 36px;
-text-align: center;
-border-bottom: 1px solid #E8EFE5;
-position: relative;
-overflow: hidden;
+  background: linear-gradient(135deg, #EEF7EB 0%, #F5FAF3 55%, #FDF9F0 100%);
+  padding: 44px 20px 36px;
+  text-align: center;
+  border-bottom: 1px solid #E8EFE5;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-deco {
-position: absolute;
-right: -30px;
-top: -20px;
-font-size: 200px;
-opacity: 0.06;
-transform: rotate(-15deg);
-pointer-events: none;
-line-height: 1;
+  position: absolute;
+  right: -30px;
+  top: -20px;
+  font-size: 200px;
+  opacity: 0.06;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  line-height: 1;
 }
 
 .hero-eyebrow {
-display: inline-flex;
-align-items: center;
-gap: 6px;
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: #5A8A54;
-background: white;
-border: 1px solid #C8E0C4;
-padding: 5px 16px;
-border-radius: 20px;
-margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #5A8A54;
+  background: white;
+  border: 1px solid #C8E0C4;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
-font-family: ‘Crimson Pro’, serif;
-font-size: clamp(26px, 5vw, 42px);
-font-weight: 300;
-font-style: italic;
-line-height: 1.15;
-color: #1E3A1B;
-margin-bottom: 12px;
-max-width: 520px;
-margin-left: auto;
-margin-right: auto;
+  font-family: 'Crimson Pro', serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.15;
+  color: #1E3A1B;
+  margin-bottom: 12px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero h1 strong {
-font-style: normal;
-font-weight: 600;
-color: #3D6B38;
+  font-style: normal;
+  font-weight: 600;
+  color: #3D6B38;
 }
 
 .hero p {
-font-size: 15px;
-color: #6B8C65;
-max-width: 440px;
-margin: 0 auto 28px;
-line-height: 1.65;
+  font-size: 15px;
+  color: #6B8C65;
+  max-width: 440px;
+  margin: 0 auto 28px;
+  line-height: 1.65;
 }
 
 /* ── TYPE FILTER BUTTONS ── */
 .search-wrap { max-width: 680px; margin: 0 auto; }
 
 .type-filter {
-display: flex;
-gap: 7px;
-margin-bottom: 14px;
-justify-content: center;
-flex-wrap: wrap;
-padding-bottom: 2px;
+  display: flex;
+  gap: 7px;
+  margin-bottom: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 2px;
 }
 
 .type-btn {
-display: flex;
-align-items: center;
-gap: 4px;
-padding: 6px 12px;
-border-radius: 30px;
-font-size: 12px;
-font-weight: 600;
-border: 2px solid #C8E0C4;
-background: white;
-color: #3D6B38;
-cursor: pointer;
-font-family: -apple-system, ‘Plus Jakarta Sans’, sans-serif;
-transition: all 0.2s;
-white-space: nowrap;
-flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 2px solid #C8E0C4;
+  background: white;
+  color: #3D6B38;
+  cursor: pointer;
+  font-family: -apple-system, 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .type-btn.active, .type-btn:hover {
-background: #3D6B38;
-color: white;
-border-color: #3D6B38;
+  background: #3D6B38;
+  color: white;
+  border-color: #3D6B38;
 }
 
 /* ── SITUATION TABS ── */
 .situation-tabs {
-display: flex;
-gap: 8px;
-margin-bottom: 14px;
-justify-content: center;
-flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tab {
-padding: 9px 20px;
-border-radius: 30px;
-font-size: 13px;
-font-weight: 600;
-cursor: pointer;
-border: 2px solid #C8E0C4;
-transition: all 0.2s;
-background: white;
-color: #6B8C65;
-font-family: -apple-system, ‘Plus Jakarta Sans’, sans-serif;
-white-space: nowrap;
-min-width: 120px;
-text-align: center;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #C8E0C4;
+  transition: all 0.2s;
+  background: white;
+  color: #6B8C65;
+  font-family: -apple-system, 'Plus Jakarta Sans', sans-serif;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
 }
 
 .tab.active {
-background: #1E3A1B;
-color: #fff !important;
-border-color: #1E3A1B;
+  background: #1E3A1B;
+  color: #fff !important;
+  border-color: #1E3A1B;
 }
 
 .tab:hover:not(.active) {
-border-color: #3D6B38;
-color: #3D6B38;
+  border-color: #3D6B38;
+  color: #3D6B38;
 }
 
 /* ── SEARCH BOX ── */
 .search-box {
-background: white;
-border-radius: 50px;
-border: 2px solid #C8E0C4;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
-padding: 6px 6px 6px 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-transition: border-color 0.2s, box-shadow 0.2s;
+  background: white;
+  border-radius: 50px;
+  border: 2px solid #C8E0C4;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .search-box:focus-within {
-border-color: #3D6B38;
-box-shadow: 0 4px 20px rgba(61,107,56,0.15);
+  border-color: #3D6B38;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.15);
 }
 
 .search-icon { font-size: 17px; opacity: 0.4; flex-shrink: 0; }
 
 .search-box input {
-flex: 1;
-border: none;
-outline: none;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
-font-size: 15px;
-color: #1E3A1B;
-background: transparent;
-padding: 6px 0;
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: #1E3A1B;
+  background: transparent;
+  padding: 6px 0;
 }
 
 .search-box input::placeholder { color: #9DB896; }
 
 .search-btn {
-background: #3D6B38;
-color: white;
-border: none;
-border-radius: 40px;
-padding: 10px 22px;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
-font-size: 13px;
-font-weight: 700;
-cursor: pointer;
-transition: all 0.2s;
-white-space: nowrap;
-flex-shrink: 0;
+  background: #3D6B38;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 22px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .search-btn:hover { background: #1E3A1B; transform: translateY(-1px); }
 
 /* ── QUICK CHIPS ── */
 .quick-chips {
-display: flex;
-flex-wrap: wrap;
-gap: 6px;
-margin-top: 12px;
-justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  justify-content: center;
 }
 
 .chip {
-background: white;
-border: 1.5px solid #C8E0C4;
-border-radius: 20px;
-padding: 5px 14px;
-font-size: 12px;
-font-weight: 600;
-color: #6B8C65;
-cursor: pointer;
-transition: all 0.15s;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
+  background: white;
+  border: 1.5px solid #C8E0C4;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B8C65;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
 }
 
 .chip:hover { border-color: #3D6B38; color: #3D6B38; background: #EEF7EB; }
 
 /* ── MAIN ── */
 main {
-max-width: 720px;
-margin: 0 auto;
-padding: 28px 20px calc(60px + env(safe-area-inset-bottom));
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 16px calc(80px + env(safe-area-inset-bottom));
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ── RESULT CARD ── */
 .result-card {
-background: white;
-border-radius: 16px;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
-border: 1px solid #E8EFE5;
-overflow: hidden;
-margin-bottom: 16px;
-animation: slideUp 0.3s ease;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  border: 1px solid #E8EFE5;
+  overflow: hidden;
+  margin-bottom: 16px;
+  animation: slideUp 0.3s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 @keyframes slideUp {
-from { opacity: 0; transform: translateY(12px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .result-header {
-padding: 20px 22px 16px;
-border-bottom: 1px solid #F0F5EF;
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-gap: 16px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid #F0F5EF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Type indicator stripe */
 .result-type-stripe {
-display: flex;
-align-items: center;
-gap: 6px;
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 1px;
-text-transform: uppercase;
-margin-bottom: 8px;
-padding: 3px 10px;
-border-radius: 20px;
-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
 }
 
 .result-type-stripe.medicamento { background: #E8F5E9; color: #2E7D32; }
@@ -501,109 +486,109 @@ width: fit-content;
 .result-type-stripe.procedimiento { background: #EDE7F6; color: #4527A0; }
 
 .result-name {
-font-family: ‘Crimson Pro’, serif;
-font-size: 24px;
-font-weight: 500;
-color: #1E3A1B;
-line-height: 1.2;
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1E3A1B;
+  line-height: 1.2;
 }
 
 .result-category {
-font-size: 12px;
-color: #6B8C65;
-margin-top: 3px;
+  font-size: 12px;
+  color: #6B8C65;
+  margin-top: 3px;
 }
 
 .result-trade {
-font-size: 12px;
-color: #5A8A54;
-margin-top: 5px;
-font-weight: 500;
+  font-size: 12px;
+  color: #5A8A54;
+  margin-top: 5px;
+  font-weight: 500;
 }
 
 .safety-badges { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
 
 .badge {
-display: flex;
-align-items: center;
-gap: 5px;
-padding: 5px 12px;
-border-radius: 30px;
-font-size: 11px;
-font-weight: 700;
-white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .badge.green { background: #E8F5E9; color: #2E7D32; }
 .badge.yellow { background: #FFF8E1; color: #E65100; }
 .badge.red { background: #FFEBEE; color: #C62828; }
 
-.result-section { padding: 16px 22px; border-bottom: 1px solid #F5F8F4; }
+.result-section { padding: 14px 16px; border-bottom: 1px solid #F5F8F4; }
 .result-section:last-child { border-bottom: none; }
 
 .section-label {
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 1px;
-text-transform: uppercase;
-color: #5A8A54;
-margin-bottom: 8px;
-display: flex;
-align-items: center;
-gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5A8A54;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .section-text { font-size: 14px; line-height: 1.65; color: #3A4A38; }
 
 .interactions-list {
-font-size: 13px;
-color: #6B8C65;
-background: #EEF7EB;
-border-radius: 10px;
-padding: 10px 14px;
-line-height: 1.6;
+  font-size: 13px;
+  color: #6B8C65;
+  background: #EEF7EB;
+  border-radius: 10px;
+  padding: 10px 14px;
+  line-height: 1.6;
 }
 
 .source-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .source-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 
 .source-tag {
-font-size: 11px !important;
-background: #EEF7EB !important;
-border: 1.5px solid #5A8A54 !important;
-color: #1E3A1B !important;
-padding: 4px 10px !important;
-border-radius: 20px !important;
-font-weight: 700 !important;
-display: inline-block !important;
+  font-size: 11px !important;
+  background: #EEF7EB !important;
+  border: 1.5px solid #5A8A54 !important;
+  color: #1E3A1B !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  display: inline-block !important;
 }
 a.source-link {
-text-decoration: none !important;
-cursor: pointer !important;
-display: inline-block !important;
--webkit-tap-highlight-color: rgba(61,107,56,0.15) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  -webkit-tap-highlight-color: rgba(61,107,56,0.15) !important;
 }
 a.source-link:active { background: #C8E0C4 !important; }
 
 .expert-check {
-font-size: 11px;
-color: #2E7D32;
-font-weight: 700;
-flex-shrink: 0;
+  font-size: 11px;
+  color: #2E7D32;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .disclaimer {
-background: #F5F0E8;
-border: 1px solid #E0D8C8;
-border-radius: 10px;
-padding: 14px 18px;
-font-size: 12px;
-color: #6B8C65;
-line-height: 1.6;
-margin-top: 8px;
-display: flex;
-gap: 9px;
-align-items: flex-start;
+  background: #F5F0E8;
+  border: 1px solid #E0D8C8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: #6B8C65;
+  line-height: 1.6;
+  margin-top: 8px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
 }
 
 .disclaimer-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
@@ -612,21 +597,21 @@ align-items: flex-start;
 .empty-state { text-align: center; padding: 36px 20px; }
 .empty-icon { font-size: 48px; margin-bottom: 14px; opacity: 0.4; }
 .empty-state h3 {
-font-family: ‘Crimson Pro’, serif;
-font-size: 22px;
-font-weight: 500;
-color: #1E3A1B;
-margin-bottom: 8px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #1E3A1B;
+  margin-bottom: 8px;
 }
 .empty-state p { font-size: 14px; color: #6B8C65; max-width: 300px; margin: 0 auto; line-height: 1.6; }
 
 .not-found {
-background: white;
-border: 1px solid #E8EFE5;
-border-radius: 16px;
-padding: 28px;
-text-align: center;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  background: white;
+  border: 1px solid #E8EFE5;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
 }
 .not-found p { color: #6B8C65; font-size: 14px; line-height: 1.6; }
 
@@ -634,38 +619,38 @@ box-shadow: 0 4px 20px rgba(61,107,56,0.08);
 .categories { margin-top: 24px; }
 
 .categories-title {
-font-size: 11px;
-font-weight: 700;
-color: #5A8A54;
-letter-spacing: 1px;
-text-transform: uppercase;
-margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5A8A54;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .cat-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
 }
 
 .cat-card {
-background: white;
-border: 1px solid #E8EFE5;
-border-radius: 10px;
-padding: 12px 14px;
-cursor: pointer;
-transition: all 0.2s;
-display: flex;
-align-items: center;
-gap: 8px;
-min-width: 0;
-overflow: hidden;
+  background: white;
+  border: 1px solid #E8EFE5;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .cat-card:hover {
-border-color: #3D6B38;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
-transform: translateY(-1px);
+  border-color: #3D6B38;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  transform: translateY(-1px);
 }
 
 .cat-card-icon { font-size: 18px; flex-shrink: 0; }
@@ -673,33 +658,33 @@ transform: translateY(-1px);
 
 /* ── PANELS ── */
 .panel-section {
-margin-top: 20px;
-background: white;
-border-radius: 16px;
-border: 1px solid #E8EFE5;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
-overflow: hidden;
+  margin-top: 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #E8EFE5;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  overflow: hidden;
 }
 
 .panel-header {
-padding: 12px 18px;
-background: #EEF7EB;
-display: flex;
-align-items: center;
-justify-content: space-between;
-cursor: pointer;
-border-bottom: 1px solid #C8E0C4;
+  padding: 12px 18px;
+  background: #EEF7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #C8E0C4;
 }
 
 .panel-header-title {
-font-size: 11px;
-font-weight: 700;
-color: #3D6B38;
-display: flex;
-align-items: center;
-gap: 6px;
-text-transform: uppercase;
-letter-spacing: 0.8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #3D6B38;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .panel-toggle { font-size: 11px; color: #6B8C65; }
@@ -707,14 +692,14 @@ letter-spacing: 0.8px;
 .panel-body.hidden { display: none; }
 
 .history-item {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 8px 10px;
-border-radius: 8px;
-cursor: pointer;
-transition: background 0.15s;
-gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 8px;
 }
 
 .history-item:hover { background: #EEF7EB; }
@@ -722,14 +707,14 @@ gap: 8px;
 .history-item-time { font-size: 11px; color: #6B8C65; flex-shrink: 0; }
 
 .saved-drug {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 8px 10px;
-border-radius: 8px;
-cursor: pointer;
-transition: background 0.15s;
-gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 8px;
 }
 .saved-drug:hover { background: #EEF7EB; }
 .saved-drug-name { font-size: 13px; font-weight: 600; color: #1E3A1B; flex: 1; }
@@ -739,60 +724,60 @@ gap: 8px;
 .saved-drug-badge.red { background: #FFEBEE; color: #C62828; }
 
 .remove-btn {
-background: none; border: none; font-size: 13px; cursor: pointer;
-opacity: 0.35; padding: 2px 4px; border-radius: 4px; transition: opacity 0.15s; flex-shrink: 0;
+  background: none; border: none; font-size: 13px; cursor: pointer;
+  opacity: 0.35; padding: 2px 4px; border-radius: 4px; transition: opacity 0.15s; flex-shrink: 0;
 }
 .remove-btn:hover { opacity: 1; }
 
 .save-drug-btn {
-margin-top: 10px !important;
-width: 100% !important;
-background: #EEF7EB !important;
-border: 2px solid #5A8A54 !important;
-border-radius: 10px !important;
-padding: 11px !important;
-font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
-font-size: 13px !important;
-font-weight: 700 !important;
-color: #1E3A1B !important;
-cursor: pointer !important;
-display: block !important;
-text-align: center !important;
--webkit-appearance: none !important;
+  margin-top: 10px !important;
+  width: 100% !important;
+  background: #EEF7EB !important;
+  border: 2px solid #5A8A54 !important;
+  border-radius: 10px !important;
+  padding: 11px !important;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #1E3A1B !important;
+  cursor: pointer !important;
+  display: block !important;
+  text-align: center !important;
+  -webkit-appearance: none !important;
 }
 .save-drug-btn:active { background: #C8E0C4 !important; }
 .save-drug-btn.saved-already {
-border-color: #C8E0C4 !important;
-color: #5A8A54 !important;
-background: #F5FAF5 !important;
-cursor: default !important;
-opacity: 0.85 !important;
+  border-color: #C8E0C4 !important;
+  color: #5A8A54 !important;
+  background: #F5FAF5 !important;
+  cursor: default !important;
+  opacity: 0.85 !important;
 }
 
 .empty-panel { text-align: center; padding: 14px; font-size: 13px; color: #6B8C65; }
 
 /* ── SAFETY LEGEND ── */
 .safety-legend {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-margin-top: 14px;
-padding: 9px 18px;
-background: white;
-border: 1px solid #E8EFE5;
-border-radius: 30px;
-width: fit-content;
-margin-left: auto;
-margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 9px 18px;
+  background: white;
+  border: 1px solid #E8EFE5;
+  border-radius: 30px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .legend-item {
-font-size: 12px;
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .legend-item.green { color: #2E7D32; }
@@ -802,60 +787,60 @@ gap: 4px;
 
 /* ── DB META ── */
 .db-meta {
-text-align: center;
-font-size: 12px;
-color: #6B8C65;
-padding: 14px 20px 4px;
-font-weight: 500;
+  text-align: center;
+  font-size: 12px;
+  color: #6B8C65;
+  padding: 14px 20px 4px;
+  font-weight: 500;
 }
 
 /* ── SAVE TOAST ── */
 .save-toast {
-position: fixed;
-bottom: 28px;
-left: 50%;
-transform: translateX(-50%) translateY(80px);
-background: #1E3A1B;
-color: white;
-padding: 11px 22px;
-border-radius: 30px;
-font-size: 13px;
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 8px 24px rgba(30,58,27,0.35);
-z-index: 9999;
-transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.35s;
-opacity: 0;
-pointer-events: none;
-white-space: nowrap;
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1E3A1B;
+  color: white;
+  padding: 11px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(30,58,27,0.35);
+  z-index: 9999;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.35s;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .save-toast.show {
-transform: translateX(-50%) translateY(0);
-opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 .save-toast-icon { font-size: 16px; }
 
 /* ── CLEAR HISTORY BTN ── */
 .clear-history-btn {
-border-color: #F5C0C0 !important;
-color: #C62828 !important;
-margin-top: 10px;
+  border-color: #F5C0C0 !important;
+  color: #C62828 !important;
+  margin-top: 10px;
 }
 .clear-history-btn:hover { background: #FFF5F5 !important; border-color: #C62828 !important; }
 
 /* ── SAVED CARD IMPROVED ── */
 .saved-drug {
-display: flex;
-align-items: center;
-padding: 10px 10px;
-border-radius: 10px;
-gap: 10px;
-transition: background 0.15s;
-border-bottom: 1px solid #F5F8F4;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  gap: 10px;
+  transition: background 0.15s;
+  border-bottom: 1px solid #F5F8F4;
 }
 .saved-drug:last-child { border-bottom: none; }
 .saved-drug:hover { background: #EEF7EB; cursor: pointer; }
@@ -871,25 +856,25 @@ border-bottom: 1px solid #F5F8F4;
 .section-block { margin-bottom: 4px; }
 
 .top-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
 .top-card {
-background: white !important;
-border: 1.5px solid #C8E0C4 !important;
-border-radius: 12px !important;
-padding: 12px 8px 10px !important;
-cursor: pointer !important;
-transition: all 0.2s;
-display: flex !important;
-flex-direction: column !important;
-align-items: center !important;
-gap: 6px !important;
-text-align: center !important;
-box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
--webkit-tap-highlight-color: rgba(61,107,56,0.1);
+  background: white !important;
+  border: 1.5px solid #C8E0C4 !important;
+  border-radius: 12px !important;
+  padding: 12px 8px 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+  text-align: center !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  -webkit-tap-highlight-color: rgba(61,107,56,0.1);
 }
 
 .top-card:active { background: #EEF7EB !important; border-color: #3D6B38 !important; }
@@ -901,87 +886,87 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 .symptom-grid { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
 
 .symptom-chip {
-background: white !important;
-border: 1.5px solid #C8E0C4 !important;
-border-radius: 30px !important;
-padding: 8px 16px !important;
-font-size: 13px !important;
-font-weight: 600 !important;
-color: #2A5226 !important;
-cursor: pointer !important;
-white-space: nowrap !important;
-font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
-box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
-display: inline-block !important;
--webkit-tap-highlight-color: rgba(61,107,56,0.1);
+  background: white !important;
+  border: 1.5px solid #C8E0C4 !important;
+  border-radius: 30px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #2A5226 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+  display: inline-block !important;
+  -webkit-tap-highlight-color: rgba(61,107,56,0.1);
 }
 
 .symptom-chip:active { border-color: #3D6B38 !important; background: #EEF7EB !important; }
 
 @media (max-width: 600px) {
-.top-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-.top-card { padding: 10px 4px 8px; }
-.top-card-icon { font-size: 20px; }
-.top-card-name { font-size: 10px; }
-.symptom-chip { font-size: 12px; padding: 7px 13px; }
+  .top-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .top-card { padding: 10px 4px 8px; }
+  .top-card-icon { font-size: 20px; }
+  .top-card-name { font-size: 10px; }
+  .symptom-chip { font-size: 12px; padding: 7px 13px; }
 }
 
 /* ── MOBILE ── */
 @media (max-width: 600px) {
-header { padding: 0 14px; height: auto; min-height: 56px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
-.hero { padding: 28px 16px 28px; }
-.cat-grid { grid-template-columns: repeat(2, 1fr); }
-.result-header { flex-direction: column; }
-.safety-badges { flex-direction: row; flex-wrap: wrap; }
-.result-section { padding: 14px 16px; }
-.result-name { font-size: 21px; }
-.search-btn { padding: 9px 16px; font-size: 13px; }
-main { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+  header { padding: 0 14px; height: auto; min-height: 56px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+  .hero { padding: 28px 16px 28px; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-header { flex-direction: column; }
+  .safety-badges { flex-direction: row; flex-wrap: wrap; }
+  .result-section { padding: 14px 16px; }
+  .result-name { font-size: 21px; }
+  .search-btn { padding: 9px 16px; font-size: 13px; }
+  main { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
 }
 
 @media (max-width: 380px) {
-.cat-grid { grid-template-columns: 1fr 1fr; }
-.type-btn { font-size: 12px; padding: 6px 12px; }
-.tab { font-size: 12px; padding: 7px 12px; }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .type-btn { font-size: 12px; padding: 6px 12px; }
+  .tab { font-size: 12px; padding: 7px 12px; }
 }
 /* ══ TRUST SECTION ══ */
 .trust-section {
-background: linear-gradient(135deg, #1E3A1B 0%, #3D6B38 100%);
-color: white;
-padding: 32px 20px;
-margin-top: 0;
-width: 100%;
-box-sizing: border-box;
+  background: linear-gradient(135deg, #1E3A1B 0%, #3D6B38 100%);
+  color: white;
+  padding: 32px 20px;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .trust-inner { max-width: 600px; margin: 0 auto; }
 
 .trust-heading {
-display: flex;
-align-items: center;
-gap: 10px;
-font-size: 15px;
-font-weight: 700;
-margin-bottom: 20px;
-letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.2px;
 }
 
 .trust-icon { font-size: 22px; }
 
 .trust-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
-margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .trust-item {
-display: flex;
-align-items: flex-start;
-gap: 10px;
-background: rgba(255,255,255,0.12);
-border-radius: 12px;
-padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
 }
 
 .trust-item-icon { font-size: 20px; flex-shrink: 0; }
@@ -989,98 +974,203 @@ padding: 12px 14px;
 .trust-item-text strong { display: block; margin-bottom: 2px; font-size: 12px; }
 
 .trust-disclaimer {
-font-size: 11px;
-opacity: 0.72;
-line-height: 1.5;
-border-top: 1px solid rgba(255,255,255,0.2);
-padding-top: 14px;
-margin-top: 4px;
+  font-size: 11px;
+  opacity: 0.72;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 14px;
+  margin-top: 4px;
 }
 
 @media (max-width: 500px) {
-.trust-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+}
+
+/* ══ GUIDES SECTION ══ */
+.guides-section {
+  background: #F5F0E8;
+  padding: 36px 20px 40px;
+  width: 100%;
+}
+
+.guides-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.guides-group-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5A8A54;
+  margin-bottom: 12px;
+}
+
+.guides-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guide-link {
+  display: inline-block;
+  background: white;
+  border: 1.5px solid #C8E0C4;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1E3A1B;
+  text-decoration: none;
+  transition: all 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.guide-link:hover {
+  background: #EEF7EB;
+  border-color: #3D6B38;
+  color: #1E3A1B;
+}
+
+/* ══ FOOTER ══ */
+.site-footer {
+  background: #1E3A1B;
+  color: white;
+  padding: 32px 20px;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.footer-credits {
+  font-size: 11px;
+  opacity: 0.65;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.footer-links a {
+  color: #C8E0C4;
+  text-decoration: none;
+}
+
+.footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+.footer-disclaimer {
+  font-size: 11px;
+  opacity: 0.5;
+  line-height: 1.5;
 }
 
 /* ══ CHAT FAB ══ */
 .chat-fab {
-position: fixed;
-bottom: 24px;
-right: 20px;
-background: #3D6B38;
-color: white;
-border-radius: 28px;
-padding: 12px 18px 12px 14px;
-display: flex;
-align-items: center;
-gap: 8px;
-cursor: pointer;
-box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(255,255,255,0.9);
-z-index: 999;
-font-weight: 700;
-font-size: 14px;
-transition: all 0.2s;
-user-select: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  background: #3D6B38;
+  color: white;
+  border-radius: 28px;
+  padding: 12px 18px 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(255,255,255,0.9);
+  z-index: 999;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.2s;
+  user-select: none;
 }
 
 .chat-fab:hover { background: #1E3A1B; transform: translateY(-2px); }
 .chat-fab-icon { font-size: 20px; }
-.chat-fab-label { font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif; }
+.chat-fab-label { font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif; }
 
 .chat-online-dot {
-width: 9px; height: 9px;
-background: #4ADE80;
-border-radius: 50%;
-border: 2px solid white;
-position: absolute;
-top: -2px; right: -2px;
-animation: pulse-dot 2s infinite;
+  width: 9px; height: 9px;
+  background: #4ADE80;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  top: -2px; right: -2px;
+  animation: pulse-dot 2s infinite;
 }
 
 .chat-online-dot-sm {
-display: inline-block;
-width: 7px; height: 7px;
-background: #4ADE80;
-border-radius: 50%;
-margin-right: 5px;
-vertical-align: middle;
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: #4ADE80;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 @keyframes pulse-dot {
-0%, 100% { transform: scale(1); opacity: 1; }
-50% { transform: scale(1.3); opacity: 0.7; }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
 }
 
 /* ══ CHAT PANEL ══ */
 .chat-panel {
-position: fixed;
-bottom: 90px;
-right: 16px;
-width: 320px;
-max-width: calc(100vw - 32px);
-background: white;
-border-radius: 20px;
-box-shadow: 0 16px 48px rgba(30,58,27,0.2);
-z-index: 1000;
-transform: translateY(20px) scale(0.95);
-opacity: 0;
-pointer-events: none;
-transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-overflow: hidden;
+  position: fixed;
+  bottom: 90px;
+  right: 16px;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(30,58,27,0.2);
+  z-index: 1000;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  overflow: hidden;
 }
 
 .chat-panel.open {
-transform: translateY(0) scale(1);
-opacity: 1;
-pointer-events: all;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .chat-header {
-background: linear-gradient(135deg, #1E3A1B, #3D6B38);
-color: white;
-padding: 14px 16px;
-display: flex;
-align-items: center;
-justify-content: space-between;
+  background: linear-gradient(135deg, #1E3A1B, #3D6B38);
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .chat-header-info { display: flex; align-items: center; gap: 10px; }
@@ -1088,73 +1178,73 @@ justify-content: space-between;
 .chat-name { font-size: 14px; font-weight: 700; }
 .chat-status { font-size: 11px; opacity: 0.85; margin-top: 2px; display: flex; align-items: center; }
 .chat-close {
-background: rgba(255,255,255,0.2); border: none; color: white;
-width: 28px; height: 28px; border-radius: 50%; font-size: 13px;
-cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  background: rgba(255,255,255,0.2); border: none; color: white;
+  width: 28px; height: 28px; border-radius: 50%; font-size: 13px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 
 .chat-body { padding: 18px 16px 20px; }
 
 .chat-intro {
-font-size: 13px;
-color: #6B8C65;
-line-height: 1.5;
-margin-bottom: 16px;
+  font-size: 13px;
+  color: #6B8C65;
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
 
 .chat-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
 
 .chat-option-btn {
-display: flex;
-align-items: center;
-gap: 10px;
-padding: 13px 16px;
-border-radius: 12px;
-font-size: 14px;
-font-weight: 700;
-text-decoration: none;
-transition: all 0.15s;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
 }
 
 .chat-option-btn.whatsapp {
-background: #25D366;
-color: white;
+  background: #25D366;
+  color: white;
 }
 
 .chat-option-btn.whatsapp:hover { background: #1da851; }
 
 .chat-option-btn.telegram {
-background: #0088cc;
-color: white;
+  background: #0088cc;
+  color: white;
 }
 
 .chat-option-btn.telegram:hover { background: #006fa6; }
 
 .chat-note {
-font-size: 11px;
-color: #6B8C65;
-line-height: 1.5;
-background: #EEF7EB;
-border-radius: 10px;
-padding: 10px 12px;
-margin-bottom: 10px;
+  font-size: 11px;
+  color: #6B8C65;
+  line-height: 1.5;
+  background: #EEF7EB;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
 }
 
 .chat-disclaimer {
-font-size: 10px;
-color: #9DB896;
-line-height: 1.4;
+  font-size: 10px;
+  color: #9DB896;
+  line-height: 1.4;
 }
 
 /* ══ NOT FOUND ══ */
 .not-found {
-background: white;
-border-radius: 16px;
-border: 1px solid #E8EFE5;
-padding: 24px 20px;
-margin: 20px 0 0;
-box-shadow: 0 4px 20px rgba(61,107,56,0.08);
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #E8EFE5;
+  padding: 24px 20px;
+  margin: 20px 0 0;
+  box-shadow: 0 4px 20px rgba(61,107,56,0.08);
 }
 
 .nf-icon { font-size: 36px; margin-bottom: 10px; text-align: center; }
@@ -1163,29 +1253,29 @@ box-shadow: 0 4px 20px rgba(61,107,56,0.08);
 .nf-sub { font-size: 13px; color: #6B8C65; text-align: center; line-height: 1.5; margin-bottom: 20px; }
 
 .nf-alts-title {
-font-size: 11px;
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 0.8px;
-color: #5A8A54;
-margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #5A8A54;
+  margin-bottom: 10px;
 }
 
 .nf-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
 
 .nf-link {
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 12px 14px;
-border: 1.5px solid #E8EFE5;
-border-radius: 12px;
-text-decoration: none;
-color: #1E3A1B;
-font-size: 13px;
-transition: all 0.15s;
-background: white;
-box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid #E8EFE5;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1E3A1B;
+  font-size: 13px;
+  transition: all 0.15s;
+  background: white;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
 .nf-link:hover { border-color: #3D6B38; background: #EEF7EB; }
@@ -1194,13 +1284,13 @@ box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 .nf-link small { color: #6B8C65; font-size: 11px; display: block; margin-top: 2px; }
 
 .nf-consult {
-display: flex;
-align-items: center;
-gap: 12px;
-background: linear-gradient(135deg, #EEF7EB, #fff);
-border: 1.5px solid #C8E0C4;
-border-radius: 14px;
-padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #EEF7EB, #fff);
+  border: 1.5px solid #C8E0C4;
+  border-radius: 14px;
+  padding: 14px 16px;
 }
 
 .nf-consult-icon { font-size: 28px; flex-shrink: 0; }
@@ -1208,196 +1298,196 @@ padding: 14px 16px;
 .nf-consult-text strong { color: #1E3A1B; font-size: 13px; display: block; margin-bottom: 3px; }
 
 .nf-consult-btn {
-background: #3D6B38;
-color: white;
-border: none;
-border-radius: 10px;
-padding: 9px 14px;
-font-size: 12px;
-font-weight: 700;
-cursor: pointer;
-white-space: nowrap;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
-flex-shrink: 0;
-transition: background 0.15s;
+  background: #3D6B38;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  flex-shrink: 0;
+  transition: background 0.15s;
 }
 
 .nf-consult-btn:hover { background: #1E3A1B; }
 
 /* ══ RESULTS BAR ══ */
 .results-bar {
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 10px 20px;
-background: white;
-border-bottom: 1px solid #E8EFE5;
-position: sticky;
-top: 0;
-z-index: 100;
-max-width: 640px;
-margin: 0 auto;
-box-sizing: border-box;
-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #E8EFE5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: 640px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .back-btn {
-display: flex;
-align-items: center;
-gap: 6px;
-background: #EEF7EB;
-border: 1.5px solid #C8E0C4;
-color: #5A8A54;
-border-radius: 20px;
-padding: 6px 14px;
-font-size: 13px;
-font-weight: 700;
-cursor: pointer;
-white-space: nowrap;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
-transition: all 0.15s;
-flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #EEF7EB;
+  border: 1.5px solid #C8E0C4;
+  color: #5A8A54;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.15s;
+  flex-shrink: 0;
 }
 
 .back-btn:hover {
-background: #C8E0C4;
-border-color: #3D6B38;
-color: #1E3A1B;
+  background: #C8E0C4;
+  border-color: #3D6B38;
+  color: #1E3A1B;
 }
 
 .results-count {
-font-size: 13px;
-color: #6B8C65;
-font-weight: 500;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+  font-size: 13px;
+  color: #6B8C65;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .results-count strong {
-color: #1E3A1B;
-font-weight: 700;
+  color: #1E3A1B;
+  font-weight: 700;
 }
 
 /* ══ YELLOW TIPS BLOCK ══ */
 .yellow-tips-block {
-margin: 0 22px 4px;
-background: #FFFBF0;
-border: 2px solid #FFE082;
-border-radius: 12px;
-overflow: hidden;
-padding: 12px 14px 14px;
+  margin: 0 16px 4px;
+  background: #FFFBF0;
+  border: 2px solid #FFE082;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 12px 14px 14px;
 }
 
 .yellow-tips-title {
-font-size: 12px;
-font-weight: 800;
-color: #E65100;
-text-transform: uppercase;
-letter-spacing: 0.4px;
-margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #E65100;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
 }
 
 .yellow-tip-item {
-font-size: 12px;
-color: #4E342E;
-line-height: 1.45;
-padding: 5px 0;
-border-bottom: 1px solid #FFF3C4;
-display: flex;
-align-items: flex-start;
-gap: 6px;
+  font-size: 12px;
+  color: #4E342E;
+  line-height: 1.45;
+  padding: 5px 0;
+  border-bottom: 1px solid #FFF3C4;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .yellow-tip-item:last-child { border-bottom: none; padding-bottom: 0; }
 
 @media (max-width: 600px) {
-.yellow-tips-block { margin: 0 16px 4px; }
+  .yellow-tips-block { margin: 0 16px 4px; }
 }
 
 /* ══ ALREADY TAKEN BLOCK ══ */
 .already-taken-block {
-margin: 0 22px 4px;
-background: #FFF8F5;
-border: 2px solid #FFCDD2;
-border-radius: 12px;
-overflow: hidden;
+  margin: 0 16px 4px;
+  background: #FFF8F5;
+  border: 2px solid #FFCDD2;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .already-taken-header {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 11px 14px;
-cursor: pointer;
-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .already-taken-title {
-font-size: 12px;
-font-weight: 800;
-color: #C62828;
-text-transform: uppercase;
-letter-spacing: 0.4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #C62828;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .already-taken-toggle {
-font-size: 11px;
-color: #C62828;
-font-weight: 600;
-white-space: nowrap;
+  font-size: 11px;
+  color: #C62828;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .already-taken-body {
-display: none;
-padding: 0 14px 14px;
-border-top: 1px solid #FFCDD2;
+  display: none;
+  padding: 0 14px 14px;
+  border-top: 1px solid #FFCDD2;
 }
 
 .already-taken-body.open { display: block; }
 
 .already-taken-intro {
-font-size: 12px;
-color: #5D4037;
-line-height: 1.5;
-margin: 10px 0 10px;
+  font-size: 12px;
+  color: #5D4037;
+  line-height: 1.5;
+  margin: 10px 0 10px;
 }
 
 .already-taken-steps {
-display: flex;
-flex-direction: column;
-gap: 7px;
-margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 12px;
 }
 
 .step-item {
-display: flex;
-align-items: flex-start;
-gap: 8px;
-font-size: 12px;
-color: #4E342E;
-line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #4E342E;
+  line-height: 1.4;
 }
 
 .step-num { font-size: 14px; flex-shrink: 0; }
 
 .already-taken-cta {
-display: block;
-text-align: center;
-background: #C62828;
-color: white;
-padding: 9px 14px;
-border-radius: 9px;
-font-size: 12px;
-font-weight: 700;
-text-decoration: none;
-font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-serif;
+  display: block;
+  text-align: center;
+  background: #C62828;
+  color: white;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
 }
 
 .already-taken-cta:hover { background: #B71C1C; }
 
 @media (max-width: 600px) {
-.already-taken-block { margin: 0 16px 4px; }
+  .already-taken-block { margin: 0 16px 4px; }
 }
 
 </style>
@@ -1430,45 +1520,41 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
       <button class="type-btn" onclick="setType('procedimiento',this)" data-type="procedimiento">🩺 <span id="txt-type-proc">Procedimientos</span></button>
     </div>
 
-```
-<div class="situation-tabs">
-  <button class="tab active" id="tab-lm" onclick="setSituation('lm',this)">🤱 <span id="txt-tab-lm">Estoy dando el pecho</span></button>
-  <button class="tab" id="tab-emb" onclick="setSituation('emb',this)">🤰 <span id="txt-tab-emb">Estoy embarazada</span></button>
-</div>
+    <div class="situation-tabs">
+      <button class="tab active" id="tab-lm" onclick="setSituation('lm',this)">🤱 <span id="txt-tab-lm">Estoy dando el pecho</span></button>
+      <button class="tab" id="tab-emb" onclick="setSituation('emb',this)">🤰 <span id="txt-tab-emb">Estoy embarazada</span></button>
+    </div>
 
-<div class="search-box">
-  <span class="search-icon">🔍</span>
-  <input type="text" id="searchInput"
-    placeholder="Manzanilla, ibuprofeno, salmón, café…"
-    oninput="onInput(this.value)"
-    onkeydown="if(event.key==='Enter') doSearch()">
-  <button class="search-btn" onclick="doSearch()" id="txt-search-btn">Consultar</button>
-</div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput"
+        placeholder="Manzanilla, ibuprofeno, salmón, café…"
+        oninput="onInput(this.value)"
+        onkeydown="if(event.key==='Enter') doSearch()">
+      <button class="search-btn" onclick="doSearch()" id="txt-search-btn">Consultar</button>
+    </div>
 
-<div class="quick-chips">
-  <span class="chip" onclick="quickSearch('Paracetamol')">Paracetamol</span>
-  <span class="chip" onclick="quickSearch('Ibuprofeno')">Ibuprofeno</span>
-  <span class="chip" onclick="quickSearch('Manzanilla')">Manzanilla</span>
-  <span class="chip" onclick="quickSearch('Jengibre')">Jengibre</span>
-  <span class="chip" onclick="quickSearch('Café')">Café</span>
-  <span class="chip" onclick="quickSearch('Salmón')">Salmón</span>
-  <span class="chip" onclick="quickSearch('Nolotil')">Nolotil</span>
-</div>
+    <div class="quick-chips">
+      <span class="chip" onclick="quickSearch('Paracetamol')">Paracetamol</span>
+      <span class="chip" onclick="quickSearch('Ibuprofeno')">Ibuprofeno</span>
+      <span class="chip" onclick="quickSearch('Manzanilla')">Manzanilla</span>
+      <span class="chip" onclick="quickSearch('Jengibre')">Jengibre</span>
+      <span class="chip" onclick="quickSearch('Café')">Café</span>
+      <span class="chip" onclick="quickSearch('Salmón')">Salmón</span>
+      <span class="chip" onclick="quickSearch('Nolotil')">Nolotil</span>
+    </div>
 
-<div class="safety-legend">
-  <span class="legend-item green">✅ Seguro</span>
-  <span class="legend-sep">·</span>
-  <span class="legend-item yellow">⚠️ Con precaución</span>
-  <span class="legend-sep">·</span>
-  <span class="legend-item red">❌ Evitar</span>
-</div>
-```
-
+    <div class="safety-legend">
+      <span class="legend-item green">✅ Seguro</span>
+      <span class="legend-sep">·</span>
+      <span class="legend-item yellow">⚠️ Con precaución</span>
+      <span class="legend-sep">·</span>
+      <span class="legend-item red">❌ Evitar</span>
+    </div>
   </div>
 </div>
 
 <!-- RESULTS BAR — shown during search -->
-
 <div class="results-bar" id="resultsBar" style="display:none">
   <button class="back-btn" onclick="goHome()">← Volver</button>
   <span class="results-count" id="resultsCount"></span>
@@ -1483,127 +1569,123 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
 
   <div class="categories" id="catSection">
 
-```
-<!-- TOP CONSULTAS -->
-<div class="section-block">
-  <div class="categories-title">🔥 TOP CONSULTAS</div>
-  <div class="top-grid">
-    <div class="top-card" onclick="quickSearch('Paracetamol')"><span class="top-card-icon">💊</span><span class="top-card-name">Paracetamol</span></div>
-    <div class="top-card" onclick="quickSearch('Ibuprofeno')"><span class="top-card-icon">💊</span><span class="top-card-name">Ibuprofeno</span></div>
-    <div class="top-card" onclick="quickSearch('Manzanilla')"><span class="top-card-icon">🌼</span><span class="top-card-name">Manzanilla</span></div>
-    <div class="top-card" onclick="quickSearch('Café')"><span class="top-card-icon">☕</span><span class="top-card-name">Café</span></div>
-    <div class="top-card" onclick="quickSearch('Sushi')"><span class="top-card-icon">🍣</span><span class="top-card-name">Sushi</span></div>
-    <div class="top-card" onclick="quickSearch('Jengibre')"><span class="top-card-icon">🌿</span><span class="top-card-name">Jengibre</span></div>
-    <div class="top-card" onclick="quickSearch('Nolotil')"><span class="top-card-icon">💊</span><span class="top-card-name">Nolotil</span></div>
-    <div class="top-card" onclick="quickSearch('Salvia')"><span class="top-card-icon">🌱</span><span class="top-card-name">Salvia</span></div>
-  </div>
-</div>
+    <!-- TOP CONSULTAS -->
+    <div class="section-block">
+      <div class="categories-title">🔥 TOP CONSULTAS</div>
+      <div class="top-grid">
+        <div class="top-card" onclick="quickSearch('Paracetamol')"><span class="top-card-icon">💊</span><span class="top-card-name">Paracetamol</span></div>
+        <div class="top-card" onclick="quickSearch('Ibuprofeno')"><span class="top-card-icon">💊</span><span class="top-card-name">Ibuprofeno</span></div>
+        <div class="top-card" onclick="quickSearch('Manzanilla')"><span class="top-card-icon">🌼</span><span class="top-card-name">Manzanilla</span></div>
+        <div class="top-card" onclick="quickSearch('Café')"><span class="top-card-icon">☕</span><span class="top-card-name">Café</span></div>
+        <div class="top-card" onclick="quickSearch('Sushi')"><span class="top-card-icon">🍣</span><span class="top-card-name">Sushi</span></div>
+        <div class="top-card" onclick="quickSearch('Jengibre')"><span class="top-card-icon">🌿</span><span class="top-card-name">Jengibre</span></div>
+        <div class="top-card" onclick="quickSearch('Nolotil')"><span class="top-card-icon">💊</span><span class="top-card-name">Nolotil</span></div>
+        <div class="top-card" onclick="quickSearch('Salvia')"><span class="top-card-icon">🌱</span><span class="top-card-name">Salvia</span></div>
+      </div>
+    </div>
 
-<!-- BUSCAR POR SÍNTOMA -->
-<div class="section-block" style="margin-top:24px">
-  <div class="categories-title">🩺 BUSCAR POR SÍNTOMA</div>
-  <div class="symptom-grid">
-    <div class="symptom-chip" onclick="filterCategory('antipirético')">🌡️ Fiebre</div>
-    <div class="symptom-chip" onclick="filterCategory('digestivo')">🤢 Náuseas / vómitos</div>
-    <div class="symptom-chip" onclick="filterCategory('digestivo')">🫃 Toxicosis</div>
-    <div class="symptom-chip" onclick="filterCategory('antiséptico')">😮 Dolor de garganta</div>
-    <div class="symptom-chip" onclick="filterCategory('descongestionante')">🤧 Resfriado</div>
-    <div class="symptom-chip" onclick="filterCategory('antifúngico')">🦠 Candidiasis</div>
-    <div class="symptom-chip" onclick="filterCategory('digestivo')">😣 Estreñimiento</div>
-    <div class="symptom-chip" onclick="filterCategory('antitusígeno')">😮‍💨 Tos</div>
-    <div class="symptom-chip" onclick="filterCategory('antihistamínico')">🌸 Alergia / picor</div>
-    <div class="symptom-chip" onclick="filterCategory('analgésico')">💊 Dolor / analgesia</div>
-    <div class="symptom-chip" onclick="filterCategory('digestivo')">🔥 Acidez</div>
-    <div class="symptom-chip" onclick="filterCategory('sedante')">🌙 Insomnio / ansiedad</div>
-    <div class="symptom-chip" onclick="filterCategory('diurético')">💧 Retención de líquidos</div>
-    <div class="symptom-chip" onclick="filterCategory('hierro')">🩸 Anemia / hemoglobina</div>
-    <div class="symptom-chip" onclick="filterCategory('uterino')">🤰 Tono uterino</div>
-    <div class="symptom-chip" onclick="filterCategory('antibiótico')">💦 Cistitis / infección</div>
-  </div>
-</div>
+    <!-- BUSCAR POR SÍNTOMA -->
+    <div class="section-block" style="margin-top:24px">
+      <div class="categories-title">🩺 BUSCAR POR SÍNTOMA</div>
+      <div class="symptom-grid">
+        <div class="symptom-chip" onclick="filterCategory('antipirético')">🌡️ Fiebre</div>
+        <div class="symptom-chip" onclick="filterCategory('digestivo')">🤢 Náuseas / vómitos</div>
+        <div class="symptom-chip" onclick="filterCategory('digestivo')">🫃 Toxicosis</div>
+        <div class="symptom-chip" onclick="filterCategory('antiséptico')">😮 Dolor de garganta</div>
+        <div class="symptom-chip" onclick="filterCategory('descongestionante')">🤧 Resfriado</div>
+        <div class="symptom-chip" onclick="filterCategory('antifúngico')">🦠 Candidiasis</div>
+        <div class="symptom-chip" onclick="filterCategory('digestivo')">😣 Estreñimiento</div>
+        <div class="symptom-chip" onclick="filterCategory('antitusígeno')">😮‍💨 Tos</div>
+        <div class="symptom-chip" onclick="filterCategory('antihistamínico')">🌸 Alergia / picor</div>
+        <div class="symptom-chip" onclick="filterCategory('analgésico')">💊 Dolor / analgesia</div>
+        <div class="symptom-chip" onclick="filterCategory('digestivo')">🔥 Acidez</div>
+        <div class="symptom-chip" onclick="filterCategory('sedante')">🌙 Insomnio / ansiedad</div>
+        <div class="symptom-chip" onclick="filterCategory('diurético')">💧 Retención de líquidos</div>
+        <div class="symptom-chip" onclick="filterCategory('hierro')">🩸 Anemia / hemoglobina</div>
+        <div class="symptom-chip" onclick="filterCategory('uterino')">🤰 Tono uterino</div>
+        <div class="symptom-chip" onclick="filterCategory('antibiótico')">💦 Cistitis / infección</div>
+      </div>
+    </div>
 
-<!-- PROCEDIMIENTOS -->
-<div class="section-block" style="margin-top:24px">
-  <div class="categories-title">🏥 PROCEDIMIENTOS</div>
-  <div class="symptom-grid">
-    <div class="symptom-chip" onclick="quickSearch('Resonancia magnética')">🧲 Resonancia magnética (RM)</div>
-    <div class="symptom-chip" onclick="quickSearch('Radiografía')">☢️ Radiografía (rayos X)</div>
-    <div class="symptom-chip" onclick="quickSearch('Ecografía')">🔊 Ecografía</div>
-    <div class="symptom-chip" onclick="quickSearch('Tratamiento dental')">🦷 Tratamiento dental</div>
-    <div class="symptom-chip" onclick="quickSearch('Anestesia local')">💉 Anestesia local</div>
-    <div class="symptom-chip" onclick="quickSearch('TAC')">🖥️ TAC / Scanner</div>
-    <div class="symptom-chip" onclick="quickSearch('Colonoscopia')">🔬 Colonoscopia</div>
-    <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunación</div>
-    <div class="symptom-chip" onclick="quickSearch('Cirugía')">🏥 Cirugía / Operación</div>
-    <div class="symptom-chip" onclick="quickSearch('Gastroscopia')">🔭 Gastroscopia</div>
-  </div>
-</div>
+    <!-- PROCEDIMIENTOS -->
+    <div class="section-block" style="margin-top:24px">
+      <div class="categories-title">🏥 PROCEDIMIENTOS</div>
+      <div class="symptom-grid">
+        <div class="symptom-chip" onclick="quickSearch('Resonancia magnética')">🧲 Resonancia magnética (RM)</div>
+        <div class="symptom-chip" onclick="quickSearch('Radiografía')">☢️ Radiografía (rayos X)</div>
+        <div class="symptom-chip" onclick="quickSearch('Ecografía')">🔊 Ecografía</div>
+        <div class="symptom-chip" onclick="quickSearch('Tratamiento dental')">🦷 Tratamiento dental</div>
+        <div class="symptom-chip" onclick="quickSearch('Anestesia local')">💉 Anestesia local</div>
+        <div class="symptom-chip" onclick="quickSearch('TAC')">🖥️ TAC / Scanner</div>
+        <div class="symptom-chip" onclick="quickSearch('Colonoscopia')">🔬 Colonoscopia</div>
+        <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunación</div>
+        <div class="symptom-chip" onclick="quickSearch('Cirugía')">🏥 Cirugía / Operación</div>
+        <div class="symptom-chip" onclick="quickSearch('Gastroscopia')">🔭 Gastroscopia</div>
+      </div>
+    </div>
 
-<!-- SITUACIONES FRECUENTES -->
-<div class="section-block" style="margin-top:24px">
-  <div class="categories-title">💬 PREGUNTAS FRECUENTES</div>
-  <div class="top-grid">
-    <div class="top-card" onclick="quickSearch('Alcohol')">
-      <span class="top-card-icon">🍷</span>
-      <span class="top-card-name">¿Puedo tomar alcohol?</span>
+    <!-- SITUACIONES FRECUENTES -->
+    <div class="section-block" style="margin-top:24px">
+      <div class="categories-title">💬 PREGUNTAS FRECUENTES</div>
+      <div class="top-grid">
+        <div class="top-card" onclick="quickSearch('Alcohol')">
+          <span class="top-card-icon">🍷</span>
+          <span class="top-card-name">¿Puedo tomar alcohol?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Cafeína')">
+          <span class="top-card-icon">☕</span>
+          <span class="top-card-name">¿Cuánto café puedo tomar?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Sushi')">
+          <span class="top-card-icon">🍣</span>
+          <span class="top-card-name">¿Puedo comer sushi?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Salvia')">
+          <span class="top-card-icon">🌿</span>
+          <span class="top-card-name">¿Salvia para destetar?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Ibuprofeno')">
+          <span class="top-card-icon">💊</span>
+          <span class="top-card-name">¿Ibuprofeno en lactancia?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Vitamina D')">
+          <span class="top-card-icon">☀️</span>
+          <span class="top-card-name">¿Vitamina D para el bebé?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Melatonina')">
+          <span class="top-card-icon">🌙</span>
+          <span class="top-card-name">¿Melatonina para dormir?</span>
+        </div>
+        <div class="top-card" onclick="quickSearch('Valeriana')">
+          <span class="top-card-icon">😴</span>
+          <span class="top-card-name">¿Valeriana para el insomnio?</span>
+        </div>
+      </div>
     </div>
-    <div class="top-card" onclick="quickSearch('Cafeína')">
-      <span class="top-card-icon">☕</span>
-      <span class="top-card-name">¿Cuánto café puedo tomar?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Sushi')">
-      <span class="top-card-icon">🍣</span>
-      <span class="top-card-name">¿Puedo comer sushi?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Salvia')">
-      <span class="top-card-icon">🌿</span>
-      <span class="top-card-name">¿Salvia para destetar?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Ibuprofeno')">
-      <span class="top-card-icon">💊</span>
-      <span class="top-card-name">¿Ibuprofeno en lactancia?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Vitamina D')">
-      <span class="top-card-icon">☀️</span>
-      <span class="top-card-name">¿Vitamina D para el bebé?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Melatonina')">
-      <span class="top-card-icon">🌙</span>
-      <span class="top-card-name">¿Melatonina para dormir?</span>
-    </div>
-    <div class="top-card" onclick="quickSearch('Valeriana')">
-      <span class="top-card-icon">😴</span>
-      <span class="top-card-name">¿Valeriana para el insomnio?</span>
-    </div>
-  </div>
-</div>
 
-<!-- DURANTE EL VIAJE -->
-<div class="section-block" style="margin-top:24px">
-  <div class="categories-title">✈️ VIAJES Y SITUACIONES ESPECIALES</div>
-  <div class="symptom-grid">
-    <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunas de viaje</div>
-    <div class="symptom-chip" onclick="quickSearch('Antihistamínico')">🤧 Mareo en viaje</div>
-    <div class="symptom-chip" onclick="quickSearch('Loratadina')">🌸 Alergia en verano</div>
-    <div class="symptom-chip" onclick="quickSearch('Ciprofloxacino')">🦠 Diarrea del viajero</div>
-    <div class="symptom-chip" onclick="quickSearch('Crema solar')">☀️ Crema solar</div>
-    <div class="symptom-chip" onclick="quickSearch('Repelente mosquitos')">🦟 Repelente de mosquitos</div>
-    <div class="symptom-chip" onclick="quickSearch('Melatonina')">🌙 Jet lag / Melatonina</div>
-    <div class="symptom-chip" onclick="quickSearch('Cloruro de sodio')">🏖️ Agua de mar / Rinitis</div>
-  </div>
-</div>
-```
+    <!-- DURANTE EL VIAJE -->
+    <div class="section-block" style="margin-top:24px">
+      <div class="categories-title">✈️ VIAJES Y SITUACIONES ESPECIALES</div>
+      <div class="symptom-grid">
+        <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunas de viaje</div>
+        <div class="symptom-chip" onclick="quickSearch('Antihistamínico')">🤧 Mareo en viaje</div>
+        <div class="symptom-chip" onclick="quickSearch('Loratadina')">🌸 Alergia en verano</div>
+        <div class="symptom-chip" onclick="quickSearch('Ciprofloxacino')">🦠 Diarrea del viajero</div>
+        <div class="symptom-chip" onclick="quickSearch('Crema solar')">☀️ Crema solar</div>
+        <div class="symptom-chip" onclick="quickSearch('Repelente mosquitos')">🦟 Repelente de mosquitos</div>
+        <div class="symptom-chip" onclick="quickSearch('Melatonina')">🌙 Jet lag / Melatonina</div>
+        <div class="symptom-chip" onclick="quickSearch('Cloruro de sodio')">🏖️ Agua de mar / Rinitis</div>
+      </div>
+    </div>
 
   </div>
 
   <!-- DB META INFO -->
-
   <div class="db-meta" id="dbMeta">
     📅 Base actualizada: mayo 2025 · <span id="dbCount">300+</span> posiciones
   </div>
 
   <!-- HISTORY PANEL -->
-
   <div class="panel-section" id="historyPanel" style="display:none">
     <div class="panel-header" onclick="togglePanel('historyBody','historyArrow')">
       <div class="panel-header-title">🕐 <span id="txt-history">Búsquedas recientes</span></div>
@@ -1616,7 +1698,6 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
   </div>
 
   <!-- SAVED PANEL -->
-
   <div class="panel-section" id="savedPanel" style="display:none">
     <div class="panel-header" onclick="togglePanel('savedBody','savedArrow')">
       <div class="panel-header-title">⭐ <span id="txt-saved">Guardado</span></div>
@@ -1630,7 +1711,6 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
 </main>
 
 <!-- ══ TRUST SECTION ══ -->
-
 <section class="trust-section">
   <div class="trust-inner">
     <div class="trust-heading">
@@ -1661,8 +1741,69 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
   </div>
 </section>
 
-<!-- ══ CHAT WIDGET — CONSULTORA ══ -->
+<!-- ══ SEO GUIDES SECTION ══ -->
+<section class="guides-section">
+  <div class="guides-inner">
 
+    <div class="guides-group">
+      <div class="guides-group-title">🤱 Guías de lactancia materna</div>
+      <div class="guides-grid">
+        <a href="ibuprofeno-lactancia.html" class="guide-link">💊 Ibuprofeno y lactancia</a>
+        <a href="paracetamol-lactancia.html" class="guide-link">💊 Paracetamol y lactancia</a>
+        <a href="nolotil-lactancia.html" class="guide-link">💊 Nolotil y lactancia</a>
+        <a href="antibioticos-lactancia.html" class="guide-link">💊 Antibióticos en lactancia</a>
+        <a href="mastitis-lactancia.html" class="guide-link">🤱 Mastitis — tratamiento</a>
+        <a href="salvia-lactancia.html" class="guide-link">🌿 Salvia para destetar</a>
+        <a href="alcohol-lactancia.html" class="guide-link">🍷 Alcohol y lactancia</a>
+        <a href="sertralina-lactancia.html" class="guide-link">💊 Sertralina y lactancia</a>
+        <a href="ibuprofeno-lactancia-preguntas.html" class="guide-link">❓ Nurofen, Espidifen en LM</a>
+        <a href="cafe-embarazo-lactancia.html" class="guide-link">☕ Café en lactancia</a>
+      </div>
+    </div>
+
+    <div class="guides-group">
+      <div class="guides-group-title">🤰 Guías de embarazo</div>
+      <div class="guides-grid">
+        <a href="paracetamol-embarazo.html" class="guide-link">💊 Paracetamol en embarazo</a>
+        <a href="ibuprofeno-embarazo.html" class="guide-link">💊 Ibuprofeno en embarazo</a>
+        <a href="nauseas-embarazo.html" class="guide-link">🤢 Náuseas en el embarazo</a>
+        <a href="infusiones-embarazo.html" class="guide-link">🍵 Infusiones en embarazo</a>
+        <a href="manzanilla-embarazo.html" class="guide-link">🌼 Manzanilla en embarazo</a>
+        <a href="vitaminas-embarazo.html" class="guide-link">💊 Vitaminas prenatales</a>
+        <a href="alimentos-prohibidos-embarazo.html" class="guide-link">🥗 Alimentos prohibidos</a>
+        <a href="estreñimiento-embarazo.html" class="guide-link">😣 Estreñimiento en embarazo</a>
+        <a href="dolor-cabeza-embarazo.html" class="guide-link">🤕 Dolor de cabeza embarazo</a>
+        <a href="resfriado-embarazo.html" class="guide-link">🤧 Resfriado en embarazo</a>
+        <a href="hierro-embarazo.html" class="guide-link">🩸 Hierro y anemia gestacional</a>
+        <a href="insomnio-embarazo.html" class="guide-link">🌙 Insomnio en embarazo</a>
+        <a href="omeprazol-embarazo-lactancia.html" class="guide-link">💊 Omeprazol en embarazo</a>
+        <a href="antihistaminicos-embarazo-lactancia.html" class="guide-link">💊 Antihistamínicos embarazo</a>
+        <a href="sushi-embarazo.html" class="guide-link">🍣 Sushi en embarazo</a>
+        <a href="candidiasis-vaginal-embarazo.html" class="guide-link">🌸 Candidiasis vaginal embarazo</a>
+        <a href="progesterona-embarazo.html" class="guide-link">💊 Utrogestan y Duphaston</a>
+        <a href="cafe-embarazo-lactancia.html" class="guide-link">☕ Café en embarazo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">🌿 <strong>Mama Clara</strong></div>
+    <p class="footer-tagline">Información farmacológica verificada para embarazo y lactancia · Solo para España 🇪🇸</p>
+    <p class="footer-credits">Elaborado por farmacólogos clínicos y revisado por consultoras IBCLC certificadas</p>
+    <div class="footer-links">
+      <a href="privacy.html">Política de privacidad</a>
+      <span>·</span>
+      <a href="sitemap.xml">Sitemap</a>
+      <span>·</span>
+      <a href="https://wa.me/34685093534" target="_blank">Contacto</a>
+    </div>
+    <p class="footer-disclaimer">Esta herramienta es informativa y no sustituye la consulta con tu médico, matrona o farmacéutico.</p>
+  </div>
+</footer>
 <div class="chat-fab" id="chatFab" onclick="toggleChat()">
   <span class="chat-fab-icon">🤱</span>
   <span class="chat-fab-label">Consultora</span>
@@ -1701,7 +1842,6 @@ font-family: -apple-system, BlinkMacSystemFont, ‘Plus Jakarta Sans’, sans-se
 </div>
 
 <!-- SAVE TOAST -->
-
 <div class="save-toast" id="saveToast">
   <span class="save-toast-icon">⭐</span>
   <span id="saveToastText">Guardando…</span>
@@ -2158,6 +2298,229 @@ const DB = [
 
   { type:"alimento", inn:"Agua de mar isotónica / Suero salino nasal", trade:"Sterimar, Physiomer, Nasalmer, Rhinomer, agua de mar", category:"Producto sanitario — Higiene nasal", safety_lm:"green", safety_emb:"green", label_lm:"✅ Totalmente seguro — ideal para rinitis", label_emb:"✅ Totalmente seguro — primera opción rinitis", trimestres:"T1, T2, T3", text_lm:"El agua de mar isotónica para lavados nasales es totalmente segura durante la lactancia. Sin contraindicaciones. Ideal para rinitis, congestión nasal, alergia y resfriado. Primera opción antes de cualquier medicamento descongestionante.", text_emb:"Primera opción para rinitis y congestión nasal en el embarazo. Completamente segura. Se puede usar tantas veces como se necesite. Alivia la congestión sin riesgos fetales.", interactions:"Sin interacciones", sources:["SEGO","AEP","e-lactancia"], tags:["medicamento","suero salino","agua de mar","nasal","rinitis","resfriado","congestión","viaje"] }
 
+,
+  // ══ ESTATINAS / COLESTEROL ══
+  { type:"medicamento", inn:"Atorvastatina", trade:"Cardyl, Atorvastatina EFG, Zarator", category:"Medicamento — Estatina hipolipemiante", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Las estatinas están contraindicadas durante la lactancia. El tratamiento del colesterol puede suspenderse durante el periodo de lactancia sin riesgo clínico significativo. Consultar con el médico para valorar la necesidad del tratamiento durante este periodo.", text_emb:"Contraindicada en el embarazo. El colesterol es necesario para el desarrollo fetal. Las estatinas pueden causar malformaciones. Suspender al buscar el embarazo o en cuanto se confirme.", interactions:"Múltiples: anticoagulantes, antifúngicos, macrólidos", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","colesterol","estatina","contraindicado","cardiovascular"] },
+
+  { type:"medicamento", inn:"Simvastatina", trade:"Simvastatina EFG, Zocor, Sinvacor", category:"Medicamento — Estatina hipolipemiante", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Contraindicada durante la lactancia. Suspender el tratamiento durante el periodo de LM.", text_emb:"Contraindicada en el embarazo. Suspender al buscar embarazo.", interactions:"Interacciones importantes con anticoagulantes, antifúngicos azólicos y macrólidos", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","colesterol","estatina","contraindicado","cardiovascular"] },
+
+  { type:"medicamento", inn:"Rosuvastatina", trade:"Crestor, Rosuvastatina EFG", category:"Medicamento — Estatina hipolipemiante", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Contraindicada durante la lactancia por el mismo mecanismo que otras estatinas.", text_emb:"Contraindicada en el embarazo. Suspender antes de buscar embarazo.", interactions:"Anticoagulantes, antiácidos, fibratos", sources:["AEMPS","EMA"], tags:["medicamento","colesterol","estatina","contraindicado","cardiovascular"] },
+
+  // ══ ANTIHIPERTENSIVOS ADICIONALES ══
+  { type:"medicamento", inn:"Amlodipino", trade:"Norvasc, Amlodipino EFG, Astudal", category:"Medicamento — Calcioantagonista antihipertensivo", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos limitados — preferir alternativas", label_emb:"⚠️ Datos limitados — preferir labetalol o metildopa", trimestres:"T2, T3 si no hay alternativa", text_lm:"El amlodipino tiene datos limitados en lactancia. Se prefieren otros antihipertensivos mejor estudiados (nifedipino, labetalol). Si ya estás tomándolo y no hay alternativa, el riesgo es bajo.", text_emb:"Datos limitados en embarazo. Preferir labetalol o metildopa como primera elección.", interactions:"Ciclosporina, tacrolimus, simvastatina", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","hipertensión","antihipertensivo","calcioantagonista","cardiovascular"] },
+
+  { type:"medicamento", inn:"Losartán", trade:"Cozaar, Losartán EFG", category:"Medicamento — ARA II antihipertensivo", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo (T2, T3)", trimestres:"Contraindicado T2-T3", text_lm:"Los ARA II están contraindicados en lactancia. Suspender y cambiar a antihipertensivo compatible.", text_emb:"Contraindicado en T2 y T3: fetotoxicidad grave (igual que IECAs). Suspender al confirmar el embarazo.", interactions:"AINEs reducen efecto antihipertensivo. Potasio: riesgo de hiperpotasemia", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","hipertensión","antihipertensivo","ARA II","cardiovascular","contraindicado"] },
+
+  { type:"medicamento", inn:"Irbesartán", trade:"Aprovel, Karvea, Irbesartán EFG", category:"Medicamento — ARA II antihipertensivo", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"ARA II contraindicado en lactancia. Cambiar a antihipertensivo compatible.", text_emb:"Contraindicado como todos los ARA II.", interactions:"AINEs, potasio", sources:["AEMPS","EMA"], tags:["medicamento","hipertensión","antihipertensivo","ARA II","contraindicado"] },
+
+  { type:"medicamento", inn:"Valsartán", trade:"Diovan, Valsartán EFG", category:"Medicamento — ARA II antihipertensivo", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado T2-T3", text_lm:"ARA II contraindicado en lactancia.", text_emb:"Contraindicado en T2 y T3.", interactions:"AINEs, litio", sources:["AEMPS","EMA"], tags:["medicamento","hipertensión","antihipertensivo","ARA II","contraindicado"] },
+
+  { type:"medicamento", inn:"Bisoprolol", trade:"Emconcor, Bisoprolol EFG, Congescor", category:"Medicamento — Betabloqueante antihipertensivo", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Pasa a leche — vigilar lactante", label_emb:"⚠️ Aceptable en embarazo — vigilar crecimiento fetal", trimestres:"T2, T3 con seguimiento", text_lm:"El bisoprolol pasa a la leche. Vigilar bradicardia, hipoglucemia e hipotensión en el lactante. Compatible con seguimiento.", text_emb:"Puede usarse en hipertensión gestacional bajo supervisión. Vigilar restricción del crecimiento fetal.", interactions:"No suspender bruscamente. Otros antihipertensivos: potenciación", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","hipertensión","antihipertensivo","betabloqueante","cardiovascular"] },
+
+  { type:"medicamento", inn:"Lisinopril", trade:"Zestril, Lisinopril EFG, Prinivil", category:"Medicamento — IECA antihipertensivo", safety_lm:"green", safety_emb:"red", label_lm:"✅ Compatible con lactancia", label_emb:"❌ Contraindicado en embarazo (T2, T3)", trimestres:"Contraindicado T2-T3", text_lm:"El lisinopril es compatible con la lactancia — paso mínimo a la leche.", text_emb:"Contraindicado en T2 y T3: fetotoxicidad grave igual que enalapril. Suspender al confirmar embarazo.", interactions:"AINEs, suplementos de potasio", sources:["AEMPS","LactMed","e-lactancia"], tags:["medicamento","hipertensión","antihipertensivo","ieca","cardiovascular","contraindicado"] },
+
+  // ══ ANTICOAGULANTES / ANTIAGREGANTES ══
+  { type:"medicamento", inn:"Apixabán", trade:"Eliquis", category:"Medicamento — Anticoagulante oral (ACOD)", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"Los ACODs (apixabán, rivaroxabán, dabigatrán) están contraindicados en lactancia. Cambiar a HBPM (Clexane) durante la lactancia.", text_emb:"Contraindicado en embarazo. Usar HBPM (Clexane) como anticoagulante de elección.", interactions:"Potencia el efecto hemostático de AINEs y otros anticoagulantes", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","anticoagulante","ACOD","trombosis","cardiovascular","contraindicado"] },
+
+  { type:"medicamento", inn:"Rivaroxabán", trade:"Xarelto", category:"Medicamento — Anticoagulante oral (ACOD)", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"Contraindicado en lactancia. Usar HBPM durante la LM.", text_emb:"Contraindicado en embarazo. HBPM es la alternativa segura.", interactions:"AINEs, otros anticoagulantes", sources:["AEMPS","EMA"], tags:["medicamento","anticoagulante","ACOD","trombosis","contraindicado"] },
+
+  { type:"medicamento", inn:"Dabigatrán", trade:"Pradaxa", category:"Medicamento — Anticoagulante oral (ACOD)", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"Contraindicado en lactancia.", text_emb:"Contraindicado en embarazo.", interactions:"AINEs, otros anticoagulantes, antiagregantes", sources:["AEMPS","EMA"], tags:["medicamento","anticoagulante","ACOD","trombosis","contraindicado"] },
+
+  { type:"medicamento", inn:"Clopidogrel", trade:"Plavix, Clopidogrel EFG", category:"Medicamento — Antiagregante plaquetario", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ Evitar en lactancia — datos insuficientes", label_emb:"⚠️ Datos limitados — solo si imprescindible", trimestres:"Solo si beneficio supera riesgo", text_lm:"Datos insuficientes en lactancia. Evitar por precaución.", text_emb:"Datos muy limitados. Solo en situaciones clínicas graves donde el beneficio supera claramente el riesgo.", interactions:"AINEs, anticoagulantes, omeprazol reduce su eficacia", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","antiagregante","cardiovascular","trombosis"] },
+
+  // ══ ANTIDIABÉTICOS ══
+  { type:"medicamento", inn:"Empagliflozina", trade:"Jardiance, Synjardy (con metformina)", category:"Medicamento — Antidiabético iSGLT2", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Los iSGLT2 están contraindicados en lactancia. Usar insulina o metformina bajo supervisión.", text_emb:"Contraindicada en embarazo. Cambiar a insulina.", interactions:"Diuréticos: riesgo de deshidratación. Insulina: riesgo de hipoglucemia", sources:["AEMPS","EMA"], tags:["medicamento","diabetes","antidiabético","iSGLT2","contraindicado"] },
+
+  { type:"medicamento", inn:"Dapagliflozina", trade:"Forxiga, Xigduo (con metformina)", category:"Medicamento — Antidiabético iSGLT2", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Contraindicada en lactancia.", text_emb:"Contraindicada en embarazo. Cambiar a insulina.", interactions:"Diuréticos, insulina", sources:["AEMPS","EMA"], tags:["medicamento","diabetes","antidiabético","iSGLT2","contraindicado"] },
+
+  { type:"medicamento", inn:"Semaglutida", trade:"Ozempic (inyectable), Rybelsus (oral)", category:"Medicamento — Antidiabético / Obesidad GLP-1", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada — suspender 2 meses antes de buscar embarazo", text_lm:"La semaglutida está contraindicada en lactancia. Datos insuficientes de seguridad en el lactante.", text_emb:"Contraindicada en embarazo. Puede causar malformaciones fetales en animales. Suspender al menos 2 meses antes de buscar embarazo por la larga vida media.", interactions:"Insulina y antidiabéticos orales: riesgo de hipoglucemia", sources:["AEMPS","EMA","FDA"], tags:["medicamento","diabetes","antidiabético","GLP1","obesidad","contraindicado"] },
+
+  { type:"medicamento", inn:"Liraglutida", trade:"Victoza (diabetes), Saxenda (obesidad)", category:"Medicamento — Antidiabético / Obesidad GLP-1", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo", trimestres:"Contraindicada", text_lm:"Contraindicada en lactancia.", text_emb:"Contraindicada en embarazo. Malformaciones en estudios animales.", interactions:"Insulina y otros antidiabéticos", sources:["AEMPS","EMA"], tags:["medicamento","diabetes","antidiabético","GLP1","obesidad","contraindicado"] },
+
+  { type:"medicamento", inn:"Sitagliptina", trade:"Januvia, Xelevia, Sitagliptina EFG", category:"Medicamento — Antidiabético iDPP4", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ Evitar en lactancia — datos insuficientes", label_emb:"⚠️ Datos muy limitados — preferir insulina", trimestres:"Preferir insulina en embarazo", text_lm:"Datos insuficientes en lactancia. Evitar por precaución — usar insulina.", text_emb:"Datos muy limitados. La insulina es el tratamiento de elección en diabetes gestacional.", interactions:"Insulina: riesgo de hipoglucemia", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","diabetes","antidiabético","iDPP4"] },
+
+  // ══ RESPIRATORIO / ASMA ══
+  { type:"medicamento", inn:"Salbutamol", trade:"Ventolín, Salbutamol EFG", category:"Medicamento — Broncodilatador beta2 de rescate", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible con lactancia — vía inhalada", label_emb:"✅ Compatible en embarazo — vía inhalada", trimestres:"T1, T2, T3", text_lm:"El salbutamol inhalado es compatible con la lactancia. Absorción sistémica mínima por vía inhalada. El asma no tratada supone mayor riesgo que el fármaco.", text_emb:"El salbutamol inhalado es el broncodilatador de rescate de elección en el embarazo. El asma no controlada es mucho más peligrosa para el feto que el medicamento.", interactions:"Betabloqueantes reducen su efecto. Diuréticos: hipopotasemia", sources:["GINA","SEGO","LactMed","e-lactancia"], tags:["medicamento","asma","broncodilatador","respiratorio","beta2"] },
+
+  { type:"medicamento", inn:"Budesonida inhalada", trade:"Pulmicort, Budesonida EFG, Inflammide", category:"Medicamento — Corticoide inhalado para asma", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible con lactancia", label_emb:"✅ Primera elección corticoide inhalado en embarazo", trimestres:"T1, T2, T3", text_lm:"La budesonida inhalada es compatible con la lactancia. Absorción sistémica mínima. No interrumpir el tratamiento del asma.", text_emb:"Primera elección entre los corticoides inhalados en el embarazo por tener los mejores datos de seguridad. El asma no controlada supone mayor riesgo que el fármaco.", interactions:"Sin interacciones relevantes a dosis inhaladas", sources:["GINA","SEGO","LactMed","e-lactancia"], tags:["medicamento","asma","corticoide","inhalado","respiratorio"] },
+
+  { type:"medicamento", inn:"Fluticasona inhalada", trade:"Flixotide, Inaladuo, Trimbow (combinado)", category:"Medicamento — Corticoide inhalado para asma", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Compatible con lactancia", label_emb:"⚠️ Aceptable — preferir budesonida en embarazo", trimestres:"T2, T3 preferiblemente", text_lm:"La fluticasona inhalada es compatible con la lactancia. Absorción sistémica muy baja.", text_emb:"Aceptable pero se prefiere budesonida que tiene más datos de seguridad en embarazo.", interactions:"Sin interacciones relevantes a dosis inhaladas", sources:["GINA","AEMPS","LactMed"], tags:["medicamento","asma","corticoide","inhalado","respiratorio"] },
+
+  { type:"medicamento", inn:"Montelukast", trade:"Singulair, Montelukast EFG", category:"Medicamento — Antileucotrieno para asma/rinitis", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos limitados — continuar si bien controlada", label_emb:"⚠️ Aceptable si asma no controlada con inhalados", trimestres:"Continuar si ya en tratamiento", text_lm:"Datos limitados en lactancia. Si el asma está bien controlada, puede continuarse bajo supervisión. Sin señales claras de alarma en estudios existentes.", text_emb:"Datos limitados pero sin malformaciones documentadas en los estudios disponibles. Continuar si necesario para control del asma.", interactions:"Rifampicina y fenobarbital reducen sus niveles", sources:["AEMPS","LactMed","e-lactancia"], tags:["medicamento","asma","antileucotrieno","rinitis","respiratorio"] },
+
+  { type:"medicamento", inn:"Tiotropio", trade:"Spiriva, Tiotropio EFG", category:"Medicamento — Broncodilatador anticolinérgico EPOC", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos muy limitados — usar solo si imprescindible", label_emb:"⚠️ Datos insuficientes — solo si beneficio supera riesgo", trimestres:"Valorar individualmente", text_lm:"Datos muy escasos en lactancia. Si la EPOC o el asma grave lo requieren, puede utilizarse bajo estricta supervisión.", text_emb:"Datos insuficientes. Solo en casos de enfermedad respiratoria grave donde el beneficio supera claramente el riesgo.", interactions:"Anticolinérgicos sistémicos: efecto aditivo", sources:["AEMPS","EMA","LactMed"], tags:["medicamento","EPOC","asma","broncodilatador","anticolinérgico","respiratorio"] },
+
+  // ══ NEUROLOGÍA / EPILEPSIA ══
+  { type:"medicamento", inn:"Ácido valproico", trade:"Depakine, Ácido valproico EFG", category:"Medicamento — Antiepiléptico / Estabilizador del ánimo", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Compatible con precaución — vigilar lactante", label_emb:"❌ Contraindicado salvo epilepsia sin alternativa", trimestres:"Contraindicado si alternativa disponible", text_lm:"El ácido valproico pasa a la leche. Compatible con lactancia con vigilancia. Vigilar sedación, irritabilidad y hepatotoxicidad en el lactante. Dar vitamina K al bebé.", text_emb:"CONTRAINDICADO en embarazo: altísimo riesgo de malformaciones (espina bífida, cardiopatías) y retraso cognitivo fetal (síndrome fetal por valproato). Solo en epilepsia resistente sin alternativa, con información completa a la paciente y ácido fólico 5 mg/día.", interactions:"Múltiples e importantes. Nunca suspender bruscamente.", sources:["AEMPS","EMA","e-lactancia","SEGO"], tags:["medicamento","epilepsia","antiepiléptico","neurología","contraindicado"] },
+
+  { type:"medicamento", inn:"Lamotrigina", trade:"Lamictal, Lamotrigina EFG", category:"Medicamento — Antiepiléptico / Estabilizador del ánimo", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Compatible — vigilar posible sedación en lactante", label_emb:"⚠️ Menor riesgo que valproico — continuar con precaución", trimestres:"Continuar si necesaria — ajustar dosis", text_lm:"La lamotrigina pasa a la leche (20-30% de la dosis materna). Compatible con lactancia con vigilancia de sedación. Los niveles aumentan postparto — vigilar toxicidad materna.", text_emb:"La lamotrigina es uno de los antiepilépticos con menor teratogenicidad. Los niveles caen en el embarazo — necesita ajuste de dosis frecuente. Ácido fólico 5 mg/día.", interactions:"Anticonceptivos hormonales reducen sus niveles a la mitad. Valproico los duplica.", sources:["AEMPS","e-lactancia","LactMed","Cochrane"], tags:["medicamento","epilepsia","antiepiléptico","neurología"] },
+
+  { type:"medicamento", inn:"Levetiracetam", trade:"Keppra, Levetiracetam EFG", category:"Medicamento — Antiepiléptico", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Pasa a leche — vigilar sedación en lactante", label_emb:"⚠️ Menor riesgo que antiepilépticos clásicos", trimestres:"Continuar si necesario", text_lm:"El levetiracetam pasa a la leche en cantidades moderadas. Compatible con vigilancia. Vigilar sedación en el lactante.", text_emb:"Datos de seguridad aceptables comparado con otros antiepilépticos. Continuar si necesario para control de epilepsia. Ácido fólico 5 mg/día.", interactions:"Pocos. No induce enzimas hepáticas.", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","epilepsia","antiepiléptico","neurología"] },
+
+  { type:"medicamento", inn:"Gabapentina", trade:"Neurontin, Gabapentina EFG", category:"Medicamento — Antiepiléptico / Neuropático", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Pasa a leche — vigilar sedación en lactante", label_emb:"⚠️ Datos limitados — valorar riesgo-beneficio", trimestres:"Solo si beneficio supera riesgo", text_lm:"La gabapentina pasa a la leche en cantidades variables. Vigilar sedación excesiva en el lactante.", text_emb:"Datos limitados. Se usa para dolor neuropático y epilepsia. Valorar siempre riesgo-beneficio con el neurólogo.", interactions:"Antiácidos reducen su absorción. Morfina aumenta sus niveles.", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","epilepsia","neuropático","dolor","antiepiléptico"] },
+
+  { type:"medicamento", inn:"Pregabalina", trade:"Lyrica, Pregabalina EFG", category:"Medicamento — Antiepiléptico / Neuropático / Ansiolítico", safety_lm:"red", safety_emb:"red", label_lm:"❌ Evitar en lactancia — datos insuficientes", label_emb:"❌ Evitar en embarazo — malformaciones en estudios", trimestres:"Contraindicada si alternativa posible", text_lm:"Datos insuficientes en lactancia. Evitar por precaución. Buscar alternativas.", text_emb:"Estudios en humanos muestran mayor riesgo de malformaciones. Evitar si hay alternativa. Siempre ácido fólico 5 mg/día si imprescindible.", interactions:"Opioides y benzodiazepinas: depresión respiratoria", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","epilepsia","neuropático","dolor","ansiedad","contraindicado"] },
+
+  // ══ TIROIDES ══
+  { type:"medicamento", inn:"Metimazol / Tiamazol", trade:"Tirodril, Neo-Mercazole", category:"Medicamento — Antitiroideos (hipertiroidismo)", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Compatible — dosis bajas preferidas", label_emb:"⚠️ Preferir propiltiouracilo en T1", trimestres:"T1: propiltiouracilo; T2-T3: metimazol preferido", text_lm:"El metimazol es compatible con la lactancia a dosis bajas (≤20 mg/día). Monitorizar función tiroidea del lactante.", text_emb:"En T1 preferir propiltiouracilo (menor riesgo de aplasia cutánea). En T2-T3 cambiar a metimazol (menor hepatotoxicidad materna).", interactions:"Vitamina K, anticoagulantes", sources:["AEMPS","ATA","e-lactancia","LactMed"], tags:["medicamento","tiroides","hipertiroidismo","antitiroideos"] },
+
+  { type:"medicamento", inn:"Propiltiouracilo (PTU)", trade:"Propiltiouracilo EFG", category:"Medicamento — Antitiroideo", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Compatible — vigilar función tiroidea lactante", label_emb:"⚠️ Preferido en T1 — riesgo hepatotoxicidad materna", trimestres:"T1 preferido; cambiar a metimazol en T2-T3", text_lm:"Compatible en lactancia. Pasar menor cantidad a la leche que el metimazol. Monitorizar TSH del lactante.", text_emb:"Primera elección en T1 por menor riesgo de aplasia cutis en el feto. En T2-T3 cambiar a metimazol por menor hepatotoxicidad materna.", interactions:"Anticoagulantes: puede potenciarlos", sources:["AEMPS","ATA","e-lactancia"], tags:["medicamento","tiroides","hipertiroidismo","antitiroideos"] },
+
+  // ══ ANTICONCEPTIVOS (consultas frecuentes postparto) ══
+  { type:"medicamento", inn:"Píldora de progestágeno solo", trade:"Cerazette, Azalia, Slinda (drospirerone)", category:"Medicamento — Anticonceptivo hormonal solo gestágeno", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Compatible con lactancia — anticonceptivo de elección", label_emb:"⚠️ No indicada en embarazo confirmado", trimestres:"No indicada en embarazo", text_lm:"La píldora de progestágeno solo (Cerazette, Azalia) es el anticonceptivo hormonal oral de elección durante la lactancia. No afecta la producción de leche. Puede iniciarse a las 6 semanas postparto.", text_emb:"No se usa en embarazo confirmado. Si se tomó sin saber del embarazo, el riesgo fetal es muy bajo.", interactions:"Induores enzimáticos (rifampicina, antiepilépticos) reducen su eficacia", sources:["SEGO","OMS","e-lactancia"], tags:["medicamento","anticonceptivo","progestágeno","lactancia","postparto"] },
+
+  { type:"medicamento", inn:"DIU hormonal (levonorgestrel)", trade:"Mirena, Kyleena, Jaydess", category:"Medicamento — Anticonceptivo intrauterino hormonal", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Compatible con lactancia", label_emb:"⚠️ Retirar si embarazo confirmado con DIU puesto", trimestres:"No indicado en embarazo", text_lm:"El DIU hormonal es compatible con la lactancia. Liberación local de levonorgestrel muy baja. Puede colocarse a partir de las 6 semanas postparto.", text_emb:"Si se queda embarazada con DIU puesto: acudir al ginecólogo para valorar extracción (mayor riesgo de aborto séptico si se deja).", interactions:"Mínimas por absorción sistémica muy baja", sources:["SEGO","OMS","e-lactancia"], tags:["medicamento","anticonceptivo","DIU","levonorgestrel","postparto","lactancia"] },
+
+  { type:"medicamento", inn:"Anticonceptivos orales combinados (estrógeno+gestágeno)", trade:"Yasmin, Yasminelle, Diane 35, Evra, NuvaRing", category:"Medicamento — Anticonceptivo hormonal combinado", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ Contraindicados en lactancia — reducen la leche", label_emb:"⚠️ No indicados en embarazo — si tomados, riesgo bajo", trimestres:"No indicados en embarazo", text_lm:"Los anticonceptivos combinados (que contienen estrógenos) están contraindicados en lactancia porque los estrógenos reducen la producción de leche. Usar la minipíldora (solo progestágeno) o DIU.", text_emb:"Si se tomaron sin saber del embarazo, el riesgo de malformaciones es muy bajo. Suspender en cuanto se confirme el embarazo.", interactions:"Rifampicina, antiepilépticos, hierba de San Juan reducen su eficacia", sources:["SEGO","OMS","e-lactancia"], tags:["medicamento","anticonceptivo","estrógeno","gestágeno","galactofugo","contraindicado"] },
+
+  // ══ DERMATOLOGÍA ══
+  { type:"medicamento", inn:"Isotretinoína", trade:"Roaccutane, Isotretinoína EFG, Roacutan", category:"Medicamento — Retinoide para acné grave", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ ABSOLUTAMENTE contraindicada en embarazo", trimestres:"Contraindicada — anticonceptivo obligatorio", text_lm:"La isotretinoína está contraindicada en lactancia. Potencialmente tóxica para el lactante.", text_emb:"ABSOLUTAMENTE CONTRAINDICADA. La isotretinoína es uno de los teratógenos más potentes conocidos: causa malformaciones gravísimas en el 25-30% de los fetos expuestos (cara, corazón, cerebro). Requiere anticonceptivo doble durante y 1 mes después del tratamiento. Programa de prevención del embarazo (PPE) obligatorio en España.", interactions:"Tetracilinas: aumento de presión intracraneal. Vitamina A: toxicidad aditiva", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","acné","retinoide","dermatología","contraindicado","teratógeno"] },
+
+  { type:"medicamento", inn:"Tretinoína tópica", trade:"Retin-A, Tretinoína crema/gel, Locacid", category:"Medicamento — Retinoide tópico para acné/antienvejecimiento", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Evitar en lactancia por precaución", label_emb:"❌ Evitar en embarazo — riesgo teórico de absorción", trimestres:"Contraindicada en embarazo", text_lm:"La absorción sistémica tópica es mínima pero los datos en lactancia son insuficientes. Evitar por precaución.", text_emb:"Aunque la absorción sistémica tópica es baja, se evita por el potencial teratogénico de los retinoides. Existen alternativas seguras para el acné en el embarazo.", interactions:"Irritación con peróxido de benzoilo, ácidos", sources:["AEMPS","e-lactancia"], tags:["medicamento","acné","retinoide","tópico","dermatología","contraindicado"] },
+
+  { type:"medicamento", inn:"Peróxido de benzoilo", trade:"Benzac, PanOxyl, Epiduo (con adapaleno)", category:"Medicamento — Antiacné tópico", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia — uso tópico localizado", label_emb:"⚠️ Uso en zonas pequeñas aceptable — evitar áreas extensas", trimestres:"T2, T3 preferiblemente", text_lm:"El peróxido de benzoilo tópico tiene absorción sistémica mínima. Compatible con lactancia en uso localizado. No aplicar cerca del pecho.", text_emb:"Absorción sistémica muy baja. Uso puntual en áreas pequeñas se considera aceptable. Evitar aplicaciones extensas.", interactions:"Tretinoína: irritación si se combinan", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","acné","tópico","dermatología","piel"] },
+
+  { type:"medicamento", inn:"Ácido azelaico", trade:"Skinoren, Finacea, ácido azelaico 15-20%", category:"Medicamento — Antiacné / Hiperpigmentación tópico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Uno de los pocos antiacné seguros en embarazo", trimestres:"T1, T2, T3", text_lm:"El ácido azelaico tópico es seguro en lactancia. Absorción sistémica mínima.", text_emb:"El ácido azelaico es uno de los pocos tratamientos para el acné y el melasma que se consideran seguros en el embarazo. Categoría B de la FDA.", interactions:"Sin interacciones relevantes a uso tópico", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","acné","melasma","tópico","dermatología","piel"] },
+
+  { type:"medicamento", inn:"Hidrocortisona tópica", trade:"Hidrocortisona 1% crema, Dermotopic, Scheriproct", category:"Medicamento — Corticoide tópico leve", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en uso localizado y puntual", label_emb:"✅ El corticoide tópico más seguro en embarazo", trimestres:"T1, T2, T3 — uso localizado y puntual", text_lm:"La hidrocortisona tópica al 1% es segura en lactancia para uso localizado y puntual. No aplicar en pezones ni areola.", text_emb:"El corticoide tópico con mejor perfil de seguridad en embarazo. Absorción sistémica mínima en uso localizado.", interactions:"Sin interacciones relevantes a uso tópico", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","corticoide","tópico","dermatología","eccema","piel"] },
+
+  { type:"medicamento", inn:"Betametasona tópica", trade:"Diprogenta, Betnovate, Diprosone", category:"Medicamento — Corticoide tópico potente", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Uso localizado y puntual — evitar zonas extensas", label_emb:"⚠️ Evitar en T1 y áreas extensas", trimestres:"T2, T3 en áreas pequeñas", text_lm:"La betametasona tópica tiene mayor absorción que la hidrocortisona. Uso localizado y puntual compatible. No aplicar en pezones.", text_emb:"Evitar en T1. En T2-T3 uso localizado en áreas pequeñas es aceptable.", interactions:"Sin interacciones relevantes a uso tópico correcto", sources:["AEMPS","e-lactancia"], tags:["medicamento","corticoide","tópico","dermatología","eccema","piel"] },
+
+  // ══ OSTEOPOROSIS ══
+  { type:"medicamento", inn:"Denosumab", trade:"Prolia, Xgeva", category:"Medicamento — Anticuerpo monoclonal para osteoporosis", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"Contraindicado en lactancia. El tratamiento de la osteoporosis puede diferirse.", text_emb:"Contraindicado en embarazo. El denosumab puede causar alteraciones del metabolismo óseo fetal.", interactions:"Calcio y vitamina D: siempre combinar con suplementos", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","osteoporosis","anticuerpo monoclonal","huesos","contraindicado"] },
+
+  // ══ ARTRITIS / AUTOINMUNE ══
+  { type:"medicamento", inn:"Metotrexato", trade:"Metotrexato EFG, Methofar, Artrotec (AINE+misoprostol)", category:"Medicamento — Inmunosupresor / Antirreumático / Antineoplásico", safety_lm:"red", safety_emb:"red", label_lm:"❌ ABSOLUTAMENTE contraindicado en lactancia", label_emb:"❌ ABSOLUTAMENTE contraindicado en embarazo", trimestres:"Contraindicado — suspender 3 meses antes", text_lm:"ABSOLUTAMENTE CONTRAINDICADO en lactancia. Antimetabolito del ácido fólico. Tóxico para el lactante. Suspender la lactancia si el tratamiento es imprescindible.", text_emb:"ABSOLUTAMENTE CONTRAINDICADO. Antagoniza el ácido fólico causando graves malformaciones (síndrome aminopterina). Suspender al menos 3 meses antes de buscar embarazo (hombre y mujer). Si exposición accidental en T1: asesoramiento genético urgente.", interactions:"AINEs: aumentan su toxicidad gravemente. Ácido fólico: tomar siempre entre ciclos", sources:["AEMPS","EMA","e-lactancia","SEGO"], tags:["medicamento","artritis","inmunosupresor","metotrexato","contraindicado","teratógeno"] },
+
+  { type:"medicamento", inn:"Hidroxicloroquina", trade:"Dolquine, Plaquenil", category:"Medicamento — Antipalúdico / Inmunomodulador", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible y recomendado en LES/artritis durante LM", label_emb:"✅ Recomendado continuar en LES durante embarazo", trimestres:"T1, T2, T3", text_lm:"La hidroxicloroquina es compatible con la lactancia. En mujeres con LES (lupus), la SEGO recomienda mantener el tratamiento durante la LM.", text_emb:"Recomendado continuar en LES y artritis reumatoide durante el embarazo — reduce el riesgo de brotes y complicaciones obstétricas. Protege al feto en madres con anticuerpos anti-Ro/SSA.", interactions:"Digoxina: aumenta sus niveles. Antidiabéticos: puede potenciar hipoglucemia", sources:["SEGO","AEMPS","e-lactancia","LactMed"], tags:["medicamento","lupus","artritis","inmunomodulador","LES","malaria"] },
+
+  { type:"medicamento", inn:"Azatioprina", trade:"Imurel, Azatioprina EFG", category:"Medicamento — Inmunosupresor", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Compatible con precaución en enfermedades autoinmunes graves", label_emb:"⚠️ Aceptable en enfermedades autoinmunes graves", trimestres:"Continuar si necesaria para control de enfermedad", text_lm:"La azatioprina es compatible con la lactancia en enfermedades autoinmunes graves donde suspenderla supone riesgo de brote. Los metabolitos activos son bajos en leche.", text_emb:"Aceptable cuando el beneficio de controlar la enfermedad autoinmune supera el riesgo. Datos extensos en trasplantadas y enfermedad inflamatoria intestinal.", interactions:"Alopurinol multiplica su toxicidad por 4 — combinación contraindicada", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","inmunosupresor","artritis","enfermedad inflamatoria","autoinmune"] },
+
+  // ══ DIGESTIVO ══
+  { type:"medicamento", inn:"Loperamida", trade:"Fortasec, Loperamida EFG, Imodium", category:"Medicamento — Antidiarreico", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Uso puntual aceptable — evitar uso prolongado", label_emb:"⚠️ Uso puntual aceptable — evitar T1 y dosis altas", trimestres:"T2, T3 uso puntual", text_lm:"La loperamida pasa a la leche en pequeñas cantidades. Uso puntual (1-2 días) para diarrea aguda se considera aceptable. No usar de forma crónica.", text_emb:"Uso puntual en T2-T3 aceptable para diarrea aguda incapacitante. Evitar en T1 por datos insuficientes. Mantener hidratación.", interactions:"Sin interacciones relevantes a dosis habituales", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","diarrea","antidiarreico","digestivo"] },
+
+  { type:"medicamento", inn:"Simeticona", trade:"Aerored, Sab Simplex, Lefax, Minfom", category:"Medicamento — Antiflatulento", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro — no se absorbe", label_emb:"✅ Seguro — no se absorbe", trimestres:"T1, T2, T3", text_lm:"La simeticona no se absorbe sistémicamente. Completamente segura en lactancia para gases y distensión abdominal.", text_emb:"No se absorbe. Segura en todos los trimestres para gases y distensión.", interactions:"Sin interacciones", sources:["AEMPS","e-lactancia"], tags:["medicamento","gases","flatulencia","digestivo","cólico"] },
+
+  { type:"medicamento", inn:"Trimebutina", trade:"Polibutin, Trimebutina EFG", category:"Medicamento — Espasmolítico intestinal", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos limitados — uso puntual de bajo riesgo", label_emb:"⚠️ Datos limitados — evitar en T1", trimestres:"T2, T3 uso puntual", text_lm:"Datos limitados en lactancia. Uso puntual para colon irritable o espasmos intestinales se considera de bajo riesgo.", text_emb:"Datos insuficientes. Uso puntual en T2-T3 probablemente de bajo riesgo.", interactions:"Sin interacciones relevantes conocidas", sources:["AEMPS","e-lactancia"], tags:["medicamento","espasmolítico","intestino","colon irritable","digestivo"] },
+
+  { type:"medicamento", inn:"Ondansetrón (náuseas quimioterapia)", trade:"Zofran, Ondansetrón EFG", category:"Medicamento — Antiemético 5-HT3", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos limitados en LM — uso puntual aceptable", label_emb:"⚠️ Solo náuseas graves resistentes — riesgo leve en T1", trimestres:"T2, T3 preferiblemente", text_lm:"El ondansetrón pasa a la leche en pequeñas cantidades. Uso puntual para náuseas graves se considera de bajo riesgo.", text_emb:"Controversia en T1: algunos estudios sugieren leve aumento de fisura palatina. FDA: categoría B. Solo para hiperémesis resistente a otros tratamientos.", interactions:"Prolongación QT: precaución con otros fármacos que alarguen QT", sources:["FDA","e-lactancia","ACOG","LactMed"], tags:["medicamento","náuseas","antiemético","quimioterapia","toxicosis"] },
+
+  // ══ VITAMINAS Y SUPLEMENTOS ADICIONALES ══
+  { type:"suplemento", inn:"Vitamina B12 (cianocobalamina)", trade:"Optovite B12, Cianocobalamina, Supradyn (B12)", category:"Suplemento — Vitamina B12 esencial", safety_lm:"green", safety_emb:"green", label_lm:"✅ Esencial en dietas veganas/vegetarianas en LM", label_emb:"✅ Esencial en dietas veganas/vegetarianas en embarazo", trimestres:"T1, T2, T3", text_lm:"La B12 es imprescindible en madres veganas/vegetarianas durante la lactancia. La deficiencia materna de B12 causa déficit neurológico grave en el lactante. Suplementar siempre en dietas sin productos animales.", text_emb:"Imprescindible en embarazadas veganas. La deficiencia de B12 en el embarazo puede causar daño neurológico fetal irreversible. 250-500 mcg/día.", interactions:"Metformina reduce la absorción de B12 con uso prolongado", sources:["SEGO","NIH ODS","AEP","e-lactancia"], tags:["suplemento","vitamina","B12","vegano","neurológico","embarazo","lactancia"] },
+
+  { type:"suplemento", inn:"Zinc", trade:"Zinc gluconato, Zinc EFG, suplementos zinc", category:"Suplemento mineral — Inmunidad y cicatrización", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en dosis habituales", label_emb:"✅ Seguro — necesidades aumentadas en embarazo", trimestres:"T1, T2, T3", text_lm:"El zinc es seguro durante la lactancia. Las necesidades aumentan durante la LM. 12-13 mg/día. Importante para la inmunidad y la cicatrización.", text_emb:"El zinc es esencial en el embarazo para el desarrollo fetal. Las necesidades aumentan a 11 mg/día. Incluido en la mayoría de vitaminas prenatales.", interactions:"Calcio y hierro reducen su absorción. Espaciar de otros minerales.", sources:["NIH ODS","SEGO","e-lactancia"], tags:["suplemento","mineral","zinc","inmunidad","cicatrización","embarazo"] },
+
+  { type:"suplemento", inn:"Colina", trade:"Colina bitartrato, lecitina de soja (fuente de colina)", category:"Suplemento — Nutriente esencial para el cerebro fetal", safety_lm:"green", safety_emb:"green", label_lm:"✅ Muy recomendado en lactancia", label_emb:"✅ Muy recomendado — desarrollo cerebral fetal", trimestres:"T1, T2, T3", text_lm:"La colina es esencial para el desarrollo cerebral del bebé y pasa a la leche. Las necesidades aumentan mucho durante la LM (550 mg/día). Los huevos son la mejor fuente alimentaria.", text_emb:"La colina es fundamental para el desarrollo cerebral y del tubo neural del feto. Muchas vitaminas prenatales no la incluyen. 450 mg/día. Fuentes: huevos, hígado, soja.", interactions:"Sin interacciones relevantes", sources:["NIH ODS","ACOG","e-lactancia"], tags:["suplemento","colina","cerebro","neurológico","embarazo","lactancia"] },
+
+  { type:"suplemento", inn:"Ashwagandha", trade:"Ashwagandha (Withania somnifera), KSM-66", category:"Suplemento — Adaptógeno / Ansiolítico natural", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia — datos insuficientes", label_emb:"❌ Contraindicada en embarazo — efecto uterotónico", trimestres:"Contraindicada", text_lm:"La ashwagandha no tiene datos de seguridad en lactancia. Por principio de precaución se evita.", text_emb:"Contraindicada en embarazo. Tiene efecto uterotónico potencial y puede causar aborto a dosis altas.", interactions:"Puede potenciar sedantes e hipotiroidismo", sources:["e-lactancia","NIH"], tags:["suplemento","adaptógeno","ansiedad","estrés","contraindicado"] },
+
+  { type:"suplemento", inn:"CBD (cannabidiol)", trade:"Aceite CBD, cápsulas CBD, cremas CBD", category:"Suplemento — Cannabinoide", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"El CBD está contraindicado en lactancia. Puede acumularse en la leche materna y en la grasa corporal del lactante. La FDA emitió advertencias específicas sobre el uso de CBD en lactancia.", text_emb:"Contraindicado en embarazo. Datos insuficientes de seguridad y potencial riesgo neurológico fetal.", interactions:"Puede interactuar con muchos medicamentos (mismo metabolismo que el pomelo)", sources:["FDA","e-lactancia","NIH"], tags:["suplemento","CBD","cannabis","contraindicado"] },
+
+  { type:"suplemento", inn:"Proteína en polvo (whey, caseína, vegetal)", trade:"Whey protein, proteína de suero, proteína vegetal (guisante, arroz)", category:"Suplemento — Proteína para deporte/nutrición", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Proteína pura sin aditivos: aceptable. Con creatina/cafeína/edulcorantes: precaución", label_emb:"⚠️ Proteína pura: aceptable. Evitar productos con aditivos", trimestres:"Solo proteína pura sin aditivos", text_lm:"La proteína en polvo pura (suero de leche o vegetal) sin aditivos es aceptable en lactancia si hay déficit proteico. Evitar productos con cafeína, creatina, edulcorantes artificiales en dosis altas o «complejos pre-workout».", text_emb:"La proteína pura sin aditivos puede usarse si hay déficit proteico. Evitar productos deportivos con múltiples aditivos, cafeína o creatina.", interactions:"Sin interacciones relevantes para proteína pura", sources:["e-lactancia","NIH"], tags:["suplemento","proteína","deporte","nutrición","whey"] },
+
+  { type:"suplemento", inn:"Colágeno hidrolizado", trade:"Colnatur, Tendisulfur, Fortigel, péptidos de colágeno", category:"Suplemento — Proteína estructural", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"El colágeno hidrolizado es seguro durante la lactancia. Es simplemente proteína hidrolizada. Sin riesgo conocido.", text_emb:"El colágeno es seguro en el embarazo. Es proteína de origen animal sin actividad farmacológica.", interactions:"Sin interacciones", sources:["e-lactancia"], tags:["suplemento","colágeno","articulaciones","piel","proteína"] },
+
+  // ══ ALIMENTOS ADICIONALES ══
+  { type:"alimento", inn:"Aguacate", trade:"Aguacate (Persea americana)", category:"Alimento — Fruta grasa rica en ácido fólico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Muy recomendado en lactancia", label_emb:"✅ Muy recomendado en embarazo", trimestres:"T1, T2, T3", text_lm:"El aguacate es uno de los alimentos más nutritivos durante la lactancia: rico en ácido fólico, vitamina K, potasio y grasas saludables. Sin restricciones.", text_emb:"Excelente en el embarazo: ácido fólico (importante en T1), vitamina K, potasio y grasas monoinsaturadas para el desarrollo cerebral fetal.", interactions:"Sin interacciones farmacológicas", sources:["e-lactancia","SEGO"], tags:["alimento","aguacate","grasa saludable","folato","potasio","nutrición"] },
+
+  { type:"alimento", inn:"Lentejas y legumbres", trade:"Lentejas, garbanzos, alubias, guisantes, edamame", category:"Alimento — Legumbre rica en proteínas y hierro", safety_lm:"green", safety_emb:"green", label_lm:"✅ Muy recomendado en lactancia", label_emb:"✅ Muy recomendado en embarazo", trimestres:"T1, T2, T3", text_lm:"Las legumbres son excelentes en lactancia: proteína vegetal, hierro no hemo, ácido fólico y fibra. Consumir variadas y frecuentemente.", text_emb:"Esenciales en el embarazo: ricas en folato (lentejas = mejor fuente vegetal), hierro, proteína y fibra. Pueden causar gases — combinar con comino o hinojo.", interactions:"Sin interacciones farmacológicas", sources:["e-lactancia","SEGO"], tags:["alimento","legumbre","proteína","hierro","folato","fibra","vegetariano"] },
+
+  { type:"alimento", inn:"Semillas de chía y lino", trade:"Chía, lino molido, semillas de lino", category:"Alimento — Semillas ricas en omega-3 vegetal", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro y beneficioso en lactancia", label_emb:"✅ Seguro en embarazo", trimestres:"T1, T2, T3", text_lm:"Las semillas de chía y lino son ricas en ALA (omega-3 vegetal), fibra y calcio. Seguras durante la lactancia. El lino molido es más biodisponible que el entero.", text_emb:"Ricas en ácido alfa-linolénico (ALA), precursor del DHA. Aunque la conversión a DHA es baja, son un buen complemento para dietas vegetarianas.", interactions:"A dosis altas pueden tener efecto laxante y anticoagulante leve", sources:["e-lactancia"], tags:["alimento","semillas","omega3","fibra","vegano","vegetariano"] },
+
+  { type:"alimento", inn:"Cúrcuma (condimento)", trade:"Cúrcuma en polvo, curry, turmeric", category:"Alimento — Especia antiinflamatoria", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en uso culinario", label_emb:"✅ Seguro en uso culinario", trimestres:"T1, T2, T3", text_lm:"La cúrcuma en uso culinario (condimento) es segura durante la lactancia. Los suplementos de curcumina concentrada tienen datos limitados.", text_emb:"El uso culinario de cúrcuma es seguro en el embarazo. Evitar suplementos de curcumina concentrada por datos insuficientes y posible efecto uterotónico a dosis muy altas.", interactions:"A dosis suplemento: puede potenciar anticoagulantes", sources:["e-lactancia"], tags:["alimento","especia","curcuma","antiinflamatorio","condimento"] },
+
+  { type:"alimento", inn:"Canela", trade:"Canela (Cinnamomum verum / cassia), canela de Ceilán", category:"Alimento — Especia", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Uso culinario seguro. Suplementos: evitar", label_emb:"⚠️ Uso culinario seguro. Suplementos altas dosis: evitar", trimestres:"Solo uso culinario", text_lm:"La canela en cantidades culinarias es segura. Los suplementos de canela en dosis altas no tienen datos en lactancia.", text_emb:"Uso culinario seguro. La canela de Ceilán es más segura que la cassia (menor contenido en cumarina). Suplementos concentrados: evitar por principio de precaución.", interactions:"Puede potenciar hipoglucemiantes y anticoagulantes a dosis altas", sources:["e-lactancia"], tags:["alimento","especia","canela","condimento"] },
+
+  { type:"alimento", inn:"Algas (nori, wakame, espirulina)", trade:"Algas nori, kombu, wakame, espirulina", category:"Alimento — Algas marinas", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Nori/wakame en cantidad limitada — alto contenido en yodo", label_emb:"⚠️ Moderar — alto contenido en yodo puede afectar tiroides fetal", trimestres:"Moderar en embarazo", text_lm:"Las algas son ricas en yodo pero en cantidades muy variables y difíciles de controlar. Consumo moderado y ocasional. Las algas procesadas (nori en sushi) en pequeñas cantidades son aceptables.", text_emb:"El yodo en exceso puede afectar la función tiroidea fetal. Moderar el consumo de algas, especialmente las ricas en yodo (kombu, kelp). La espirulina tiene riesgo de contaminantes.", interactions:"Pueden afectar la función tiroidea si contienen mucho yodo", sources:["e-lactancia","EFSA","AESAN"], tags:["alimento","algas","yodo","tiroides","marisco"] },
+
+  { type:"alimento", inn:"Piña natural", trade:"Piña (Ananas comosus), zumo de piña", category:"Alimento — Fruta tropical", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia", label_emb:"✅ Seguro en embarazo — mito sin evidencia", trimestres:"T1, T2, T3", text_lm:"La piña es completamente segura durante la lactancia. Rica en vitamina C y bromelina. No hay evidencia de que afecte la producción de leche.", text_emb:"La piña es segura en el embarazo. El mito de que causa abortos por la bromelina es FALSO — la cantidad de bromelina en la piña fresca es insignificante para causar cualquier efecto uterino. Disfrútala sin preocupación.", interactions:"Sin interacciones farmacológicas a cantidades normales", sources:["e-lactancia","AESAN"], tags:["alimento","fruta","vitamina","mito","tropical"] },
+
+  { type:"alimento", inn:"Papaya", trade:"Papaya madura, zumo de papaya", category:"Alimento — Fruta tropical", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia — fruta madura", label_emb:"⚠️ Papaya madura: segura. Papaya verde: evitar", trimestres:"Solo papaya madura en embarazo", text_lm:"La papaya madura es completamente segura durante la lactancia. Rica en vitamina C, betacaroteno y enzimas digestivas.", text_emb:"La papaya MADURA es segura en el embarazo. La papaya VERDE (no madura) contiene látex de papaína en concentraciones que pueden estimular contracciones uterinas. Evitar papaya verde y zumos de papaya verde.", interactions:"Sin interacciones farmacológicas la papaya madura", sources:["e-lactancia","AESAN"], tags:["alimento","fruta","papaya","tropical"] },
+
+  { type:"alimento", inn:"Kiwi", trade:"Kiwi verde, kiwi amarillo, kiwi baby", category:"Alimento — Fruta rica en vitamina C", safety_lm:"green", safety_emb:"green", label_lm:"✅ Muy recomendado en lactancia", label_emb:"✅ Muy recomendado en embarazo", trimestres:"T1, T2, T3", text_lm:"El kiwi es una de las frutas con mayor contenido en vitamina C. Seguro y beneficioso en lactancia. Dos kiwis al día = más vitamina C que una naranja.", text_emb:"Excelente en el embarazo: vitamina C, ácido fólico y fibra. Los dos kiwis en ayunas son uno de los remedios más eficaces para el estreñimiento en el embarazo.", interactions:"Sin interacciones farmacológicas", sources:["e-lactancia","SEGO"], tags:["alimento","fruta","vitamina C","folato","estreñimiento","fibra"] },
+
+  // ══ HIERBAS ADICIONALES ══
+  { type:"hierba", inn:"Orégano (suplemento concentrado)", trade:"Aceite de orégano, cápsulas orégano", category:"Hierba medicinal — Antimicrobiano natural", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Uso culinario seguro. Suplementos: datos insuficientes", label_emb:"❌ Suplementos concentrados: evitar — efecto uterotónico", trimestres:"Solo uso culinario en embarazo", text_lm:"El orégano como condimento es seguro. Los suplementos de aceite de orégano concentrado tienen datos insuficientes en lactancia.", text_emb:"El orégano como condimento es seguro. Los suplementos concentrados de aceite de orégano se evitan por posible efecto uterotónico a dosis altas.", interactions:"Sin interacciones culinarias. Aceite concentrado puede potenciar anticoagulantes.", sources:["e-lactancia"], tags:["hierba","orégano","culinario","condimento","antimicrobiano"] },
+
+  { type:"hierba", inn:"Anís verde (Pimpinella anisum)", trade:"Anís verde, infusión de anís, aguardiente de anís", category:"Hierba medicinal — Digestivo / Carminativo", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Infusión ocasional suave: aceptable. No confundir con anís estrellado", label_emb:"⚠️ Uso culinario seguro. Infusión: moderación en T1", trimestres:"Moderación en T1", text_lm:"El anís verde (diferente del anís estrellado) en infusión suave y ocasional es aceptable en lactancia. Tiene propiedades carminativas. No confundir con anís estrellado que es TÓXICO para lactantes.", text_emb:"Uso culinario seguro. Infusión suave ocasional probablemente segura. No usar a dosis altas en T1.", interactions:"Sin interacciones relevantes a dosis habituales", sources:["e-lactancia","ESCOP"], tags:["hierba","anís","digestivo","carminativo","infusión","gases"] },
+
+  { type:"hierba", inn:"Boldo", trade:"Infusión de boldo, cápsulas boldo", category:"Hierba medicinal — Hepática / Digestiva", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"El boldo está contraindicado en lactancia. Contiene ascaridol, potencialmente tóxico. Sus alcaloides pasan a la leche.", text_emb:"Contraindicado en embarazo. Efecto oxitócico (estimula contracciones) y hepatotóxico potencial.", interactions:"Puede potenciar anticoagulantes y hepatotóxicos", sources:["e-lactancia","ESCOP"], tags:["hierba","boldo","digestivo","hígado","contraindicado"] },
+
+  { type:"hierba", inn:"Cola de caballo", trade:"Equisetum arvense, infusión cola de caballo, cápsulas", category:"Hierba medicinal — Diurética / Remineralizante", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Datos limitados — uso puntual corto plazo", label_emb:"⚠️ Evitar en T1 — uso puntual en T2-T3", trimestres:"T2, T3 uso puntual", text_lm:"La cola de caballo tiene propiedades diuréticas y remineralizantes. Datos limitados en lactancia. Uso puntual (max 1 semana) de bajo riesgo. No usar productos concentrados.", text_emb:"Evitar en T1. En T2-T3 uso puntual aceptable. Contiene nicotina natural en pequeñas cantidades — no abusar.", interactions:"Puede potenciar diuréticos farmacológicos", sources:["e-lactancia","ESCOP"], tags:["hierba","diurético","remineralizante","silicio","infusión"] },
+
+  { type:"hierba", inn:"Gordolobo", trade:"Verbascum thapsus, jarabe de gordolobo, infusión", category:"Hierba medicinal — Emoliente respiratoria", safety_lm:"green", safety_emb:"green", label_lm:"✅ Seguro en lactancia para tos y garganta", label_emb:"✅ Seguro en embarazo para tos", trimestres:"T1, T2, T3", text_lm:"El gordolobo es emoliente respiratorio y está entre las hierbas más seguras para la tos durante la lactancia.", text_emb:"Seguro en todos los trimestres para tos seca e irritación de garganta.", interactions:"Sin interacciones conocidas", sources:["e-lactancia","ESCOP"], tags:["hierba","tos","garganta","emoliente","respiratorio","infusión"] },
+
+  { type:"hierba", inn:"Romero (suplemento)", trade:"Rosmarinus officinalis, aceite esencial romero, cápsulas", category:"Hierba medicinal / Condimento", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Culinario seguro. Suplementos/aceite esencial: evitar", label_emb:"❌ Suplementos/aceite esencial: evitar — efecto uterotónico", trimestres:"Solo uso culinario en embarazo", text_lm:"El romero como condimento es seguro. El aceite esencial de romero y suplementos concentrados tienen datos insuficientes.", text_emb:"Uso culinario (cocinando) seguro. Suplementos de romero y aceite esencial se evitan por posible efecto uterotónico y estimulación del flujo menstrual.", interactions:"Aceite esencial puede potenciar anticoagulantes", sources:["e-lactancia"], tags:["hierba","romero","culinario","condimento","uterino"] },
+
+  { type:"hierba", inn:"Matricaria (feverfew)", trade:"Tanacetum parthenium, migraña, cápsulas matricaria", category:"Hierba medicinal — Antimigrañosa", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicada en lactancia", label_emb:"❌ Contraindicada en embarazo — efecto uterotónico", trimestres:"Contraindicada", text_lm:"La matricaria (feverfew) está contraindicada en lactancia. Puede causar irritabilidad en el lactante.", text_emb:"Contraindicada en embarazo. Tiene efectos uterotónicos y puede causar contracciones.", interactions:"Potencia anticoagulantes", sources:["e-lactancia","ESCOP"], tags:["hierba","migraña","matricaria","uterino","contraindicado"] },
+
+  { type:"hierba", inn:"Pasiflora (Passiflora incarnata)", trade:"Pasiflora, Passiflora, Dormidina Pasiflora", category:"Hierba medicinal — Sedante / Ansiolítica", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Datos limitados — evitar si posible", label_emb:"❌ Contraindicada — efecto uterotónico potencial", trimestres:"Contraindicada en embarazo", text_lm:"La pasiflora tiene datos insuficientes en lactancia. Por principio de precaución se prefieren la tila o la melisa.", text_emb:"Contraindicada en embarazo por posible efecto uterotónico. Usar tila o melisa como alternativas seguras.", interactions:"Puede potenciar sedantes y benzodiacepinas", sources:["e-lactancia","ESCOP"], tags:["hierba","sedante","ansiedad","insomnio","pasiflora"] },
+
+  { type:"hierba", inn:"Ginkgo biloba", trade:"Ginkgo biloba EFG, Tanakan, suplementos ginkgo", category:"Hierba medicinal — Circulación / Cognitivo", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ Contraindicado en embarazo", trimestres:"Contraindicado", text_lm:"El ginkgo biloba está contraindicado en lactancia. Puede aumentar el riesgo de hemorragia.", text_emb:"Contraindicado en embarazo. Puede aumentar el riesgo de sangrado y tiene datos de efectos adversos en animales.", interactions:"Potencia anticoagulantes y antiagregantes. No combinar con aspirina o warfarina.", sources:["e-lactancia","ESCOP","NIH"], tags:["hierba","ginkgo","circulación","cognitivo","contraindicado"] },
+
+  { type:"hierba", inn:"Ginseng", trade:"Panax ginseng, ginseng rojo, ginseng EFG", category:"Hierba medicinal — Adaptógeno / Energizante", safety_lm:"red", safety_emb:"red", label_lm:"❌ Evitar en lactancia — datos insuficientes", label_emb:"❌ Evitar en embarazo — datos insuficientes, posible actividad hormonal", trimestres:"Contraindicado", text_lm:"El ginseng tiene datos insuficientes de seguridad en lactancia. Por principio de precaución se evita.", text_emb:"Evitar en embarazo. Tiene actividad hormonal débil y datos insuficientes de seguridad.", interactions:"Puede potenciar anticoagulantes e hipoglucemiantes", sources:["e-lactancia","NIH"], tags:["hierba","ginseng","adaptógeno","energizante","contraindicado"] },
+
+  // ══ PROCEDIMIENTOS ADICIONALES ══
+  { type:"procedimiento", inn:"Fisioterapia y osteopatía", trade:"Fisioterapia, osteopatía, quiropraxia, masajes terapéuticos", category:"Procedimiento — Terapia física", safety_lm:"green", safety_emb:"green", label_lm:"✅ Totalmente seguro en lactancia", label_emb:"✅ Seguro — técnicas adaptadas al embarazo", trimestres:"T1, T2, T3", text_lm:"La fisioterapia y la osteopatía son completamente seguras durante la lactancia. Muy útiles para dolores cervicales, lumbares y tensión muscular habituales en el postparto.", text_emb:"La fisioterapia obstétrica y la osteopatía adaptada son seguras y muy beneficiosas en el embarazo. Comunicar siempre la semana de gestación al terapeuta.", interactions:"No aplica", sources:["SEGO","AEP"], tags:["procedimiento","fisioterapia","osteopatía","dolor","postparto","rehabilitación"] },
+
+  { type:"procedimiento", inn:"Acupuntura", trade:"Acupuntura, moxibustión, electroacupuntura", category:"Procedimiento — Medicina tradicional china", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Seguro en lactancia con profesional cualificado", label_emb:"⚠️ Aceptable con profesional cualificado — evitar puntos uterinos", trimestres:"T2, T3 preferiblemente", text_lm:"La acupuntura con profesional cualificado es segura durante la lactancia. Puede ayudar con el dolor, el estrés y algunos problemas de lactancia.", text_emb:"La acupuntura puede usarse en embarazo por profesional experto en acupuntura obstétrica. Existen puntos contraindicados (estimulantes uterinos) que deben evitarse.", interactions:"No aplica", sources:["Cochrane","e-lactancia"], tags:["procedimiento","acupuntura","medicina alternativa","dolor"] },
+
+  { type:"procedimiento", inn:"Depilación láser", trade:"Láser diodo, IPL, láser Alexandrita", category:"Procedimiento estético — Depilación", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Evitar zona del pecho — resto del cuerpo datos insuficientes", label_emb:"❌ Evitar durante el embarazo", trimestres:"Contraindicada en embarazo", text_lm:"No hay datos de seguridad del láser depilatorio durante la lactancia. Por precaución se suele recomendar esperar al final de la LM. Absolutamente evitar la zona del pecho/pezón.", text_emb:"Se evita durante el embarazo: cambios hormonales alteran la pigmentación y pueden causar quemaduras; además no hay datos de seguridad sobre el efecto del calor profundo en el feto.", interactions:"No aplica", sources:["e-lactancia"], tags:["procedimiento","láser","depilación","estético","piel"] },
+
+  { type:"procedimiento", inn:"Botox (toxina botulínica)", trade:"Botox, Dysport, Xeomin — uso cosmético y terapéutico", category:"Procedimiento — Toxina botulínica", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Datos muy limitados — evitar durante LM", label_emb:"❌ Evitar en embarazo — datos insuficientes", trimestres:"Contraindicada en embarazo", text_lm:"No hay datos suficientes de seguridad del botox durante la lactancia. Las dosis cosméticas tienen absorción sistémica mínima pero la precaución es razonable. Para uso terapéutico (migraña, bruxismo), valorar con el médico.", text_emb:"No hay datos de seguridad. Se evita por principio de precaución. Las dosis terapéuticas tienen potencial de absorción sistémica.", interactions:"Potencia el efecto de relajantes musculares y aminoglucósidos", sources:["AEMPS","e-lactancia"], tags:["procedimiento","botox","toxina","estético","cosmético"] },
+
+  { type:"procedimiento", inn:"Tatuajes y piercings", trade:"Tatuaje, micropigmentación, piercing", category:"Procedimiento — Modificación corporal", safety_lm:"red", safety_emb:"red", label_lm:"❌ Evitar durante lactancia — riesgo infección y tintes", label_emb:"❌ Evitar durante embarazo — riesgo infección y tóxicos", trimestres:"Contraindicado", text_lm:"Se recomienda evitar tatuajes durante la lactancia: riesgo de infección (hepatitis, VIH) y algunos componentes de las tintas tienen datos insuficientes sobre paso a leche.", text_emb:"Evitar en embarazo. Riesgo de infección y los componentes de las tintas (metales pesados, disolventes) pueden atravesar la placenta.", interactions:"No aplica", sources:["e-lactancia","CDC"], tags:["procedimiento","tatuaje","piercing","infección","tóxico"] },
+
+  { type:"procedimiento", inn:"Cirugía estética (mamoplastia, liposucción)", trade:"Aumento de pecho, mastopexia, liposucción, rinoplastia", category:"Procedimiento quirúrgico — Cirugía estética electiva", safety_lm:"red", safety_emb:"red", label_lm:"❌ Posponer hasta fin de lactancia", label_emb:"❌ Contraindicada — posponer hasta postparto", trimestres:"Contraindicada", text_lm:"La cirugía estética electiva debe posponerse hasta el fin de la lactancia. La anestesia general es compatible con la LM, pero los cambios en las mamas durante la lactancia afectan el resultado de la cirugía mamaria.", text_emb:"Toda cirugía estética electiva debe posponerse hasta después del parto. Cualquier anestesia general conlleva riesgos en el embarazo.", interactions:"No aplica", sources:["SEGO","e-lactancia"], tags:["procedimiento","cirugía","estética","anestesia","postparto"] },
+
+  // ══ MEDICAMENTOS PSIQUIÁTRICOS ADICIONALES ══
+  { type:"medicamento", inn:"Venlafaxina", trade:"Vandral, Efexor, Venlafaxina EFG", category:"Medicamento — Antidepresivo ISRN", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Pasa a leche más que sertralina — segunda línea", label_emb:"⚠️ Aceptable — síndrome de abstinencia neonatal en T3", trimestres:"Continuar si tratamiento establecido", text_lm:"La venlafaxina pasa a la leche más que la sertralina. Se prefiere sertralina como primera línea. Si el tratamiento con venlafaxina funciona bien, el riesgo de cambiar puede superar al beneficio.", text_emb:"Puede causar síndrome de abstinencia neonatal transitorio si se usa en T3. No suspender bruscamente — riesgo de recaída.", interactions:"No combinar con IMAO. Síndrome serotoninérgico con triptanes y tramadol.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","antidepresivo","ISRN","depresión","ansiedad","salud mental"] },
+
+  { type:"medicamento", inn:"Mirtazapina", trade:"Rexer, Mirtazapina EFG, Zispin", category:"Medicamento — Antidepresivo noradrenérgico", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Segunda línea — preferir sertralina", label_emb:"⚠️ Aceptable si otras opciones no adecuadas", trimestres:"Continuar si necesaria", text_lm:"La mirtazapina pasa a la leche en cantidades moderadas. Causa sedación — vigilar somnolencia en el lactante.", text_emb:"Datos limitados. Puede usarse si otras opciones no son adecuadas.", interactions:"Potencia sedantes. No combinar con IMAO.", sources:["LactMed","e-lactancia"], tags:["medicamento","antidepresivo","depresión","sedante","salud mental"] },
+
+  { type:"medicamento", inn:"Alprazolam", trade:"Trankimazin, Alprazolam EFG", category:"Medicamento — Benzodiacepina ansiolítica", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Evitar uso crónico — riesgo sedación en lactante", label_emb:"⚠️ Uso puntual aceptable — evitar T1 y T3", trimestres:"T2 uso puntual si imprescindible", text_lm:"El alprazolam pasa a la leche. Evitar uso regular — riesgo de sedación y dependencia en el lactante. Uso puntual nocturno de bajo riesgo.", text_emb:"Uso puntual en crisis de ansiedad severa es aceptable. Evitar en T1 (posible labio leporino, datos no concluyentes) y al término.", interactions:"Potencia sedantes y opioides. No combinar con alcohol.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","ansiolítico","benzodiacepina","ansiedad","sedante"] },
+
+  { type:"medicamento", inn:"Quetiapina", trade:"Seroquel, Quetiapina EFG", category:"Medicamento — Antipsicótico atípico / Estabilizador", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Segunda opción — datos limitados", label_emb:"⚠️ Continuar si necesaria — riesgo de suspensión mayor", trimestres:"Continuar si necesaria para psicosis/bipolaridad", text_lm:"La quetiapina pasa a la leche en cantidades variables. Vigilar sedación en el lactante. En enfermedades psiquiátricas graves, el beneficio de continuar supera el riesgo.", text_emb:"Continuar si es necesaria para control de psicosis o bipolaridad. La enfermedad no tratada supone mayor riesgo.", interactions:"Potencia sedantes y antihipertensivos. Metabolismo por CYP3A4.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","antipsicótico","bipolaridad","psicosis","salud mental"] },
+
+  // ══ UROLOGÍA ══
+  { type:"medicamento", inn:"Dutasterida / Finasterida", trade:"Avodart, Proscar, Propecia", category:"Medicamento — Inhibidor 5-alfa reductasa", safety_lm:"red", safety_emb:"red", label_lm:"❌ Contraindicado en lactancia", label_emb:"❌ ABSOLUTAMENTE contraindicado en embarazo con feto masculino", trimestres:"Contraindicado", text_lm:"Contraindicado en lactancia. Se usa principalmente en hombres.", text_emb:"ABSOLUTAMENTE contraindicado en embarazo. Puede causar feminización de fetos masculinos (hipospadia). Las mujeres embarazadas no deben tocar comprimidos triturados.", interactions:"Sin interacciones relevantes", sources:["AEMPS","EMA","e-lactancia"], tags:["medicamento","ureología","próstata","contraindicado","teratógeno"] },
+
+  // ══ CARDIOVASCULAR ADICIONAL ══
+  { type:"medicamento", inn:"Digoxina", trade:"Digoxina EFG, Lanacordin", category:"Medicamento — Glucósido cardíaco", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible con lactancia — margen terapéutico estrecho", label_emb:"✅ Compatible en embarazo — monitorizar niveles", trimestres:"T1, T2, T3 con monitorización", text_lm:"La digoxina pasa a la leche en pequeñas cantidades. Compatible con lactancia. La dosis que recibe el lactante es insignificante.", text_emb:"Compatible en embarazo para arritmias cardíacas. Los niveles caen en el embarazo — puede necesitar ajuste de dosis. También se usa para tratar arritmias fetales.", interactions:"Margen terapéutico estrecho. Muchas interacciones. Hipopotasemia aumenta toxicidad.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","corazón","arritmia","cardiovascular","digoxina"] },
+
+  { type:"medicamento", inn:"Furosemida", trade:"Seguril, Furosemida EFG", category:"Medicamento — Diurético de asa", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Puede reducir la producción de leche", label_emb:"⚠️ Uso cuidadoso — riesgo de oligohidramnios", trimestres:"Solo si imprescindible", text_lm:"La furosemida puede reducir la producción de leche al disminuir la volemia. Uso puntual e imprescindible bajo supervisión.", text_emb:"Los diuréticos de asa pueden causar oligohidramnios (reducción del líquido amniótico). Solo en insuficiencia cardíaca o edema grave refractario.", interactions:"AINEs reducen su efecto. Aminoglucósidos: ototoxicidad aditiva.", sources:["AEMPS","LactMed","e-lactancia"], tags:["medicamento","diurético","corazón","cardiovascular","galactofugo"] },
+
+  { type:"medicamento", inn:"Espironolactona", trade:"Aldactone, Espironolactona EFG", category:"Medicamento — Diurético ahorrador de potasio / Antiandrógeno", safety_lm:"yellow", safety_emb:"red", label_lm:"⚠️ Pasa a leche — precaución en lactantes masculinos", label_emb:"❌ Contraindicada — feminización de fetos masculinos", trimestres:"Contraindicada T1-T3 en fetos masculinos", text_lm:"La espironolactona pasa a la leche y tiene actividad antiandrogénica. Precaución especial en lactantes masculinos.", text_emb:"Contraindicada en embarazo — actividad antiandrogénica puede causar feminización de fetos masculinos (hipospadia).", interactions:"ACE inhibidores, ARA II: hiperpotasemia grave", sources:["AEMPS","e-lactancia","LactMed"], tags:["medicamento","diurético","corazón","antiandrógeno","contraindicado"] },
+
+  // ══ ANESTÉSICOS LOCALES ADICIONALES ══
+  { type:"medicamento", inn:"Mepivacaína", trade:"Mepivacaína EFG, Scandinibsa, Carbocaína", category:"Medicamento — Anestésico local (odontología)", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Compatible con lactancia", label_emb:"⚠️ Preferir lidocaína en embarazo — más datos", trimestres:"T2, T3 preferiblemente", text_lm:"La mepivacaína es compatible con la lactancia. Paso mínimo a leche a dosis dentales habituales.", text_emb:"Aceptable en odontología pero se prefiere lidocaína o articaína con más datos en embarazo.", interactions:"Sin interacciones relevantes a dosis dentales", sources:["ADA","e-lactancia"], tags:["medicamento","anestesia","local","dental","odontología"] },
+
+  // ══ ANTIVIRALES ══
+  { type:"medicamento", inn:"Aciclovir", trade:"Zovirax, Aciclovir EFG, Virherpes", category:"Medicamento — Antiviral (herpes)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible con lactancia", label_emb:"✅ Compatible — amplia experiencia", trimestres:"T1, T2, T3", text_lm:"El aciclovir es compatible con la lactancia. Amplia experiencia. Se usa para herpes labial, genital y varicela.", text_emb:"Compatible en embarazo. Se usa para herpes genital primario grave y varicela en el embarazo. Sin malformaciones documentadas.", interactions:"Sin interacciones clínicamente relevantes a dosis habituales", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","antiviral","herpes","varicela","zovirax"] },
+
+  { type:"medicamento", inn:"Valaciclovir", trade:"Valtrex, Valaciclovir EFG", category:"Medicamento — Antiviral (herpes) — profármaco", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible con lactancia", label_emb:"✅ Compatible en embarazo", trimestres:"T1, T2, T3", text_lm:"El valaciclovir es el profármaco del aciclovir. Compatible con la lactancia con los mismos datos que aciclovir.", text_emb:"Compatible en embarazo. Mejor biodisponibilidad oral que aciclovir.", interactions:"Sin interacciones relevantes", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","antiviral","herpes","varicela"] },
+
+  { type:"medicamento", inn:"Oseltamivir", trade:"Tamiflu", category:"Medicamento — Antiviral (gripe)", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible — beneficio supera riesgo en gripe grave", label_emb:"✅ Recomendado en gripe grave — beneficio supera riesgo", trimestres:"T1, T2, T3", text_lm:"El oseltamivir es compatible con la lactancia. En gripe grave (H1N1, H5N1), el beneficio del tratamiento supera claramente el riesgo.", text_emb:"Recomendado en gripe grave o complicada en el embarazo. Las embarazadas tienen mayor riesgo de complicaciones por gripe. Iniciar cuanto antes (primeras 48h).", interactions:"Sin interacciones relevantes", sources:["OMS","CDC","LactMed","e-lactancia"], tags:["medicamento","antiviral","gripe","influenza","tamiflu"] },
+
+  // ══ OFTALMOLOGÍA ══
+  { type:"procedimiento", inn:"Colirios (gotas oculares)", trade:"Colirios antibióticos, antialérgicos, lubricantes oculares", category:"Procedimiento / Medicamento — Uso oftálmico tópico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Los colirios tópicos son generalmente seguros", label_emb:"✅ Los colirios tópicos son generalmente seguros", trimestres:"T1, T2, T3", text_lm:"Los colirios tienen absorción sistémica mínima. Los lubricantes oculares (Systane, Visine sin vasoconstrictor) son completamente seguros. Los colirios antibióticos (tobramicina, eritromicina) son generalmente aceptables.", text_emb:"Los colirios lubricantes y la mayoría de los antibióticos tópicos oftálmicos son seguros. Evitar colirios con vasoconstrictor (nafazolina) — preferir suero salino.", interactions:"Presionar el lagrimal después de instilar reduce la absorción sistémica", sources:["AEMPS","e-lactancia","LactMed"], tags:["procedimiento","medicamento","colirio","ojos","oftalmología"] },
+
+  // ══ OÍDOS ══
+  { type:"medicamento", inn:"Gotas óticas (antibiótico/corticoide)", trade:"Otipax, Polydexa, Ciloxan ótico, Gyneac", category:"Medicamento — Uso ótico tópico", safety_lm:"green", safety_emb:"green", label_lm:"✅ Generalmente seguras — absorción sistémica mínima", label_emb:"✅ Generalmente seguras — absorción sistémica mínima", trimestres:"T1, T2, T3", text_lm:"Las gotas óticas tienen absorción sistémica despreciable. Otipax (lidocaína + fenazona) y antibióticos tópicos óticos son seguros en lactancia.", text_emb:"Las gotas óticas son seguras en el embarazo. La absorción sistémica es mínima.", interactions:"Sin interacciones sistémicas relevantes", sources:["AEMPS","e-lactancia"], tags:["medicamento","oído","ótico","antibiótico","tópico"] },
+
+  // ══ MISCELÁNEA ══
+  { type:"medicamento", inn:"Codeína", trade:"Codeína EFG, Codeisán, Neocodión (combinado)", category:"Medicamento — Opioide débil / Antitusígeno", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ CONTRAINDICADA en lactancia — riesgo vital", label_emb:"⚠️ Uso puntual T2 posible — evitar T3 y altas dosis", trimestres:"Evitar T3", text_lm:"La codeína está CONTRAINDICADA en lactancia. Las madres 'metabolizadoras ultra-rápidas' convierten la codeína en morfina muy eficientemente — niveles letales de morfina en leche. Casos de muerte neonatal documentados. La FDA y EMA lo prohibieron en lactancia.", text_emb:"Uso puntual en T2 aceptable bajo supervisión. Evitar en T3 (depresión respiratoria neonatal). Nunca en madres con fenotipo metabolizador ultra-rápido conocido.", interactions:"Potencia sedantes y opioides. CYP2D6: polimorfismo genético crítico", sources:["FDA","EMA","LactMed","e-lactancia"], tags:["medicamento","opioide","codeína","tos","analgésico","contraindicado"] },
+
+  { type:"medicamento", inn:"Tramadol", trade:"Adolonta, Zaldiar (con paracetamol), Tramadol EFG", category:"Medicamento — Opioide de acción central", safety_lm:"red", safety_emb:"yellow", label_lm:"❌ Evitar en lactancia — riesgo de sedación neonatal", label_emb:"⚠️ Uso puntual T2 posible — evitar T3", trimestres:"T2 uso puntual si imprescindible", text_lm:"El tramadol pasa a la leche y puede causar sedación, dificultades de alimentación y depresión respiratoria en el lactante. Evitar. Alternativas: paracetamol + ibuprofeno.", text_emb:"Uso puntual en dolor severo T2 bajo supervisión. Evitar en T3 por riesgo de síndrome de abstinencia neonatal.", interactions:"No combinar con IMAO. Síndrome serotoninérgico con ISRS y triptanes.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","opioide","analgésico","dolor severo","contraindicado"] },
+
+  { type:"medicamento", inn:"Morfina", trade:"MST Continus, Sevredol, Morfina EFG", category:"Medicamento — Opioide mayor", safety_lm:"yellow", safety_emb:"yellow", label_lm:"⚠️ Uso mínimo puntual posible — alto riesgo sedación neonatal", label_emb:"⚠️ Solo dolor severo — síndrome abstinencia neonatal en uso crónico", trimestres:"Solo urgencia clínica", text_lm:"La morfina pasa a la leche. Uso puntual (cirugía, dolor severo agudo) con vigilancia estrecha del lactante. Nunca uso crónico.", text_emb:"Para dolor severo agudo bajo supervisión hospitalaria. Uso crónico asociado a síndrome de abstinencia neonatal.", interactions:"Todos los depresores del SNC. Naloxona revierte sus efectos.", sources:["LactMed","e-lactancia","AEMPS"], tags:["medicamento","opioide","analgésico","dolor severo"] },
+
+  { type:"medicamento", inn:"Naloxona / Naltrexona", trade:"Narcan (naloxona), Revia, Vivitrol (naltrexona)", category:"Medicamento — Antagonista opioides", safety_lm:"green", safety_emb:"yellow", label_lm:"✅ Compatible — absorción oral mínima", label_emb:"⚠️ Naloxona urgencia: segura. Naltrexona crónica: precaución", trimestres:"Naloxona urgencia siempre segura", text_lm:"La naloxona IV/IM tiene absorción oral mínima. Compatible con lactancia. La naltrexona oral pasa a leche en pequeñas cantidades.", text_emb:"La naloxona en urgencias por sobredosis es siempre segura. La naltrexona oral crónica tiene datos limitados.", interactions:"Revierte todos los efectos de opioides", sources:["LactMed","e-lactancia"], tags:["medicamento","opioide","antagonista","urgencia"] },
+
+  { type:"medicamento", inn:"Buprenorfina", trade:"Suboxone (con naloxona), Buprenorfina EFG, Transtec", category:"Medicamento — Opioide parcial / Sustitutivo", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible — continuar tratamiento de sustitución", label_emb:"✅ Continuar tratamiento — no suspender bruscamente", trimestres:"T1, T2, T3 — no interrumpir", text_lm:"La buprenorfina es compatible con la lactancia y se recomienda continuar el tratamiento de sustitución. La LM puede reducir el síndrome de abstinencia neonatal.", text_emb:"El tratamiento de sustitución con buprenorfina NO debe interrumpirse en el embarazo. El síndrome de abstinencia por retirada brusca es más peligroso para el feto que el medicamento.", interactions:"Otros depresores del SNC", sources:["AEMPS","SAMHSA","LactMed","e-lactancia"], tags:["medicamento","opioide","sustitutivo","adicción","embarazo"] },
+
+  { type:"medicamento", inn:"Metadona", trade:"Metadona EFG", category:"Medicamento — Opioide sustitutivo", safety_lm:"green", safety_emb:"green", label_lm:"✅ Compatible — continuar tratamiento de sustitución", label_emb:"✅ Continuar — no interrumpir en embarazo", trimestres:"T1, T2, T3", text_lm:"La metadona es compatible con la lactancia en tratamientos de mantenimiento. La LM puede ayudar con el síndrome de abstinencia neonatal.", text_emb:"No interrumpir el tratamiento de sustitución con metadona. La abstinencia materna es más peligrosa para el feto.", interactions:"Potencia todos los depresores del SNC. Muchos fármacos alteran sus niveles (CYP3A4, CYP2D6).", sources:["AEMPS","SAMHSA","LactMed","e-lactancia"], tags:["medicamento","opioide","sustitutivo","metadona","adicción"] }
+
 ];
 // ══════════════════════════════════════════════
 // STATE
@@ -2295,6 +2658,42 @@ const SYNONYMS = {
   'repelente':'repelente de mosquitos (deet / icaridina)','deet':'repelente de mosquitos (deet / icaridina)','icaridina':'repelente de mosquitos (deet / icaridina)','mosquitos':'repelente de mosquitos (deet / icaridina)','dengue':'repelente de mosquitos (deet / icaridina)',
   'agua de mar':'agua de mar isotónica / suero salino nasal','cloruro de sodio':'agua de mar isotónica / suero salino nasal',
   'moco nasal':'oximetazolina nasal','nariz taponada':'oximetazolina nasal',
+  // Estatinas
+  'colesterol':'atorvastatina','atorvastatina':'atorvastatina','cardyl':'atorvastatina','simvastatina':'simvastatina','zocor':'simvastatina','rosuvastatina':'rosuvastatina','crestor':'rosuvastatina',
+  // Antihipertensivos
+  'amlodipino':'amlodipino','norvasc':'amlodipino','losartan':'losartán','cozaar':'losartán','irbesartan':'irbesartán','aprovel':'irbesartán','valsartan':'valsartán','diovan':'valsartán','bisoprolol':'bisoprolol','emconcor':'bisoprolol','lisinopril':'lisinopril','zestril':'lisinopril',
+  // Anticoagulantes
+  'apixaban':'apixabán','eliquis':'apixabán','rivaroxaban':'rivaroxabán','xarelto':'rivaroxabán','dabigatran':'dabigatrán','pradaxa':'dabigatrán','clopidogrel':'clopidogrel','plavix':'clopidogrel',
+  // Antidiabéticos
+  'empagliflozina':'empagliflozina','jardiance':'empagliflozina','dapagliflozina':'dapagliflozina','forxiga':'dapagliflozina','semaglutida':'semaglutida','ozempic':'semaglutida','liraglutida':'liraglutida','victoza':'liraglutida','saxenda':'liraglutida','sitagliptina':'sitagliptina','januvia':'sitagliptina',
+  // Respiratorio
+  'salbutamol':'salbutamol','ventolin':'salbutamol','pulmicort':'budesonida inhalada','budesonida inhalada':'budesonida inhalada','flixotide':'fluticasona inhalada','fluticasona':'fluticasona inhalada','montelukast':'montelukast','singulair':'montelukast','tiotropio':'tiotropio','spiriva':'tiotropio',
+  // Neurología
+  'valproico':'ácido valproico','depakine':'ácido valproico','epilepsia':'ácido valproico','lamotrigina':'lamotrigina','lamictal':'lamotrigina','levetiracetam':'levetiracetam','keppra':'levetiracetam','gabapentina':'gabapentina','neurontin':'gabapentina','pregabalina':'pregabalina','lyrica':'pregabalina',
+  // Tiroides
+  'metimazol':'metimazol / tiamazol','tirodril':'metimazol / tiamazol','hipertiroidismo':'metimazol / tiamazol','propiltiouracilo':'propiltiouracilo (ptu)',
+  // Anticonceptivos
+  'cerazette':'píldora de progestágeno solo','azalia':'píldora de progestágeno solo','minipildora':'píldora de progestágeno solo','diu':'diu hormonal (levonorgestrel)','mirena':'diu hormonal (levonorgestrel)','kyleena':'diu hormonal (levonorgestrel)','yasmin':'anticonceptivos orales combinados (estrógeno+gestágeno)','diane':'anticonceptivos orales combinados (estrógeno+gestágeno)','pildora':'anticonceptivos orales combinados (estrógeno+gestágeno)',
+  // Dermatología
+  'isotretinoina':'isotretinoína','roaccutane':'isotretinoína','roacutan':'isotretinoína','acne':'isotretinoína','tretinoin':'tretinoína tópica','peroxido de benzoilo':'peróxido de benzoilo','benzac':'peróxido de benzoilo','acido azelaico':'ácido azelaico','skinoren':'ácido azelaico','hidrocortisona':'hidrocortisona tópica','betametasona':'betametasona tópica','betnovate':'betametasona tópica',
+  // Artritis/autoinmune
+  'metotrexato':'metotrexato','methotrexate':'metotrexato','hidroxicloroquina':'hidroxicloroquina','plaquenil':'hidroxicloroquina','lupus':'hidroxicloroquina','azatioprina':'azatioprina','imurel':'azatioprina',
+  // Digestivo adicional
+  'loperamida':'loperamida','imodium':'loperamida','fortasec':'loperamida','diarrea':'loperamida','simeticona':'simeticona','aerored':'simeticona','gases':'simeticona','ondansetron':'ondansetrón (náuseas quimioterapia)',
+  // Vitaminas adicionales
+  'b12':'vitamina b12 (cianocobalamina)','vitamina b12':'vitamina b12 (cianocobalamina)','vegana':'vitamina b12 (cianocobalamina)','zinc':'zinc','colina':'colina','ashwagandha':'ashwagandha','cbd':'cbd (cannabidiol)','cannabidiol':'cbd (cannabidiol)','proteina':'proteína en polvo (whey, caseína, vegetal)','whey':'proteína en polvo (whey, caseína, vegetal)','colageno':'colágeno hidrolizado','colágeno':'colágeno hidrolizado',
+  // Alimentos adicionales
+  'aguacate':'aguacate','palta':'aguacate','lentejas':'lentejas y legumbres','garbanzos':'lentejas y legumbres','legumbres':'lentejas y legumbres','chia':'semillas de chía y lino','lino':'semillas de chía y lino','piña':'piña natural','ananas':'piña natural','papaya':'papaya','kiwi':'kiwi','canela':'canela','oregano':'orégano (suplemento concentrado)',
+  // Psiquiatría adicional
+  'venlafaxina':'venlafaxina','efexor':'venlafaxina','mirtazapina':'mirtazapina','rexer':'mirtazapina','alprazolam':'alprazolam','trankimazin':'alprazolam','quetiapina':'quetiapina','seroquel':'quetiapina',
+  // Antivirales
+  'aciclovir':'aciclovir','zovirax':'aciclovir','herpes':'aciclovir','valaciclovir':'valaciclovir','valtrex':'valaciclovir','oseltamivir':'oseltamivir','tamiflu':'oseltamivir','gripe':'oseltamivir',
+  // Cardiovascular
+  'digoxina':'digoxina','furosemida':'furosemida','seguril':'furosemida','espironolactona':'espironolactona','aldactone':'espironolactona',
+  // Opioides
+  'codeina':'codeína','codeisan':'codeína','tramadol':'tramadol','adolonta':'tramadol','morfina':'morfina','naloxona':'naloxona / naltrexona','narcan':'naloxona / naltrexona','buprenorfina':'buprenorfina','suboxone':'buprenorfina','metadona':'metadona',
+  // Procedimientos adicionales
+  'fisioterapia':'fisioterapia y osteopatía','osteopatia':'fisioterapia y osteopatía','acupuntura':'acupuntura','laser depilacion':'depilación láser','botox':'botox (toxina botulínica)','tatuaje':'tatuajes y piercings','cirugia estetica':'cirugía estética (mamoplastia, liposucción)',
 };
 
 // Safety sort order: green > yellow > red, according to current situation
@@ -2829,6 +3228,5 @@ window.addEventListener('DOMContentLoaded', () => {
   if (countEl) countEl.textContent = '300+';
 });
 </script>
-
 </body>
 </html>
