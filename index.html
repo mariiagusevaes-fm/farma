@@ -1180,70 +1180,114 @@ a.source-link:active { background: #C8E0C4 !important; }
   cursor: pointer;
   font-family: inherit;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .sym-title {
   font-size: 17px;
   font-weight: 700;
   color: #1E3A1B;
   flex: 1;
+  min-width: 0;
+  word-break: break-word;
 }
 .sym-count {
   font-size: 12px;
   color: #6B8C65;
   white-space: nowrap;
+  flex-shrink: 0;
 }
-.sym-grid {
-  display: flex;
-  flex-direction: column;
+/* ══ CATEGORY BROWSE BUTTONS ══ */
+.cat-browse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
-.sym-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+@media (max-width: 380px) {
+  .cat-browse-grid { grid-template-columns: 1fr 1fr; }
+}
+.cat-browse-btn {
   background: white;
+  border: 1.5px solid #E0EDD9;
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 14px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(30,58,27,0.07);
-  border: 1px solid #E8EFE5;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: all 0.15s;
   -webkit-tap-highlight-color: transparent;
-}
-.sym-card:active {
-  transform: scale(0.98);
-  box-shadow: 0 1px 4px rgba(30,58,27,0.1);
-}
-.sym-card-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-  width: 28px;
   text-align: center;
 }
-.sym-card-body {
-  flex: 1;
-  min-width: 0;
+.cat-browse-btn:active {
+  background: #EEF7EB;
+  border-color: #3D6B38;
+  transform: scale(0.96);
 }
-.sym-card-name {
+.cat-browse-icon { font-size: 26px; line-height: 1; }
+.cat-browse-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1E3A1B;
+  line-height: 1.2;
+}
+.cat-browse-count {
+  font-size: 10px;
+  color: #6B8C65;
+  font-weight: 500;
+}
+
+/* Two-column grid */
+.sym-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 380px) {
+  .sym-grid2 { grid-template-columns: 1fr 1fr; gap: 8px; }
+}
+.sym-card2 {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 14px 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(30,58,27,0.08);
+  border: 1px solid #EEF5EC;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100px;
+}
+.sym-card2:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 4px rgba(30,58,27,0.1);
+}
+.sym-card2-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #6B8C65;
+  text-transform: uppercase;
+}
+.sym-card2-name {
   font-size: 15px;
   font-weight: 600;
   color: #1E3A1B;
   line-height: 1.3;
+  flex: 1;
   word-break: break-word;
 }
-.sym-card-trade {
-  font-size: 12px;
-  color: #6B8C65;
+.sym-card2-chip {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 20px;
+  line-height: 1.3;
   margin-top: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.sym-card-arrow {
-  font-size: 20px;
-  color: #C8E0C4;
-  font-weight: 300;
-  flex-shrink: 0;
+  word-break: break-word;
 }
 /* ══ CHAT FAB ══ */
 .chat-fab {
@@ -1738,6 +1782,43 @@ a.source-link:active { background: #C8E0C4 !important; }
       </div>
     </div>
 
+    <!-- EXPLORAR POR CATEGORÍA -->
+    <div class="section-block" style="margin-top:24px">
+      <div class="categories-title">🗂️ EXPLORAR POR CATEGORÍA</div>
+      <div class="cat-browse-grid">
+        <div class="cat-browse-btn" onclick="filterCategory('medicamento','💊 Medicamentos')">
+          <span class="cat-browse-icon">💊</span>
+          <span class="cat-browse-label">Medicamentos</span>
+          <span class="cat-browse-count">500+</span>
+        </div>
+        <div class="cat-browse-btn" onclick="filterCategory('alimento','🥗 Alimentos')">
+          <span class="cat-browse-icon">🥗</span>
+          <span class="cat-browse-label">Alimentos</span>
+          <span class="cat-browse-count">190+</span>
+        </div>
+        <div class="cat-browse-btn" onclick="filterCategory('hierba','🌿 Hierbas')">
+          <span class="cat-browse-icon">🌿</span>
+          <span class="cat-browse-label">Hierbas</span>
+          <span class="cat-browse-count">140+</span>
+        </div>
+        <div class="cat-browse-btn" onclick="filterCategory('suplemento','💊 Suplementos')">
+          <span class="cat-browse-icon">🧴</span>
+          <span class="cat-browse-label">Suplementos</span>
+          <span class="cat-browse-count">100+</span>
+        </div>
+        <div class="cat-browse-btn" onclick="filterCategory('procedimiento','🩺 Procedimientos')">
+          <span class="cat-browse-icon">🩺</span>
+          <span class="cat-browse-label">Procedimientos</span>
+          <span class="cat-browse-count">120+</span>
+        </div>
+        <div class="cat-browse-btn" onclick="filterCategory('te','🍵 Infusiones')">
+          <span class="cat-browse-icon">🍵</span>
+          <span class="cat-browse-label">Infusiones</span>
+          <span class="cat-browse-count">5+</span>
+        </div>
+      </div>
+    </div>
+
     <!-- BUSCAR POR SÍNTOMA -->
     <div class="section-block" style="margin-top:24px">
       <div class="categories-title">🩺 BUSCAR POR SÍNTOMA</div>
@@ -1765,16 +1846,16 @@ a.source-link:active { background: #C8E0C4 !important; }
     <div class="section-block" style="margin-top:24px">
       <div class="categories-title">🏥 PROCEDIMIENTOS</div>
       <div class="symptom-grid">
-        <div class="symptom-chip" onclick="quickSearch('Resonancia magnética')">🧲 Resonancia magnética (RM)</div>
-        <div class="symptom-chip" onclick="quickSearch('Radiografía')">☢️ Radiografía (rayos X)</div>
-        <div class="symptom-chip" onclick="quickSearch('Ecografía')">🔊 Ecografía</div>
-        <div class="symptom-chip" onclick="quickSearch('Tratamiento dental')">🦷 Tratamiento dental</div>
-        <div class="symptom-chip" onclick="quickSearch('Anestesia local')">💉 Anestesia local</div>
-        <div class="symptom-chip" onclick="quickSearch('TAC')">🖥️ TAC / Scanner</div>
-        <div class="symptom-chip" onclick="quickSearch('Colonoscopia')">🔬 Colonoscopia</div>
-        <div class="symptom-chip" onclick="quickSearch('Vacuna')">💉 Vacunación</div>
-        <div class="symptom-chip" onclick="quickSearch('Cirugía')">🏥 Cirugía / Operación</div>
-        <div class="symptom-chip" onclick="quickSearch('Gastroscopia')">🔭 Gastroscopia</div>
+        <div class="symptom-chip" onclick="filterCategory('resonancia','🧲 Resonancia magnética')">🧲 Resonancia magnética</div>
+        <div class="symptom-chip" onclick="filterCategory('radiografía','☢️ Radiografía')">☢️ Radiografía</div>
+        <div class="symptom-chip" onclick="filterCategory('ecografía','🔊 Ecografía')">🔊 Ecografía</div>
+        <div class="symptom-chip" onclick="filterCategory('dental','🦷 Tratamiento dental')">🦷 Tratamiento dental</div>
+        <div class="symptom-chip" onclick="filterCategory('anestesia','💉 Anestesia')">💉 Anestesia</div>
+        <div class="symptom-chip" onclick="filterCategory('vacuna','💉 Vacunación')">💉 Vacunación</div>
+        <div class="symptom-chip" onclick="filterCategory('cirugía','🏥 Cirugía')">🏥 Cirugía</div>
+        <div class="symptom-chip" onclick="filterCategory('parto','👶 Parto y nacimiento')">👶 Parto y nacimiento</div>
+        <div class="symptom-chip" onclick="filterCategory('lactancia','🤱 Lactancia materna')">🤱 Lactancia materna</div>
+        <div class="symptom-chip" onclick="filterCategory('diagnóstico','🔬 Diagnóstico prenatal')">🔬 Diagnóstico prenatal</div>
       </div>
     </div>
 
@@ -5320,7 +5401,6 @@ function filterCategory(tag, label) {
 }
 
 function showSymptomCards(results, label, tag) {
-  // Hide home, hide results bar
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('catSection').style.display = 'none';
   document.getElementById('resultsBar').style.display = 'none';
@@ -5328,18 +5408,29 @@ function showSymptomCards(results, label, tag) {
 
   const main = document.querySelector('main') || document.body;
 
-  // Safety icons mapping
-  const safetyIcon = d => {
-    const s = situation === 'emb' ? d.safety_emb : d.safety_lm;
-    return s === 'green' ? '✅' : s === 'yellow' ? '⚠️' : '❌';
+  const typeConf = TYPE_CONFIG;
+
+  const safetyLabel = d => {
+    const sit = situation === 'emb' ? d.safety_emb : d.safety_lm;
+    const lbl = situation === 'emb' ? d.label_emb : d.label_lm;
+    // Short version of label
+    if (!lbl) return sit === 'green' ? '✅ Compatible' : sit === 'yellow' ? '⚠️ Con precaución' : '❌ Evitar';
+    // Take first sentence only, max 35 chars
+    const short = lbl.replace(/^[✅⚠️❌]\s*/,'').split('—')[0].split('.')[0].trim();
+    const icon = sit === 'green' ? '✅' : sit === 'yellow' ? '⚠️' : '❌';
+    return icon + ' ' + (short.length > 35 ? short.slice(0,33)+'…' : short);
   };
-  const safetyColor = d => {
+
+  const safetyChipStyle = d => {
     const s = situation === 'emb' ? d.safety_emb : d.safety_lm;
-    return s === 'green' ? '#2E7D32' : s === 'yellow' ? '#E65100' : '#C62828';
+    if (s === 'green')  return 'background:#E8F5E9;color:#2E7D32;';
+    if (s === 'yellow') return 'background:#FFF3E0;color:#E65100;';
+    return 'background:#FFEBEE;color:#C62828;';
   };
-  const safetyBg = d => {
-    const s = situation === 'emb' ? d.safety_emb : d.safety_lm;
-    return s === 'green' ? '#F1F8F1' : s === 'yellow' ? '#FFF8F0' : '#FFF0F0';
+
+  const typeLabel = d => {
+    const tc = typeConf[d.type];
+    return tc ? `${tc.icon} ${tc.label.toUpperCase()}` : d.type.toUpperCase();
   };
 
   const screen = document.createElement('div');
@@ -5348,18 +5439,14 @@ function showSymptomCards(results, label, tag) {
     <div class="sym-header">
       <button class="sym-back" onclick="goHome()">← Volver</button>
       <div class="sym-title">${label}</div>
-      <div class="sym-count">${results.length} resultado${results.length !== 1 ? 's' : ''}</div>
+      <div class="sym-count">${results.length} resultados</div>
     </div>
-    <div class="sym-grid">
+    <div class="sym-grid2">
       ${results.map(d => `
-        <div class="sym-card" onclick="quickSearch('${d.inn.replace(/'/g,'&#39;')}')"
-             style="border-left: 4px solid ${safetyColor(d)}; background: ${safetyBg(d)}">
-          <div class="sym-card-icon">${safetyIcon(d)}</div>
-          <div class="sym-card-body">
-            <div class="sym-card-name">${d.inn}</div>
-            <div class="sym-card-trade">${(d.trade||'').split(',')[0]}</div>
-          </div>
-          <div class="sym-card-arrow">›</div>
+        <div class="sym-card2" onclick="quickSearch('${d.inn.replace(/['"]/g,'').replace(/[()]/g,'')}')">
+          <div class="sym-card2-type">${typeLabel(d)}</div>
+          <div class="sym-card2-name">${d.inn}</div>
+          <div class="sym-card2-chip" style="${safetyChipStyle(d)}">${safetyLabel(d)}</div>
         </div>
       `).join('')}
     </div>
